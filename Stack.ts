@@ -3,7 +3,7 @@
  */
 class Stack {
 
-    private elements:Array;
+    private elements:Array = [];
 
     /**
      * Appends new elements to a stack, and returns the new length of the stack.

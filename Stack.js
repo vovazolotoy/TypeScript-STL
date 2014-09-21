@@ -3,6 +3,7 @@
 */
 var Stack = (function () {
     function Stack() {
+        this.elements = [];
     }
     /**
     * Appends new elements to a stack, and returns the new length of the stack.
