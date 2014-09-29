@@ -3,6 +3,9 @@
 */
 var DoublyLinkedList = (function () {
     function DoublyLinkedList() {
+        this._length = 0;
+        this._head = null;
+        this._tail = null;
     }
     /**
     * Insert a new value at the specified index
@@ -37,6 +40,21 @@ var DoublyLinkedList = (function () {
     * @return void
     */
     DoublyLinkedList.prototype.push = function (value) {
+        // allocate new node
+        var node = {
+            value: value,
+            prev: this._tail,
+            next: null
+        };
+
+        if (this._head === null) {
+            this._head = this._tail = node;
+        } else {
+            this._tail.next = node;
+            this._tail = this._tail.next;
+        }
+
+        this._length++;
     };
 
     /**
@@ -46,6 +64,21 @@ var DoublyLinkedList = (function () {
     * @return void
     */
     DoublyLinkedList.prototype.unshift = function (value) {
+        // allocate new node
+        var node = {
+            value: value,
+            prev: this._tail,
+            next: null
+        };
+
+        if (this._head === null) {
+            this._head = this._tail = node;
+        } else {
+            this._tail.next = node;
+            this._tail = this._tail.next;
+        }
+
+        this._length--;
     };
 
     /**
@@ -54,6 +87,7 @@ var DoublyLinkedList = (function () {
     * @return any  The value of the last node.
     */
     DoublyLinkedList.prototype.top = function () {
+        return this._tail.value;
     };
 
     /**
@@ -62,6 +96,7 @@ var DoublyLinkedList = (function () {
     * @return any  The value of the first node.
     */
     DoublyLinkedList.prototype.bottom = function () {
+        return this._head.value;
     };
 
     /**
@@ -70,7 +105,7 @@ var DoublyLinkedList = (function () {
     * @return number the number of elements in the doubly linked list.
     */
     DoublyLinkedList.prototype.count = function () {
-        return 0;
+        return this._length;
     };
 
     /**
@@ -79,7 +114,7 @@ var DoublyLinkedList = (function () {
     * @return boolean whether the doubly linked list is empty.
     */
     DoublyLinkedList.prototype.isEmpty = function () {
-        return true;
+        return (this._length === 0);
     };
 
     /**
@@ -91,7 +126,7 @@ var DoublyLinkedList = (function () {
     };
 
     /**
-    * Return current array entry
+    * Return current list entry
     *
     * @return any  The current node value.
     */
@@ -141,4 +176,17 @@ var DoublyLinkedList = (function () {
     };
     return DoublyLinkedList;
 })();
+
+var list = new DoublyLinkedList();
+console.log(list.isEmpty());
+for (var i = 0; i < 1000; i++) {
+    list.push(i);
+}
+
+console.log(list.bottom());
+
+console.log(list.top());
+
+console.log(list.isEmpty());
+console.log(list.count());
 //# sourceMappingURL=DoublyLinkedList.js.map

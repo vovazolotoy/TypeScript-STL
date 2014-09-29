@@ -3,6 +3,12 @@
  */
 class DoublyLinkedList {
 
+    private _length = 0;
+
+    private _head:DoublyLinkedListNode = null;
+
+    private _tail:DoublyLinkedListNode = null;
+
     /**
      * Insert a new value at the specified index
      *
@@ -11,7 +17,6 @@ class DoublyLinkedList {
      * @return void
      */
     public add(index:any, value:any):void {
-
     }
 
     /**
@@ -20,7 +25,6 @@ class DoublyLinkedList {
      * @return any  The value of the popped node.
      */
     public pop():any {
-
     }
 
     /**
@@ -29,7 +33,6 @@ class DoublyLinkedList {
      * @return any  The value of the shifted node.
      */
     public shift():any {
-
     }
 
     /**
@@ -40,6 +43,21 @@ class DoublyLinkedList {
      */
     public push(value:any):void {
 
+        // allocate new node
+        var node:DoublyLinkedListNode = {
+            value: value,
+            prev:this._tail,
+            next:null
+        };
+
+        if (this._head === null) {
+            this._head = this._tail = node;
+        } else {
+            this._tail.next = node;
+            this._tail = this._tail.next;
+        }
+
+        this._length++;
     }
 
     /**
@@ -50,6 +68,21 @@ class DoublyLinkedList {
      */
     public unshift(value:any):void {
 
+        // allocate new node
+        var node:DoublyLinkedListNode = {
+            value: value,
+            prev:this._tail,
+            next:null
+        };
+
+        if (this._head === null) {
+            this._head = this._tail = node;
+        } else {
+            this._tail.next = node;
+            this._tail = this._tail.next;
+        }
+
+        this._length--;
     }
 
     /**
@@ -58,7 +91,7 @@ class DoublyLinkedList {
      * @return any  The value of the last node.
      */
     public top():any {
-
+        return this._tail.value;
     }
 
     /**
@@ -67,7 +100,7 @@ class DoublyLinkedList {
      * @return any  The value of the first node.
      */
     public bottom():any {
-
+        return this._head.value;
     }
 
     /**
@@ -76,7 +109,7 @@ class DoublyLinkedList {
      * @return number the number of elements in the doubly linked list.
      */
     public count():number {
-        return 0;
+        return this._length;
     }
 
     /**
@@ -85,7 +118,7 @@ class DoublyLinkedList {
      * @return boolean whether the doubly linked list is empty.
      */
     public isEmpty():boolean {
-        return true;
+        return (this._length === 0);
     }
 
     /**
@@ -98,7 +131,7 @@ class DoublyLinkedList {
     }
 
     /**
-     * Return current array entry
+     * Return current list entry
      *
      * @return any  The current node value.
      */
@@ -151,3 +184,27 @@ class DoublyLinkedList {
         return "";
     }
 }
+
+/**
+ * DoublyLinkedList element
+ */
+interface DoublyLinkedListNode {
+    value:any;
+    prev:DoublyLinkedListNode;
+    next:DoublyLinkedListNode;
+}
+
+
+var list = new DoublyLinkedList();
+console.log(list.isEmpty());
+for (var i = 0; i < 1000; i++) {
+    list.push(i);
+}
+
+console.log(list.bottom());
+
+console.log(list.top());
+
+console.log(list.isEmpty());
+console.log(list.count());
+

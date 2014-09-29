@@ -1,24 +1,6 @@
 /**
  * The Stack class provides the main functionality of a stack implemented using a doubly linked list.
  */
-class Stack {
+class Stack extends DoublyLinkedList {
 
-    private elements:Array = [];
-
-    /**
-     * Appends new elements to a stack, and returns the new length of the stack.
-     * @param item
-     * @returns {number}
-     */
-    public push(item:any):number {
-        return this.elements.push(item);
-    }
-
-    /**
-     * Removes the last element from a stack and returns it.
-     * @returns any
-     */
-    public pop():any {
-        return this.elements.pop();
-    }
 }

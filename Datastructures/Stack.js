@@ -1,26 +1,17 @@
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
 /**
 * The Stack class provides the main functionality of a stack implemented using a doubly linked list.
 */
-var Stack = (function () {
+var Stack = (function (_super) {
+    __extends(Stack, _super);
     function Stack() {
-        this.elements = [];
+        _super.apply(this, arguments);
     }
-    /**
-    * Appends new elements to a stack, and returns the new length of the stack.
-    * @param item
-    * @returns {number}
-    */
-    Stack.prototype.push = function (item) {
-        return this.elements.push(item);
-    };
-
-    /**
-    * Removes the last element from a stack and returns it.
-    * @returns any
-    */
-    Stack.prototype.pop = function () {
-        return this.elements.pop();
-    };
     return Stack;
-})();
+})(DoublyLinkedList);
 //# sourceMappingURL=Stack.js.map
