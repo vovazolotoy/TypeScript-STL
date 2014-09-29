@@ -13,7 +13,6 @@ STL provides a set of standard datastructures. They are grouped here by their un
 * [MaxHeap](#MaxHeap)
 * [MinHeap](#MinHeap)
 * [PriorityQueue](#PriorityQueue)
-* [ObjectStorage](#ObjectStorage)
 
 ## Doubly Linked Lists
 
@@ -31,9 +30,3 @@ Heaps are tree-like structures that follow the heap-property: each node is great
 * [MaxHeap](#MaxHeap)
 * [MinHeap](#MinHeap)
 * [PriorityQueue](#PriorityQueue)
-
-## Map
-
-A map is a datastructure holding key-value pairs. PHP arrays can be seen as maps from integers/strings to values. SPL provides a map from objects to data. This map can also be used as an object set.
-
-* [ObjectStorage](#ObjectStorage)
