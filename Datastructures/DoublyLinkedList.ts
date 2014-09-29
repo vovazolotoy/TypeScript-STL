@@ -71,18 +71,18 @@ class DoublyLinkedList {
         // allocate new node
         var node:DoublyLinkedListNode = {
             value: value,
-            prev:this._tail,
-            next:null
+            prev:null,
+            next:this._head
         };
 
         if (this._head === null) {
             this._head = this._tail = node;
         } else {
-            this._tail.next = node;
-            this._tail = this._tail.next;
+            this._head.prev = node;
+            this._head = this._head.prev;
         }
 
-        this._length--;
+        this._length++;
     }
 
     /**
@@ -181,7 +181,12 @@ class DoublyLinkedList {
      * @return string The serialized string.
      */
     public  toString():string {
-        return "";
+        var node = this._head;
+        var value = node.value;
+        while (node = node.next) {
+            value += '->' + node.value;
+        }
+        return value;
     }
 }
 
@@ -197,14 +202,19 @@ interface DoublyLinkedListNode {
 
 var list = new DoublyLinkedList();
 console.log(list.isEmpty());
-for (var i = 0; i < 1000; i++) {
+for (var i = 0; i < 10; i++) {
     list.push(i);
 }
-
-console.log(list.bottom());
-
-console.log(list.top());
-
-console.log(list.isEmpty());
+for (var i = 0; i < 5; i++) {
+    list.unshift(i);
+}
+//
+//console.log(list.bottom());
+//
+//console.log(list.top());
+//
+//console.log(list.isEmpty());
 console.log(list.count());
 
+
+console.log(list+"");
