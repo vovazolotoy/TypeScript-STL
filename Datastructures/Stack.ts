@@ -1,5 +1,5 @@
 /**
- * TypeScript Data structures
+ * The Stack class provides the main functionality of a stack implemented using a doubly linked list.
  */
 class Stack {
 
