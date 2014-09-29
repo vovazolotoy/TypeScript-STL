@@ -38,7 +38,7 @@ class DoublyLinkedList {
      * @param value The value to push.
      * @return void
      */
-    public push (value:any):void {
+    public push(value:any):void {
 
     }
 
