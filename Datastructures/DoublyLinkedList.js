@@ -23,6 +23,21 @@ var DoublyLinkedList = (function () {
     * @return any  The value of the popped node.
     */
     DoublyLinkedList.prototype.pop = function () {
+        if (this._length === 0) {
+            throw new Error("Can't pop from an empty data structure");
+        }
+
+        var value = this._tail.value;
+
+        this._tail = this._tail.prev;
+        if (this._tail) {
+            delete this._tail.next;
+            this._tail.next = null;
+        }
+
+        this._length--;
+
+        return value;
     };
 
     /**
@@ -31,6 +46,21 @@ var DoublyLinkedList = (function () {
     * @return any  The value of the shifted node.
     */
     DoublyLinkedList.prototype.shift = function () {
+        if (this._length === 0) {
+            throw new Error("Can't shift from an empty data structure");
+        }
+
+        var value = this._head.value;
+
+        this._head = this._head.next;
+        if (this._head) {
+            delete this._head.prev;
+            this._head.prev = null;
+        }
+
+        this._length--;
+
+        return value;
     };
 
     /**
@@ -47,7 +77,7 @@ var DoublyLinkedList = (function () {
             next: null
         };
 
-        if (this._head === null) {
+        if (this._length === 0) {
             this._head = this._tail = node;
         } else {
             this._tail.next = node;
@@ -71,7 +101,7 @@ var DoublyLinkedList = (function () {
             next: this._head
         };
 
-        if (this._head === null) {
+        if (this._length === 0) {
             this._head = this._tail = node;
         } else {
             this._head.prev = node;
@@ -172,12 +202,17 @@ var DoublyLinkedList = (function () {
     * @return string The serialized string.
     */
     DoublyLinkedList.prototype.toString = function () {
+        if (this._length === 0) {
+            return "{}";
+        }
+
         var node = this._head;
         var value = node.value;
         while (node = node.next) {
-            value += '->' + node.value;
+            value += " > " + node.value;
         }
-        return value;
+
+        return "{" + value + "}";
     };
     return DoublyLinkedList;
 })();
@@ -187,17 +222,4 @@ console.log(list.isEmpty());
 for (var i = 0; i < 10; i++) {
     list.push(i);
 }
-for (var i = 0; i < 5; i++) {
-    list.unshift(i);
-}
-
-//
-//console.log(list.bottom());
-//
-//console.log(list.top());
-//
-//console.log(list.isEmpty());
-console.log(list.count());
-
-console.log(list + "");
 //# sourceMappingURL=DoublyLinkedList.js.map

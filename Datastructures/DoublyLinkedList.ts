@@ -25,6 +25,21 @@ class DoublyLinkedList {
      * @return any  The value of the popped node.
      */
     public pop():any {
+        if (this._length === 0) {
+            throw new Error("Can't pop from an empty data structure");
+        }
+
+        var value = this._tail.value;
+
+        this._tail = this._tail.prev;
+        if (this._tail) {
+            delete this._tail.next;
+            this._tail.next = null;
+        }
+
+        this._length--;
+
+        return value;
     }
 
     /**
@@ -33,6 +48,21 @@ class DoublyLinkedList {
      * @return any  The value of the shifted node.
      */
     public shift():any {
+        if (this._length === 0) {
+            throw new Error("Can't shift from an empty data structure");
+        }
+
+        var value = this._head.value;
+
+        this._head = this._head.next;
+        if (this._head) {
+            delete this._head.prev;
+            this._head.prev = null;
+        }
+
+        this._length--;
+
+        return value;
     }
 
     /**
@@ -42,7 +72,6 @@ class DoublyLinkedList {
      * @return void
      */
     public push(value:any):void {
-
         // allocate new node
         var node:DoublyLinkedListNode = {
             value: value,
@@ -50,7 +79,7 @@ class DoublyLinkedList {
             next:null
         };
 
-        if (this._head === null) {
+        if (this._length === 0) {
             this._head = this._tail = node;
         } else {
             this._tail.next = node;
@@ -67,7 +96,6 @@ class DoublyLinkedList {
      * @return void
      */
     public unshift(value:any):void {
-
         // allocate new node
         var node:DoublyLinkedListNode = {
             value: value,
@@ -75,7 +103,7 @@ class DoublyLinkedList {
             next:this._head
         };
 
-        if (this._head === null) {
+        if (this._length === 0) {
             this._head = this._tail = node;
         } else {
             this._head.prev = node;
@@ -181,12 +209,17 @@ class DoublyLinkedList {
      * @return string The serialized string.
      */
     public  toString():string {
+        if (this._length === 0) {
+            return "{}"
+        }
+
         var node = this._head;
         var value = node.value;
         while (node = node.next) {
-            value += '->' + node.value;
+            value += " > " + node.value;
         }
-        return value;
+
+        return "{" + value + "}";
     }
 }
 
@@ -205,16 +238,3 @@ console.log(list.isEmpty());
 for (var i = 0; i < 10; i++) {
     list.push(i);
 }
-for (var i = 0; i < 5; i++) {
-    list.unshift(i);
-}
-//
-//console.log(list.bottom());
-//
-//console.log(list.top());
-//
-//console.log(list.isEmpty());
-console.log(list.count());
-
-
-console.log(list+"");
