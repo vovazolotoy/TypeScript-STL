@@ -1,13 +1,51 @@
 /**
+ * DoublyLinkedList element
+ */
+interface DoublyLinkedListNode {
+    value:any;
+    prev:DoublyLinkedListNode;
+    next:DoublyLinkedListNode;
+}
+
+/**
  * The DoublyLinkedList class provides the main functionality of a doubly linked list.
  */
 class DoublyLinkedList {
 
+    /**
+     * Count of elements in list
+     * @type number
+     * @private
+     */
     private _length = 0;
 
+    /**
+     * Iteration pointer
+     * @type number
+     * @private
+     */
+    private _key = 0;
+
+    /**
+     * Reference to head(first) element in list
+     * @type DoublyLinkedListNode
+     * @private
+     */
     private _head:DoublyLinkedListNode = null;
 
+    /**
+     * Reference to tail(last) element in list
+     * @type DoublyLinkedListNode
+     * @private
+     */
     private _tail:DoublyLinkedListNode = null;
+
+    /**
+     * Reference to iterated element in list
+     * @type DoublyLinkedListNode
+     * @private
+     */
+    private _current:DoublyLinkedListNode = null;
 
     /**
      * Insert a new value at the specified index
@@ -155,7 +193,8 @@ class DoublyLinkedList {
      * @return void
      */
     public rewind():void {
-
+        this._key = 0;
+        this._current = this._head;
     }
 
     /**
@@ -164,7 +203,10 @@ class DoublyLinkedList {
      * @return any  The current node value.
      */
     public current():any {
-
+        if (this._current) {
+            return this._current.value;
+        }
+        return null;
     }
 
     /**
@@ -173,7 +215,7 @@ class DoublyLinkedList {
      * @return any  The current node index.
      */
     public key():any {
-
+        return this._key;
     }
 
     /**
@@ -182,7 +224,8 @@ class DoublyLinkedList {
      * @return void
      */
     public next():void {
-
+        this._current = this._current.next;
+        this._key++;
     }
 
     /**
@@ -191,7 +234,8 @@ class DoublyLinkedList {
      * @return void
      */
     public prev():void {
-
+        this._current = this._current.prev;
+        this._key--;
     }
 
     /**
@@ -200,41 +244,29 @@ class DoublyLinkedList {
      * @return boolean true if the doubly linked list contains any more nodes, false otherwise.
      */
     public valid():boolean {
-        return false;
+        return (this._key >= 0 && this._key < this._length);
     }
 
     /**
-     * Serializes the list
-     *
-     * @return string The serialized string.
+     * Export the list to array
+     * @returns Array   The exported array
      */
-    public  toString():string {
-        if (this._length === 0) {
-            return "{}"
+    public toArray():Array {
+        var list = new Array();
+        var current = this._head;
+        while (current) {
+            list.push(current.value);
+            current = current.next;
         }
-
-        var node = this._head;
-        var value = node.value;
-        while (node = node.next) {
-            value += " > " + node.value;
-        }
-
-        return "{" + value + "}";
+        return list;
     }
-}
 
-/**
- * DoublyLinkedList element
- */
-interface DoublyLinkedListNode {
-    value:any;
-    prev:DoublyLinkedListNode;
-    next:DoublyLinkedListNode;
-}
-
-
-var list = new DoublyLinkedList();
-console.log(list.isEmpty());
-for (var i = 0; i < 10; i++) {
-    list.push(i);
+    /**
+     * Serializes the list to string
+     *
+     * @return string   The serialized string.
+     */
+    public toString():string {
+        return "{" + this.toArray().join("->") + "}";
+    }
 }
