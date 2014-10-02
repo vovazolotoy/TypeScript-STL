@@ -249,7 +249,7 @@ class DoublyLinkedList {
 
     /**
      * Export the list to array
-     * @returns Array   The exported array
+     * @return Array   The exported array
      */
     public toArray():Array {
         var list = new Array();

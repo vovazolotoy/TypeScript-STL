@@ -236,7 +236,7 @@ var DoublyLinkedList = (function () {
 
     /**
     * Export the list to array
-    * @returns Array   The exported array
+    * @return Array   The exported array
     */
     DoublyLinkedList.prototype.toArray = function () {
         var list = new Array();

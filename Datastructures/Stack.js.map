@@ -1,1 +1,1 @@
-{"version":3,"file":"Stack.js","sourceRoot":"","sources":["Stack.ts"],"names":["Stack","Stack.constructor"],"mappings":";;;;;;AAAA;;EAEG;AACH;;IAAAA;;;AAECA,IAADA;AAACA,CAAAA,EAFmB,gBAAgB,EAEnC"}
+{"version":3,"file":"Stack.js","sourceRoot":"","sources":["Stack.ts"],"names":["Stack","Stack.constructor"],"mappings":";;;;;;AAAA,2CAA2C;AAC3C;;EAEG;AACH;;IAAAA;;;AAECA,IAADA;AAACA,CAAAA,EAFmB,gBAAgB,EAEnC"}

@@ -4,6 +4,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
+/// <reference path="DoublyLinkedList.ts"/>
 /**
 * The Stack class provides the main functionality of a stack implemented using a doubly linked list.
 */
