@@ -3,12 +3,18 @@
  */
 class Heap {
 
+    private _tree:Array = [];
+
     /**
      * Extracts a node from top of the heap and sift up
      *
      * @return any The value of the extracted node.
      */
-    public extract():any {}
+    public extract():any {
+        var extracted:any = this._tree[0];
+        this._tree[0] = this._tree.pop();
+        return extracted;
+    }
 
     /**
      * Inserts an element in the heap by sifting it up
@@ -16,13 +22,17 @@ class Heap {
      * @param value The value to insert.
      * @return void
      */
-    public insert(value:any):void {}
+    public insert(value:any):void {
+        this._tree.push(value);
+    }
 
     /**
      * Peeks at the node from the top of the heap
      * @return any The value of the node on the top.
      */
-    public top():any {}
+    public top():any {
+        return this._tree[0];
+    }
 
     /**
      * Counts the number of elements in the heap
@@ -30,7 +40,7 @@ class Heap {
      * @return number the number of elements in the heap.
      */
     public count():number {
-        return 0;
+        return this._tree.length;
     }
 
     /**
@@ -39,7 +49,7 @@ class Heap {
      * @return boolean whether the heap is empty.
      */
     public isEmpty():boolean {
-        return true;
+        return (this._tree.length === 0);
     }
 
     /**
@@ -88,8 +98,8 @@ class Heap {
 
     /**
      * Compare elements in order to place them correctly in the heap while sifting up.
-     * @param any first The value of the first node being compared.
-     * @param any second The value of the second node being compared.
+     * @param first The value of the first node being compared.
+     * @param second The value of the second node being compared.
      * @return number Result of the comparison, positive integer if value1 is greater than value2, 0 if they are equal, negative integer otherwise.
      * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
      */

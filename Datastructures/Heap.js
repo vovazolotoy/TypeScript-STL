@@ -3,6 +3,7 @@
 */
 var Heap = (function () {
     function Heap() {
+        this._tree = [];
     }
     /**
     * Extracts a node from top of the heap and sift up
@@ -10,6 +11,9 @@ var Heap = (function () {
     * @return any The value of the extracted node.
     */
     Heap.prototype.extract = function () {
+        var extracted = this._tree[0];
+        this._tree[0] = this._tree.pop();
+        return extracted;
     };
 
     /**
@@ -19,6 +23,7 @@ var Heap = (function () {
     * @return void
     */
     Heap.prototype.insert = function (value) {
+        this._tree.push(value);
     };
 
     /**
@@ -26,6 +31,7 @@ var Heap = (function () {
     * @return any The value of the node on the top.
     */
     Heap.prototype.top = function () {
+        return this._tree[0];
     };
 
     /**
@@ -34,7 +40,7 @@ var Heap = (function () {
     * @return number the number of elements in the heap.
     */
     Heap.prototype.count = function () {
-        return 0;
+        return this._tree.length;
     };
 
     /**
@@ -43,7 +49,7 @@ var Heap = (function () {
     * @return boolean whether the heap is empty.
     */
     Heap.prototype.isEmpty = function () {
-        return true;
+        return (this._tree.length === 0);
     };
 
     /**
@@ -97,8 +103,8 @@ var Heap = (function () {
 
     /**
     * Compare elements in order to place them correctly in the heap while sifting up.
-    * @param any first The value of the first node being compared.
-    * @param any second The value of the second node being compared.
+    * @param first The value of the first node being compared.
+    * @param second The value of the second node being compared.
     * @return number Result of the comparison, positive integer if value1 is greater than value2, 0 if they are equal, negative integer otherwise.
     * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
     */
