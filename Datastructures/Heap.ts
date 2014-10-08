@@ -169,27 +169,7 @@ class Heap {
             c2:{d:2,
                 c1: {d:'vova',
                     c1: 3,
-                    c2: {d:'deep',
-                        c1: {
-                            d:3,
-                            c1:{
-                                d:3,
-                                c1:{
-                                    d:3,
-                                    c1:{
-                                        d:3,
-                                        c1:{d:4
-                                        },
-                                        c2:null
-                                    },
-                                    c2:null
-                                },
-                                c2:null
-                            },
-                            c2:null
-                        },
-                        c2: {d:3}
-                    }
+                    c2: {d:'deep'}
                 },
                 c2: {d:'zolotoy',
                     c1: {d:789},
