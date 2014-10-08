@@ -127,12 +127,12 @@ var Heap = (function () {
     Heap.prototype.line = function (node, prefix, last) {
         if (typeof prefix === "undefined") { prefix = ''; }
         if (typeof last === "undefined") { last = true; }
-        var r = prefix + (last ? (prefix ? '└─' : '  ') : '├─') + node.d;
+        var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + node.d;
 
         if (last) {
-            prefix = prefix + '  ';
+            prefix = prefix + '   ';
         } else {
-            prefix = prefix + '│ ';
+            prefix = prefix + '│  ';
         }
 
         if (node.c1) {

@@ -122,13 +122,13 @@ class Heap {
 
     private line(node, prefix = '', last = true) {
 
-            var r = prefix + (last ? (prefix ? '└─' : '  ') : '├─') + node.d;
+            var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + node.d;
         //}
 
         if (last) {
-            prefix = prefix + '  ';
+            prefix = prefix + '   ';
         } else {
-            prefix = prefix + '│ ';
+            prefix = prefix + '│  ';
         }
 
         if (node.c1) {
