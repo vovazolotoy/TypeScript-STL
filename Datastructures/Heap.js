@@ -6,6 +6,18 @@ var Heap = (function () {
         this._tree = [];
     }
     /**
+    *
+    * @param n
+    * @return {number}
+    */
+    Heap.prototype.parent = function (n) {
+        return Math.floor(n - 1 / 2);
+    };
+
+    Heap.prototype.shiftUp = function () {
+    };
+
+    /**
     * Extracts a node from top of the heap and sift up
     *
     * @return any The value of the extracted node.
@@ -111,6 +123,109 @@ var Heap = (function () {
     Heap.prototype.compare = function (first, second) {
         return 0;
     };
+
+    Heap.prototype.line = function (node, prefix, last) {
+        if (typeof prefix === "undefined") { prefix = ''; }
+        if (typeof last === "undefined") { last = true; }
+        var r = prefix + (last ? (prefix ? '└─' : '  ') : '├─') + node.d;
+
+        if (last) {
+            prefix = prefix + '  ';
+        } else {
+            prefix = prefix + '│ ';
+        }
+
+        if (node.c1) {
+            r += '\n' + this.line(node.c1, prefix, false);
+        }
+        if (node.c2) {
+            r += '\n' + this.line(node.c2, prefix, true);
+        }
+
+        return r;
+    };
+
+    /**
+    * Serializes the heap to string
+    *
+    * @return string   The serialized string.
+    */
+    Heap.prototype.toString = function () {
+        var val = {
+            d: 1,
+            c1: {
+                d: 2,
+                c1: {
+                    d: 3,
+                    c1: {
+                        d: 4
+                    },
+                    c2: {
+                        d: 4
+                    }
+                },
+                c2: {
+                    d: 3,
+                    c1: {
+                        d: 4
+                    },
+                    c2: {
+                        d: 4
+                    }
+                }
+            },
+            c2: {
+                d: 2,
+                c1: {
+                    d: 'vova',
+                    c1: 3,
+                    c2: {
+                        d: 'deep',
+                        c1: {
+                            d: 3,
+                            c1: {
+                                d: 3,
+                                c1: {
+                                    d: 3,
+                                    c1: {
+                                        d: 3,
+                                        c1: {
+                                            d: 4
+                                        },
+                                        c2: null
+                                    },
+                                    c2: null
+                                },
+                                c2: null
+                            },
+                            c2: null
+                        },
+                        c2: { d: 3 }
+                    }
+                },
+                c2: {
+                    d: 'zolotoy',
+                    c1: { d: 789 },
+                    c2: { d: 39876 }
+                }
+            }
+        };
+        return this.line(val);
+        return this.line({
+            d: 1,
+            c1: { d: 2, c1: { d: 3, c1: { d: 4, c1: null, c2: null }, c2: { d: 4, c1: null, c2: null } }, c2: null },
+            c2: { d: 4, c1: { d: 4, c1: null, c2: null }, c2: { d: 2, c1: null, c2: null } }
+        }, '');
+        return "0 \n\
+ ├─ 1 \n\
+ │  ├─ 2\n\
+ │  │    └─ 3\n\
+ │  └─ 4\n\
+ │    ├─ 5\n\
+ │    └ 6";
+    };
     return Heap;
 })();
+var heap = new Heap();
+console.log('' + heap);
 //# sourceMappingURL=Heap.js.map

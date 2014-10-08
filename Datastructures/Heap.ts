@@ -6,6 +6,19 @@ class Heap {
     private _tree:Array = [];
 
     /**
+     *
+     * @param n
+     * @return {number}
+     */
+    private parent(n:number):number {
+        return Math.floor(n - 1 / 2);
+    }
+
+    private shiftUp():void {
+
+    }
+
+    /**
      * Extracts a node from top of the heap and sift up
      *
      * @return any The value of the extracted node.
@@ -106,4 +119,96 @@ class Heap {
     public compare(first:any, second:any):number {
         return 0;
     }
+
+    private line(node, prefix = '', last = true) {
+
+            var r = prefix + (last ? (prefix ? '└─' : '  ') : '├─') + node.d;
+        //}
+
+        if (last) {
+            prefix = prefix + '  ';
+        } else {
+            prefix = prefix + '│ ';
+        }
+
+        if (node.c1) {
+            r += '\n' + this.line(node.c1, prefix, false);
+        }
+        if (node.c2) {
+            r += '\n' + this.line(node.c2, prefix, true);
+        }
+
+        return r;
+    }
+
+    /**
+     * Serializes the heap to string
+     *
+     * @return string   The serialized string.
+     */
+    public toString():string {
+        var val = {
+            d:1,
+            c1:{
+                d:2,
+                c1:{
+                    d:3,
+                    c1:{d:4
+                    },
+                    c2:{d:4
+                    }
+                },
+                c2:{
+                    d:3,
+                    c1:{d:4
+                    },
+                    c2:{d:4
+                    }
+                }
+            },
+            c2:{d:2,
+                c1: {d:'vova',
+                    c1: 3,
+                    c2: {d:'deep',
+                        c1: {
+                            d:3,
+                            c1:{
+                                d:3,
+                                c1:{
+                                    d:3,
+                                    c1:{
+                                        d:3,
+                                        c1:{d:4
+                                        },
+                                        c2:null
+                                    },
+                                    c2:null
+                                },
+                                c2:null
+                            },
+                            c2:null
+                        },
+                        c2: {d:3}
+                    }
+                },
+                c2: {d:'zolotoy',
+                    c1: {d:789},
+                    c2: {d:39876}
+                }
+            }
+        };
+        return this.line(val);
+        return this.line(
+            {d:1,
+                c1:{d:2, c1:{d:3, c1:{d:4, c1:null, c2:null}, c2:{d:4, c1:null, c2:null}}, c2:null}, c2:{d:4, c1:{d:4, c1:null, c2:null}, c2:{d:2, c1:null, c2:null}}}, '');
+        return "0 \n\
+ ├─ 1 \n\
+ │  ├─ 2\n\
+ │  │    └─ 3\n\
+ │  └─ 4\n\
+ │    ├─ 5\n\
+ │    └ 6";
+    }
 }
+var heap = new Heap();
+console.log('' + heap);
