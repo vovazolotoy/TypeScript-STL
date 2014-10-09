@@ -14,7 +14,28 @@ var Heap = (function () {
         return Math.floor(n - 1 / 2);
     };
 
-    Heap.prototype.shiftUp = function () {
+    Heap.prototype.child = function (n) {
+        return 2 * n + 1;
+    };
+    Heap.prototype.child2 = function (n) {
+        return 2 * n + 2;
+    };
+
+    /**
+    *
+    * @param n
+    */
+    Heap.prototype.shiftUp = function (n) {
+        while (n > 0) {
+            if (this._tree[n] < this._tree[this.parent(n)]) {
+                var swap = this._tree[n];
+                this._tree[n] = this._tree[this.parent(n)];
+                this._tree[this.parent(n)] = swap;
+            } else {
+                n = 0;
+            }
+            n = this.parent(n);
+        }
     };
 
     /**
@@ -36,6 +57,7 @@ var Heap = (function () {
     */
     Heap.prototype.insert = function (value) {
         this._tree.push(value);
+        this.shiftUp(this._tree.length);
     };
 
     /**
@@ -124,10 +146,10 @@ var Heap = (function () {
         return 0;
     };
 
-    Heap.prototype.line = function (node, prefix, last) {
+    Heap.prototype.line = function (n, prefix, last) {
         if (typeof prefix === "undefined") { prefix = ''; }
         if (typeof last === "undefined") { last = true; }
-        var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + node.d;
+        var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + this._tree[n];
 
         if (last) {
             prefix = prefix + '   ';
@@ -135,11 +157,11 @@ var Heap = (function () {
             prefix = prefix + '│  ';
         }
 
-        if (node.c1) {
-            r += '\n' + this.line(node.c1, prefix, false);
+        if (this._tree[this.child(n)]) {
+            r += '\n' + this.line(this.child(n), prefix, false);
         }
-        if (node.c2) {
-            r += '\n' + this.line(node.c2, prefix, true);
+        if (this._tree[this.child2(n)]) {
+            r += '\n' + this.line(this.child2(n), prefix, true);
         }
 
         return r;
@@ -188,7 +210,7 @@ var Heap = (function () {
                 }
             }
         };
-        return this.line(val);
+        return this.line(0);
         return this.line({
             d: 1,
             c1: { d: 2, c1: { d: 3, c1: { d: 4, c1: null, c2: null }, c2: { d: 4, c1: null, c2: null } }, c2: null },
@@ -205,5 +227,18 @@ var Heap = (function () {
     return Heap;
 })();
 var heap = new Heap();
+for (var i = 160; i > 0; i--) {
+    //heap.insert(Math.round(Math.random() * 100));
+}
+heap.insert(19);
+heap.insert(36);
+heap.insert(7);
+heap.insert(25);
+heap.insert(17);
+heap.insert(100);
+heap.insert(1);
+heap.insert(2);
+heap.insert(3);
+console.log(heap);
 console.log('' + heap);
 //# sourceMappingURL=Heap.js.map

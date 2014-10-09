@@ -14,7 +14,28 @@ class Heap {
         return Math.floor(n - 1 / 2);
     }
 
-    private shiftUp():void {
+    private child(n:number):number {
+        return 2 * n + 1;
+    }
+    private child2(n:number):number {
+        return 2 * n + 2;
+    }
+
+    /**
+     *
+     * @param n
+     */
+    private shiftUp(n:number):void {
+        while (n > 0) {
+            if (this._tree[n] < this._tree[this.parent(n)]) {
+                var swap = this._tree[n];
+                this._tree[n] = this._tree[this.parent(n)];
+                this._tree[this.parent(n)] = swap;
+            } else {
+                n = 0;
+            }
+            n = this.parent(n);
+        }
 
     }
 
@@ -37,6 +58,7 @@ class Heap {
      */
     public insert(value:any):void {
         this._tree.push(value);
+        this.shiftUp(this._tree.length);
     }
 
     /**
@@ -120,9 +142,9 @@ class Heap {
         return 0;
     }
 
-    private line(node, prefix = '', last = true) {
+    private line(n, prefix = '', last = true) {
 
-            var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + node.d;
+            var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + this._tree[n];
         //}
 
         if (last) {
@@ -131,11 +153,11 @@ class Heap {
             prefix = prefix + '│  ';
         }
 
-        if (node.c1) {
-            r += '\n' + this.line(node.c1, prefix, false);
+        if (this._tree[this.child(n)]) {
+            r += '\n' + this.line(this.child(n), prefix, false);
         }
-        if (node.c2) {
-            r += '\n' + this.line(node.c2, prefix, true);
+        if (this._tree[this.child2(n)]) {
+            r += '\n' + this.line(this.child2(n), prefix, true);
         }
 
         return r;
@@ -177,7 +199,7 @@ class Heap {
                 }
             }
         };
-        return this.line(val);
+        return this.line(0);
         return this.line(
             {d:1,
                 c1:{d:2, c1:{d:3, c1:{d:4, c1:null, c2:null}, c2:{d:4, c1:null, c2:null}}, c2:null}, c2:{d:4, c1:{d:4, c1:null, c2:null}, c2:{d:2, c1:null, c2:null}}}, '');
@@ -191,4 +213,17 @@ class Heap {
     }
 }
 var heap = new Heap();
+for (var i = 160; i > 0; i--) {
+    //heap.insert(Math.round(Math.random() * 100));
+}
+heap.insert(19);
+heap.insert(36);
+heap.insert(7);
+heap.insert(25);
+heap.insert(17);
+heap.insert(100);
+heap.insert(1);
+heap.insert(2);
+heap.insert(3);
+console.log(heap);
 console.log('' + heap);
