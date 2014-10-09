@@ -25,18 +25,40 @@ class Heap {
      *
      * @param n
      */
-    private shiftUp(n:number):void {
-        while (n > 0) {
-            if (this._tree[n] < this._tree[this.parent(n)]) {
-                var swap = this._tree[n];
-                this._tree[n] = this._tree[this.parent(n)];
-                this._tree[this.parent(n)] = swap;
-            } else {
-                n = 0;
-            }
-            n = this.parent(n);
-        }
+    private shiftUp(i:number):void {
+        while (i > 0) {
+            if (this._tree[i] <= this._tree[this.parent(i)]) {
 
+                var swap = this._tree[i];
+                this._tree[i] = this._tree[this.parent(i)];
+                this._tree[this.parent(i)] = swap;
+
+            } else {
+                //return;
+            }
+
+            i = this.parent(i);
+        }
+    }
+
+    /**
+     *
+     * @param n
+     */
+    private shiftDown(i:number):void {
+        while (i > 0) {
+            if (this._tree[i] <= this._tree[this.parent(i)]) {
+
+                var swap = this._tree[i];
+                this._tree[i] = this._tree[this.parent(i)];
+                this._tree[this.parent(i)] = swap;
+
+            } else {
+                //return;
+            }
+
+            i = this.parent(i);
+        }
     }
 
     /**
@@ -214,7 +236,7 @@ class Heap {
 }
 var heap = new Heap();
 for (var i = 160; i > 0; i--) {
-    //heap.insert(Math.round(Math.random() * 100));
+    heap.insert(Math.round(Math.random() * 100));
 }
 heap.insert(19);
 heap.insert(36);
@@ -225,5 +247,5 @@ heap.insert(100);
 heap.insert(1);
 heap.insert(2);
 heap.insert(3);
-console.log(heap);
+console.log(heap.top());
 console.log('' + heap);
