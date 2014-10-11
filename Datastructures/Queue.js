@@ -38,3 +38,4 @@ var STL;
         return Queue;
     })(STL.DoublyLinkedList);
 })(STL || (STL = {}));
+//# sourceMappingURL=Queue.js.map

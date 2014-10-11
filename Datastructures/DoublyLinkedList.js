@@ -266,3 +266,4 @@ var STL;
     })();
     STL.DoublyLinkedList = DoublyLinkedList;
 })(STL || (STL = {}));
+//# sourceMappingURL=DoublyLinkedList.js.map
