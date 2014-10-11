@@ -4,32 +4,37 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-/// <reference path="DoublyLinkedList.ts"/>
+/// <reference path="DoublyLinkedList.ts" />
 /**
-* The Queue class provides the main functionality of a queue implemented using a doubly linked list.
+* The Standard TypeScript Library (STL) is a collection of interfaces and classes that are meant to solve common problems.
 */
-var Queue = (function (_super) {
-    __extends(Queue, _super);
-    function Queue() {
-        _super.apply(this, arguments);
-    }
+var STL;
+(function (STL) {
     /**
-    * Adds an element to the queue
-    *
-    * @param value The value to enqueue.
-    * @return void
+    * The Queue class provides the main functionality of a queue implemented using a doubly linked list.
     */
-    Queue.prototype.enqueue = function (value) {
-        return this.push(value);
-    };
+    var Queue = (function (_super) {
+        __extends(Queue, _super);
+        function Queue() {
+            _super.apply(this, arguments);
+        }
+        /**
+        * Adds an element to the queue
+        *
+        * @param value The value to enqueue.
+        * @return void
+        */
+        Queue.prototype.enqueue = function (value) {
+            return this.push(value);
+        };
 
-    /**
-    * Dequeues a node from the queue
-    * @return any  The value of the dequeued node.
-    */
-    Queue.prototype.dequeue = function () {
-        return this.pop();
-    };
-    return Queue;
-})(DoublyLinkedList);
-//# sourceMappingURL=Queue.js.map
+        /**
+        * Dequeues a node from the queue
+        * @return any  The value of the dequeued node.
+        */
+        Queue.prototype.dequeue = function () {
+            return this.pop();
+        };
+        return Queue;
+    })(STL.DoublyLinkedList);
+})(STL || (STL = {}));

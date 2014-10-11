@@ -1,261 +1,268 @@
 /**
-* The DoublyLinkedList class provides the main functionality of a doubly linked list.
+* The Standard TypeScript Library (STL) is a collection of interfaces and classes that are meant to solve common problems.
 */
-var DoublyLinkedList = (function () {
-    function DoublyLinkedList() {
-        /**
-        * Count of elements in list
-        * @type number
-        * @private
-        */
-        this._length = 0;
-        /**
-        * Iteration pointer
-        * @type number
-        * @private
-        */
-        this._key = 0;
-        /**
-        * Reference to head(first) element in list
-        * @type DoublyLinkedListNode
-        * @private
-        */
-        this._head = null;
-        /**
-        * Reference to tail(last) element in list
-        * @type DoublyLinkedListNode
-        * @private
-        */
-        this._tail = null;
-        /**
-        * Reference to iterated element in list
-        * @type DoublyLinkedListNode
-        * @private
-        */
-        this._current = null;
-    }
+var STL;
+(function (STL) {
     /**
-    * Insert a new value at the specified index
-    *
-    * @param index The index where the new value is to be inserted.
-    * @param value The new value for the index.
-    * @return void
+    * The DoublyLinkedList class provides the main functionality of a doubly linked list.
     */
-    DoublyLinkedList.prototype.add = function (index, value) {
-    };
-
-    /**
-    * Pops a node from the end of the doubly linked list
-    *
-    * @return any  The value of the popped node.
-    */
-    DoublyLinkedList.prototype.pop = function () {
-        if (this._length === 0) {
-            throw new Error("Can't pop from an empty data structure");
+    var DoublyLinkedList = (function () {
+        function DoublyLinkedList() {
+            /**
+            * Count of elements in list
+            * @type number
+            * @private
+            */
+            this._length = 0;
+            /**
+            * Iteration pointer
+            * @type number
+            * @private
+            */
+            this._key = 0;
+            /**
+            * Reference to head(first) element in list
+            * @type DoublyLinkedListNode
+            * @private
+            */
+            this._head = null;
+            /**
+            * Reference to tail(last) element in list
+            * @type DoublyLinkedListNode
+            * @private
+            */
+            this._tail = null;
+            /**
+            * Reference to iterated element in list
+            * @type DoublyLinkedListNode
+            * @private
+            */
+            this._current = null;
         }
-
-        var value = this._tail.value;
-
-        this._tail = this._tail.prev;
-        if (this._tail) {
-            delete this._tail.next;
-            this._tail.next = null;
-        }
-
-        this._length--;
-
-        return value;
-    };
-
-    /**
-    * Shifts a node from the beginning of the doubly linked list
-    *
-    * @return any  The value of the shifted node.
-    */
-    DoublyLinkedList.prototype.shift = function () {
-        if (this._length === 0) {
-            throw new Error("Can't shift from an empty data structure");
-        }
-
-        var value = this._head.value;
-
-        this._head = this._head.next;
-        if (this._head) {
-            delete this._head.prev;
-            this._head.prev = null;
-        }
-
-        this._length--;
-
-        return value;
-    };
-
-    /**
-    * Pushes an element at the end of the doubly linked list
-    *
-    * @param value The value to push.
-    * @return void
-    */
-    DoublyLinkedList.prototype.push = function (value) {
-        // allocate new node
-        var node = {
-            value: value,
-            prev: this._tail,
-            next: null
+        /**
+        * Insert a new value at the specified index
+        *
+        * @param index The index where the new value is to be inserted.
+        * @param value The new value for the index.
+        * @return void
+        */
+        DoublyLinkedList.prototype.add = function (index, value) {
+            // TODO:
         };
 
-        if (this._length === 0) {
-            this._head = this._tail = node;
-        } else {
-            this._tail.next = node;
-            this._tail = this._tail.next;
-        }
+        /**
+        * Pops a node from the end of the doubly linked list
+        *
+        * @return any  The value of the popped node.
+        */
+        DoublyLinkedList.prototype.pop = function () {
+            if (this._length === 0) {
+                throw new Error("Can't pop from an empty data structure");
+            }
 
-        this._length++;
-    };
+            var value = this._tail.value;
 
-    /**
-    * Prepends the doubly linked list with an element
-    *
-    * @param value The value to unshift.
-    * @return void
-    */
-    DoublyLinkedList.prototype.unshift = function (value) {
-        // allocate new node
-        var node = {
-            value: value,
-            prev: null,
-            next: this._head
+            this._tail = this._tail.prev;
+            if (this._tail) {
+                delete this._tail.next;
+                this._tail.next = null;
+            }
+
+            this._length--;
+
+            return value;
         };
 
-        if (this._length === 0) {
-            this._head = this._tail = node;
-        } else {
-            this._head.prev = node;
-            this._head = this._head.prev;
-        }
+        /**
+        * Shifts a node from the beginning of the doubly linked list
+        *
+        * @return any  The value of the shifted node.
+        */
+        DoublyLinkedList.prototype.shift = function () {
+            if (this._length === 0) {
+                throw new Error("Can't shift from an empty data structure");
+            }
 
-        this._length++;
-    };
+            var value = this._head.value;
 
-    /**
-    * Peeks at the node from the end of the doubly linked list
-    *
-    * @return any  The value of the last node.
-    */
-    DoublyLinkedList.prototype.top = function () {
-        return this._tail.value;
-    };
+            this._head = this._head.next;
+            if (this._head) {
+                delete this._head.prev;
+                this._head.prev = null;
+            }
 
-    /**
-    * Peeks at the node from the beginning of the doubly linked list
-    *
-    * @return any  The value of the first node.
-    */
-    DoublyLinkedList.prototype.bottom = function () {
-        return this._head.value;
-    };
+            this._length--;
 
-    /**
-    * Counts the number of elements in the doubly linked list
-    *
-    * @return number the number of elements in the doubly linked list.
-    */
-    DoublyLinkedList.prototype.count = function () {
-        return this._length;
-    };
+            return value;
+        };
 
-    /**
-    * Checks whether the doubly linked list is empty
-    *
-    * @return boolean whether the doubly linked list is empty.
-    */
-    DoublyLinkedList.prototype.isEmpty = function () {
-        return (this._length === 0);
-    };
+        /**
+        * Pushes an element at the end of the doubly linked list
+        *
+        * @param value The value to push.
+        * @return void
+        */
+        DoublyLinkedList.prototype.push = function (value) {
+            // allocate new node
+            var node = {
+                value: value,
+                prev: this._tail,
+                next: null
+            };
 
-    /**
-    * Rewind iterator back to the start
-    *
-    * @return void
-    */
-    DoublyLinkedList.prototype.rewind = function () {
-        this._key = 0;
-        this._current = this._head;
-    };
+            if (this._length === 0) {
+                this._head = this._tail = node;
+            } else {
+                this._tail.next = node;
+                this._tail = this._tail.next;
+            }
 
-    /**
-    * Return current list entry
-    *
-    * @return any  The current node value.
-    */
-    DoublyLinkedList.prototype.current = function () {
-        if (this._current) {
-            return this._current.value;
-        }
-        return null;
-    };
+            this._length++;
+        };
 
-    /**
-    * Return current node index
-    *
-    * @return any  The current node index.
-    */
-    DoublyLinkedList.prototype.key = function () {
-        return this._key;
-    };
+        /**
+        * Prepends the doubly linked list with an element
+        *
+        * @param value The value to unshift.
+        * @return void
+        */
+        DoublyLinkedList.prototype.unshift = function (value) {
+            // allocate new node
+            var node = {
+                value: value,
+                prev: null,
+                next: this._head
+            };
 
-    /**
-    * Move to next entry
-    *
-    * @return void
-    */
-    DoublyLinkedList.prototype.next = function () {
-        this._current = this._current.next;
-        this._key++;
-    };
+            if (this._length === 0) {
+                this._head = this._tail = node;
+            } else {
+                this._head.prev = node;
+                this._head = this._head.prev;
+            }
 
-    /**
-    * Move to previous entry
-    *
-    * @return void
-    */
-    DoublyLinkedList.prototype.prev = function () {
-        this._current = this._current.prev;
-        this._key--;
-    };
+            this._length++;
+        };
 
-    /**
-    * Check whether the doubly linked list contains more nodes
-    *
-    * @return boolean true if the doubly linked list contains any more nodes, false otherwise.
-    */
-    DoublyLinkedList.prototype.valid = function () {
-        return (this._key >= 0 && this._key < this._length);
-    };
+        /**
+        * Peeks at the node from the end of the doubly linked list
+        *
+        * @return any  The value of the last node.
+        */
+        DoublyLinkedList.prototype.top = function () {
+            return this._tail.value;
+        };
 
-    /**
-    * Export the list to array
-    * @return Array   The exported array
-    */
-    DoublyLinkedList.prototype.toArray = function () {
-        var list = new Array();
-        var current = this._head;
-        while (current) {
-            list.push(current.value);
-            current = current.next;
-        }
-        return list;
-    };
+        /**
+        * Peeks at the node from the beginning of the doubly linked list
+        *
+        * @return any  The value of the first node.
+        */
+        DoublyLinkedList.prototype.bottom = function () {
+            return this._head.value;
+        };
 
-    /**
-    * Serializes the list to string
-    *
-    * @return string   The serialized string.
-    */
-    DoublyLinkedList.prototype.toString = function () {
-        return "{" + this.toArray().join("->") + "}";
-    };
-    return DoublyLinkedList;
-})();
-//# sourceMappingURL=DoublyLinkedList.js.map
+        /**
+        * Counts the number of elements in the doubly linked list
+        *
+        * @return number the number of elements in the doubly linked list.
+        */
+        DoublyLinkedList.prototype.count = function () {
+            return this._length;
+        };
+
+        /**
+        * Checks whether the doubly linked list is empty
+        *
+        * @return boolean whether the doubly linked list is empty.
+        */
+        DoublyLinkedList.prototype.isEmpty = function () {
+            return (this._length === 0);
+        };
+
+        /**
+        * Rewind iterator back to the start
+        *
+        * @return void
+        */
+        DoublyLinkedList.prototype.rewind = function () {
+            this._key = 0;
+            this._current = this._head;
+        };
+
+        /**
+        * Return current list entry
+        *
+        * @return any  The current node value.
+        */
+        DoublyLinkedList.prototype.current = function () {
+            if (this._current) {
+                return this._current.value;
+            }
+            return null;
+        };
+
+        /**
+        * Return current node index
+        *
+        * @return any  The current node index.
+        */
+        DoublyLinkedList.prototype.key = function () {
+            return this._key;
+        };
+
+        /**
+        * Move to next entry
+        *
+        * @return void
+        */
+        DoublyLinkedList.prototype.next = function () {
+            this._current = this._current.next;
+            this._key++;
+        };
+
+        /**
+        * Move to previous entry
+        *
+        * @return void
+        */
+        DoublyLinkedList.prototype.prev = function () {
+            this._current = this._current.prev;
+            this._key--;
+        };
+
+        /**
+        * Check whether the doubly linked list contains more nodes
+        *
+        * @return boolean true if the doubly linked list contains any more nodes, false otherwise.
+        */
+        DoublyLinkedList.prototype.valid = function () {
+            return (this._key >= 0 && this._key < this._length);
+        };
+
+        /**
+        * Export the list to array
+        * @return Array   The exported array
+        */
+        DoublyLinkedList.prototype.toArray = function () {
+            var list = new Array();
+            var current = this._head;
+            while (current) {
+                list.push(current.value);
+                current = current.next;
+            }
+            return list;
+        };
+
+        /**
+        * Serializes the list to string
+        *
+        * @return string   The serialized string.
+        */
+        DoublyLinkedList.prototype.toString = function () {
+            return "{" + this.toArray().join("->") + "}";
+        };
+        return DoublyLinkedList;
+    })();
+    STL.DoublyLinkedList = DoublyLinkedList;
+})(STL || (STL = {}));
