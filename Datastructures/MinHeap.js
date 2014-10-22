@@ -4,7 +4,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-/// <reference path="Heap.ts"/>
+var Heap = require('Heap');
 /**
  * The MinHeap class provides the main functionality of a heap, keeping the minimum on the top.
  */
@@ -15,4 +15,5 @@ var MinHeap = (function (_super) {
     }
     return MinHeap;
 })(Heap);
+module.exports = MinHeap;
 //# sourceMappingURL=MinHeap.js.map

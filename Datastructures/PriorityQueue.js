@@ -4,7 +4,6 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-/// <reference path="Heap.ts" />
 /**
  * The PriorityQueue class provides the main functionality of an prioritized queue, implemented using a max heap.
  */
@@ -15,4 +14,5 @@ var PriorityQueue = (function (_super) {
     }
     return PriorityQueue;
 })(Heap);
+module.exports = PriorityQueue;
 //# sourceMappingURL=PriorityQueue.js.map
