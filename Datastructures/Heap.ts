@@ -182,7 +182,6 @@ class Heap {
     private _displayNode(node, prefix = '', last = true) {
 
         var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + this._tree[node];
-        //}
 
         if (last) {
             prefix += '   ';

@@ -1,5 +1,5 @@
 
-import DoublyLinkedList = require('DoublyLinkedList');
+import DoublyLinkedList = require('./DoublyLinkedList');
 
 /**
  * The Stack class provides the main functionality of a stack implemented using a doubly linked list.

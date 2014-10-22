@@ -4,7 +4,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var DoublyLinkedList = require('DoublyLinkedList');
+var DoublyLinkedList = require('./DoublyLinkedList');
 /**
  * The Queue class provides the main functionality of a queue implemented using a doubly linked list.
  */

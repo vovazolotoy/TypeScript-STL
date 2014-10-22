@@ -162,7 +162,6 @@ var Heap = (function () {
         if (prefix === void 0) { prefix = ''; }
         if (last === void 0) { last = true; }
         var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + this._tree[node];
-        //}
         if (last) {
             prefix += '   ';
         }
