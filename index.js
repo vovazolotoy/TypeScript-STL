@@ -1,4 +1,9 @@
 
-var stl = require('./js-stl');
+var list2 = require('./js-stl').dll.DoublyLinkedList;
 
-console.log(stl);
+var list = new list2();
+
+list.push(1);
+list.push(1);
+list.push(1);
+console.log(list, list + '');

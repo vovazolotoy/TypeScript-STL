@@ -1,7 +1,7 @@
 /**
  * The Heap class provides the main functionality of a Heap.
  */
-class Heap {
+export class Heap {
 
     /**
      *
@@ -15,11 +15,11 @@ class Heap {
      * @param n
      * @return number
      */
-    private parent(n:number):number {
+    private _parent(n:number):number {
         return Math.floor(n - 1 / 2);
     }
 
-    private child(n:number):number {
+    private _child(n:number):number {
         return 2 * n + 1;
     }
 
@@ -29,17 +29,17 @@ class Heap {
      */
     private shiftUp(i:number):void {
         while (i > 0) {
-            if (this._tree[i] <= this._tree[this.parent(i)]) {
+            if (this._tree[i] <= this._tree[this._parent(i)]) {
 
                 var swap = this._tree[i];
-                this._tree[i] = this._tree[this.parent(i)];
-                this._tree[this.parent(i)] = swap;
+                this._tree[i] = this._tree[this._parent(i)];
+                this._tree[this._parent(i)] = swap;
 
             } else {
-                //return;
+                break;
             }
 
-            i = this.parent(i);
+            i = this._parent(i);
         }
     }
 
@@ -49,17 +49,17 @@ class Heap {
      */
     private shiftDown(i:number):void {
         while (i > 0) {
-            if (this._tree[i] <= this._tree[this.parent(i)]) {
+            if (this._tree[i] <= this._tree[this._parent(i)]) {
 
                 var swap = this._tree[i];
-                this._tree[i] = this._tree[this.parent(i)];
-                this._tree[this.parent(i)] = swap;
+                this._tree[i] = this._tree[this._parent(i)];
+                this._tree[this._parent(i)] = swap;
 
             } else {
                 //return;
             }
 
-            i = this.parent(i);
+            i = this._parent(i);
         }
     }
 
@@ -71,6 +71,7 @@ class Heap {
     public extract():any {
         var extracted:any = this._tree[0];
         this._tree[0] = this._tree.pop();
+
         return extracted;
     }
 
@@ -168,7 +169,7 @@ class Heap {
      * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
      */
     public compare(first:any, second:any):number {
-        return 0;
+        return 1;
     }
 
     private line(node, prefix = '', last = true) {
@@ -185,8 +186,8 @@ class Heap {
         if (this._tree[this.child(node)]) {
             r += '\n' + this.line(this.child(node), prefix, false);
         }
-        if (this._tree[this.child(node) + 1]) {
-            r += '\n' + this.line(this.child(node) + 1, prefix, true);
+        if (this._tree[this._child(node) + 1]) {
+            r += '\n' + this.line(this._child(node) + 1, prefix, true);
         }
 
         return r;

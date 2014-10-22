@@ -15,10 +15,10 @@ var Heap = (function () {
      * @param n
      * @return number
      */
-    Heap.prototype.parent = function (n) {
+    Heap.prototype._parent = function (n) {
         return Math.floor(n - 1 / 2);
     };
-    Heap.prototype.child = function (n) {
+    Heap.prototype._child = function (n) {
         return 2 * n + 1;
     };
     /**
@@ -27,14 +27,15 @@ var Heap = (function () {
      */
     Heap.prototype.shiftUp = function (i) {
         while (i > 0) {
-            if (this._tree[i] <= this._tree[this.parent(i)]) {
+            if (this._tree[i] <= this._tree[this._parent(i)]) {
                 var swap = this._tree[i];
-                this._tree[i] = this._tree[this.parent(i)];
-                this._tree[this.parent(i)] = swap;
+                this._tree[i] = this._tree[this._parent(i)];
+                this._tree[this._parent(i)] = swap;
             }
             else {
+                break;
             }
-            i = this.parent(i);
+            i = this._parent(i);
         }
     };
     /**
@@ -43,14 +44,14 @@ var Heap = (function () {
      */
     Heap.prototype.shiftDown = function (i) {
         while (i > 0) {
-            if (this._tree[i] <= this._tree[this.parent(i)]) {
+            if (this._tree[i] <= this._tree[this._parent(i)]) {
                 var swap = this._tree[i];
-                this._tree[i] = this._tree[this.parent(i)];
-                this._tree[this.parent(i)] = swap;
+                this._tree[i] = this._tree[this._parent(i)];
+                this._tree[this._parent(i)] = swap;
             }
             else {
             }
-            i = this.parent(i);
+            i = this._parent(i);
         }
     };
     /**
@@ -147,7 +148,7 @@ var Heap = (function () {
      * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
      */
     Heap.prototype.compare = function (first, second) {
-        return 0;
+        return 1;
     };
     Heap.prototype.line = function (node, prefix, last) {
         if (prefix === void 0) { prefix = ''; }
@@ -163,8 +164,8 @@ var Heap = (function () {
         if (this._tree[this.child(node)]) {
             r += '\n' + this.line(this.child(node), prefix, false);
         }
-        if (this._tree[this.child(node) + 1]) {
-            r += '\n' + this.line(this.child(node) + 1, prefix, true);
+        if (this._tree[this._child(node) + 1]) {
+            r += '\n' + this.line(this._child(node) + 1, prefix, true);
         }
         return r;
     };
@@ -179,4 +180,5 @@ var Heap = (function () {
     };
     return Heap;
 })();
+exports.Heap = Heap;
 //# sourceMappingURL=Heap.js.map
