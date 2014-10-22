@@ -233,5 +233,5 @@ var DoublyLinkedList = (function () {
     };
     return DoublyLinkedList;
 })();
-exports.DoublyLinkedList = DoublyLinkedList;
+module.exports = DoublyLinkedList;
 //# sourceMappingURL=DoublyLinkedList.js.map

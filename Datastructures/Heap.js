@@ -150,7 +150,15 @@ var Heap = (function () {
     Heap.prototype.compare = function (first, second) {
         return 1;
     };
-    Heap.prototype.line = function (node, prefix, last) {
+    /**
+     *
+     * @param node
+     * @param prefix
+     * @param last
+     * @return {string}
+     * @private
+     */
+    Heap.prototype._displayNode = function (node, prefix, last) {
         if (prefix === void 0) { prefix = ''; }
         if (last === void 0) { last = true; }
         var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + this._tree[node];
@@ -161,11 +169,11 @@ var Heap = (function () {
         else {
             prefix = prefix + '│  ';
         }
-        if (this._tree[this.child(node)]) {
-            r += '\n' + this.line(this.child(node), prefix, false);
+        if (this._tree[this._child(node)]) {
+            r += '\n' + this._displayNode(this._child(node), prefix, false);
         }
         if (this._tree[this._child(node) + 1]) {
-            r += '\n' + this.line(this._child(node) + 1, prefix, true);
+            r += '\n' + this._displayNode(this._child(node) + 1, prefix, true);
         }
         return r;
     };
@@ -176,9 +184,9 @@ var Heap = (function () {
      */
     Heap.prototype.toString = function () {
         // start with root and recursively goes to each node
-        return this.line(0);
+        return this._displayNode(0);
     };
     return Heap;
 })();
-exports.Heap = Heap;
+module.exports = Heap;
 //# sourceMappingURL=Heap.js.map

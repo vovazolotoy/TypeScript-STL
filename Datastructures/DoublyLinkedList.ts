@@ -1,7 +1,7 @@
 /**
  * The DoublyLinkedList class provides the main functionality of a doubly linked list.
  */
-export class DoublyLinkedList {
+class DoublyLinkedList {
 
     /**
      * Count of elements in list
@@ -266,8 +266,10 @@ export class DoublyLinkedList {
 /**
  * DoublyLinkedList element
  */
-export interface DoublyLinkedListNode {
+interface DoublyLinkedListNode {
     value:any;
     prev:DoublyLinkedListNode;
     next:DoublyLinkedListNode;
 }
+
+export = DoublyLinkedList;

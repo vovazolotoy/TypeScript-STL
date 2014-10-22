@@ -1,7 +1,7 @@
 /**
  * The Heap class provides the main functionality of a Heap.
  */
-export class Heap {
+class Heap {
 
     /**
      *
@@ -71,7 +71,6 @@ export class Heap {
     public extract():any {
         var extracted:any = this._tree[0];
         this._tree[0] = this._tree.pop();
-
         return extracted;
     }
 
@@ -172,7 +171,15 @@ export class Heap {
         return 1;
     }
 
-    private line(node, prefix = '', last = true) {
+    /**
+     *
+     * @param node
+     * @param prefix
+     * @param last
+     * @return {string}
+     * @private
+     */
+    private _displayNode(node, prefix = '', last = true) {
 
         var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + this._tree[node];
         //}
@@ -183,11 +190,11 @@ export class Heap {
             prefix = prefix + '│  ';
         }
 
-        if (this._tree[this.child(node)]) {
-            r += '\n' + this.line(this.child(node), prefix, false);
+        if (this._tree[this._child(node)]) {
+            r += '\n' + this._displayNode(this._child(node), prefix, false);
         }
         if (this._tree[this._child(node) + 1]) {
-            r += '\n' + this.line(this._child(node) + 1, prefix, true);
+            r += '\n' + this._displayNode(this._child(node) + 1, prefix, true);
         }
 
         return r;
@@ -199,7 +206,10 @@ export class Heap {
      * @return string   The serialized string.
      */
     public toString():string {
+
         // start with root and recursively goes to each node
-        return this.line(0);
+        return this._displayNode(0);
     }
 }
+
+export = Heap;

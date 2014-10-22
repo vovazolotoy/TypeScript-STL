@@ -1,4 +1,6 @@
-/// <reference path="DoublyLinkedList.ts" />
+
+import DoublyLinkedList = require('DoublyLinkedList');
+
 /**
  * The Queue class provides the main functionality of a queue implemented using a doubly linked list.
  */
@@ -22,3 +24,5 @@ class Queue extends DoublyLinkedList {
         return this.pop();
     }
 }
+
+export = Queue;
