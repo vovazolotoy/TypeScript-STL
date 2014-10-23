@@ -1,10 +1,13 @@
 /**
  * The DoublyLinkedList class provides the main functionality of a doubly linked list.
+ *
+ * @class DoublyLinkedList
  */
 var DoublyLinkedList = (function () {
     function DoublyLinkedList() {
         /**
          * Count of elements in list
+         * @property _length
          * @type number
          * @private
          */
@@ -37,6 +40,7 @@ var DoublyLinkedList = (function () {
     /**
      * Insert a new value at the specified index
      *
+     * @method add
      * @param index The index where the new value is to be inserted.
      * @param value The new value for the index.
      * @return void
@@ -47,6 +51,7 @@ var DoublyLinkedList = (function () {
     /**
      * Pops a node from the end of the doubly linked list
      *
+     * @method pop
      * @return any  The value of the popped node.
      */
     DoublyLinkedList.prototype.pop = function () {
@@ -65,6 +70,7 @@ var DoublyLinkedList = (function () {
     /**
      * Shifts a node from the beginning of the doubly linked list
      *
+     * @method shift
      * @return any  The value of the shifted node.
      */
     DoublyLinkedList.prototype.shift = function () {
@@ -83,6 +89,7 @@ var DoublyLinkedList = (function () {
     /**
      * Pushes an element at the end of the doubly linked list
      *
+     * @method push
      * @param value The value to push.
      * @return void
      */

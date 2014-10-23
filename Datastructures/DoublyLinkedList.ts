@@ -1,10 +1,13 @@
 /**
  * The DoublyLinkedList class provides the main functionality of a doubly linked list.
+ *
+ * @class DoublyLinkedList
  */
 class DoublyLinkedList {
 
     /**
      * Count of elements in list
+     * @property _length
      * @type number
      * @private
      */
@@ -41,6 +44,7 @@ class DoublyLinkedList {
     /**
      * Insert a new value at the specified index
      *
+     * @method add
      * @param index The index where the new value is to be inserted.
      * @param value The new value for the index.
      * @return void
@@ -52,6 +56,7 @@ class DoublyLinkedList {
     /**
      * Pops a node from the end of the doubly linked list
      *
+     * @method pop
      * @return any  The value of the popped node.
      */
     public pop():any {
@@ -75,6 +80,7 @@ class DoublyLinkedList {
     /**
      * Shifts a node from the beginning of the doubly linked list
      *
+     * @method shift
      * @return any  The value of the shifted node.
      */
     public shift():any {
@@ -98,6 +104,7 @@ class DoublyLinkedList {
     /**
      * Pushes an element at the end of the doubly linked list
      *
+     * @method push
      * @param value The value to push.
      * @return void
      */

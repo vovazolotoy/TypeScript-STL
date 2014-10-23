@@ -7,6 +7,9 @@ var __extends = this.__extends || function (d, b) {
 var DoublyLinkedList = require('./DoublyLinkedList');
 /**
  * The Stack class provides the main functionality of a stack implemented using a doubly linked list.
+ *
+ * @class Stack
+ * @extends DoublyLinkedList
  */
 var Stack = (function (_super) {
     __extends(Stack, _super);

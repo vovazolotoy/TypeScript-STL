@@ -1,0 +1,10 @@
+{
+	"name": "STL",
+	"logo": "...",
+	"description": "Ha ha ha",
+	"options": {
+		"extension": ".ts",
+		"paths": "Datastructures",
+		"outdir": "Docs"
+	}
+}
