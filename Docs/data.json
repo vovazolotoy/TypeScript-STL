@@ -1,0 +1,759 @@
+{
+    "project": {
+        "name": "STL",
+        "logo": "...",
+        "description": "Ha ha ha",
+        "version": "0.0.4"
+    },
+    "files": {
+        "Datastructures/DoublyLinkedList.ts": {
+            "name": "Datastructures/DoublyLinkedList.ts",
+            "modules": {},
+            "classes": {
+                "DoublyLinkedList": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "Datastructures/Heap.ts": {
+            "name": "Datastructures/Heap.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "Datastructures/MaxHeap.ts": {
+            "name": "Datastructures/MaxHeap.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "Datastructures/MinHeap.ts": {
+            "name": "Datastructures/MinHeap.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "Datastructures/PriorityQueue.ts": {
+            "name": "Datastructures/PriorityQueue.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "Datastructures/Queue.ts": {
+            "name": "Datastructures/Queue.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "Datastructures/Stack.ts": {
+            "name": "Datastructures/Stack.ts",
+            "modules": {},
+            "classes": {
+                "Stack": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "DoublyLinkedList": {
+            "name": "DoublyLinkedList",
+            "shortname": "DoublyLinkedList",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 1,
+            "description": "The DoublyLinkedList class provides the main functionality of a doubly linked list."
+        },
+        "Stack": {
+            "name": "Stack",
+            "shortname": "Stack",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "Datastructures/Stack.ts",
+            "line": 4,
+            "description": "The Stack class provides the main functionality of a stack implemented using a doubly linked list.",
+            "extends": "DoublyLinkedList"
+        }
+    },
+    "classitems": [
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 8,
+            "description": "Count of elements in list",
+            "itemtype": "property",
+            "name": "_length",
+            "type": "number",
+            "access": "private",
+            "tagname": "",
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 16,
+            "description": "Iteration pointer",
+            "type": "number",
+            "access": "private",
+            "tagname": "",
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 23,
+            "description": "Reference to head(first) element in list",
+            "type": "DoublyLinkedListNode",
+            "access": "private",
+            "tagname": "",
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 30,
+            "description": "Reference to tail(last) element in list",
+            "type": "DoublyLinkedListNode",
+            "access": "private",
+            "tagname": "",
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 37,
+            "description": "Reference to iterated element in list",
+            "type": "DoublyLinkedListNode",
+            "access": "private",
+            "tagname": "",
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 44,
+            "description": "Insert a new value at the specified index",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "index",
+                    "description": "The index where the new value is to be inserted."
+                },
+                {
+                    "name": "value",
+                    "description": "The new value for the index."
+                }
+            ],
+            "return": {
+                "description": "void"
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 56,
+            "description": "Pops a node from the end of the doubly linked list",
+            "itemtype": "method",
+            "name": "pop",
+            "return": {
+                "description": "any  The value of the popped node."
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 80,
+            "description": "Shifts a node from the beginning of the doubly linked list",
+            "itemtype": "method",
+            "name": "shift",
+            "return": {
+                "description": "any  The value of the shifted node."
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 104,
+            "description": "Pushes an element at the end of the doubly linked list",
+            "itemtype": "method",
+            "name": "push",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The value to push."
+                }
+            ],
+            "return": {
+                "description": "void"
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 129,
+            "description": "Prepends the doubly linked list with an element",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The value to unshift."
+                }
+            ],
+            "return": {
+                "description": "void"
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 153,
+            "description": "Peeks at the node from the end of the doubly linked list",
+            "return": {
+                "description": "any  The value of the last node."
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 162,
+            "description": "Peeks at the node from the beginning of the doubly linked list",
+            "return": {
+                "description": "any  The value of the first node."
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 171,
+            "description": "Counts the number of elements in the doubly linked list",
+            "return": {
+                "description": "number the number of elements in the doubly linked list."
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 180,
+            "description": "Checks whether the doubly linked list is empty",
+            "return": {
+                "description": "boolean whether the doubly linked list is empty."
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 189,
+            "description": "Rewind iterator back to the start",
+            "return": {
+                "description": "void"
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 199,
+            "description": "Return current list entry",
+            "return": {
+                "description": "any  The current node value."
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 211,
+            "description": "Return current node index",
+            "return": {
+                "description": "any  The current node index."
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 220,
+            "description": "Move to next entry",
+            "return": {
+                "description": "void"
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 230,
+            "description": "Move to previous entry",
+            "return": {
+                "description": "void"
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 240,
+            "description": "Check whether the doubly linked list contains more nodes",
+            "return": {
+                "description": "boolean true if the doubly linked list contains any more nodes, false otherwise."
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 249,
+            "description": "Export the list to array",
+            "return": {
+                "description": "Array   The exported array"
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 263,
+            "description": "Serializes the list to string",
+            "return": {
+                "description": "string   The serialized string."
+            },
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/DoublyLinkedList.ts",
+            "line": 273,
+            "description": "DoublyLinkedList element",
+            "class": "DoublyLinkedList"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 1,
+            "description": "The Heap class provides the main functionality of a Heap.",
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 6,
+            "type": "Array",
+            "access": "private",
+            "tagname": "",
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 13,
+            "params": [
+                {
+                    "name": "n",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "number"
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 26,
+            "params": [
+                {
+                    "name": "n",
+                    "description": ""
+                }
+            ],
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 46,
+            "params": [
+                {
+                    "name": "n",
+                    "description": ""
+                }
+            ],
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 66,
+            "description": "Extracts a node from top of the heap and sift up",
+            "return": {
+                "description": "any The value of the extracted node."
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 77,
+            "description": "Inserts an element in the heap by sifting it up",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The value to insert."
+                }
+            ],
+            "return": {
+                "description": "void"
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 88,
+            "description": "Peeks at the node from the top of the heap",
+            "return": {
+                "description": "any The value of the node on the top."
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 96,
+            "description": "Counts the number of elements in the heap",
+            "return": {
+                "description": "number the number of elements in the heap."
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 105,
+            "description": "Checks whether the heap is empty",
+            "return": {
+                "description": "boolean whether the heap is empty."
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 114,
+            "description": "Rewind iterator back to the start (no-op)",
+            "return": {
+                "description": "void"
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 122,
+            "description": "Return current node pointed by the iterator",
+            "return": {
+                "description": "any The current node value."
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 130,
+            "description": "Return current node index",
+            "return": {
+                "description": "any The current node index."
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 138,
+            "description": "Move to the next node",
+            "return": {
+                "description": "void"
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 146,
+            "description": "Check whether the heap contains more nodes",
+            "return": {
+                "description": "boolean true if the heap contains any more nodes, false otherwise."
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 155,
+            "description": "Recover from the corrupted state and allow further actions on the heap.",
+            "return": {
+                "description": "void"
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 163,
+            "description": "Compare elements in order to place them correctly in the heap while sifting up.",
+            "params": [
+                {
+                    "name": "first",
+                    "description": "The value of the first node being compared."
+                },
+                {
+                    "name": "second",
+                    "description": "The value of the second node being compared."
+                }
+            ],
+            "return": {
+                "description": "number Result of the comparison, positive integer if value1 is greater than value2, 0 if they are equal, negative integer otherwise.\nHaving multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position."
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 174,
+            "params": [
+                {
+                    "name": "node",
+                    "description": ""
+                },
+                {
+                    "name": "prefix",
+                    "description": ""
+                },
+                {
+                    "name": "last",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 202,
+            "description": "Serializes the heap to string",
+            "return": {
+                "description": "string   The serialized string."
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/MaxHeap.ts",
+            "line": 4,
+            "description": "The MaxHeap class provides the main functionality of a heap, keeping the maximum on the top.",
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/MinHeap.ts",
+            "line": 5,
+            "description": "The MinHeap class provides the main functionality of a heap, keeping the minimum on the top.",
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/PriorityQueue.ts",
+            "line": 4,
+            "description": "The PriorityQueue class provides the main functionality of an prioritized queue, implemented using a max heap.",
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Queue.ts",
+            "line": 4,
+            "description": "The Queue class provides the main functionality of a queue implemented using a doubly linked list.",
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Queue.ts",
+            "line": 9,
+            "description": "Adds an element to the queue",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The value to enqueue."
+                }
+            ],
+            "return": {
+                "description": "void"
+            },
+            "class": "Stack"
+        },
+        {
+            "file": "Datastructures/Queue.ts",
+            "line": 19,
+            "description": "Dequeues a node from the queue",
+            "return": {
+                "description": "any  The value of the dequeued node."
+            },
+            "class": "Stack"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nIteration pointer",
+            "line": " Datastructures/DoublyLinkedList.ts:16"
+        },
+        {
+            "message": "Missing item type\nReference to head(first) element in list",
+            "line": " Datastructures/DoublyLinkedList.ts:23"
+        },
+        {
+            "message": "Missing item type\nReference to tail(last) element in list",
+            "line": " Datastructures/DoublyLinkedList.ts:30"
+        },
+        {
+            "message": "Missing item type\nReference to iterated element in list",
+            "line": " Datastructures/DoublyLinkedList.ts:37"
+        },
+        {
+            "message": "Missing item type\nPrepends the doubly linked list with an element",
+            "line": " Datastructures/DoublyLinkedList.ts:129"
+        },
+        {
+            "message": "Missing item type\nPeeks at the node from the end of the doubly linked list",
+            "line": " Datastructures/DoublyLinkedList.ts:153"
+        },
+        {
+            "message": "Missing item type\nPeeks at the node from the beginning of the doubly linked list",
+            "line": " Datastructures/DoublyLinkedList.ts:162"
+        },
+        {
+            "message": "Missing item type\nCounts the number of elements in the doubly linked list",
+            "line": " Datastructures/DoublyLinkedList.ts:171"
+        },
+        {
+            "message": "Missing item type\nChecks whether the doubly linked list is empty",
+            "line": " Datastructures/DoublyLinkedList.ts:180"
+        },
+        {
+            "message": "Missing item type\nRewind iterator back to the start",
+            "line": " Datastructures/DoublyLinkedList.ts:189"
+        },
+        {
+            "message": "Missing item type\nReturn current list entry",
+            "line": " Datastructures/DoublyLinkedList.ts:199"
+        },
+        {
+            "message": "Missing item type\nReturn current node index",
+            "line": " Datastructures/DoublyLinkedList.ts:211"
+        },
+        {
+            "message": "Missing item type\nMove to next entry",
+            "line": " Datastructures/DoublyLinkedList.ts:220"
+        },
+        {
+            "message": "Missing item type\nMove to previous entry",
+            "line": " Datastructures/DoublyLinkedList.ts:230"
+        },
+        {
+            "message": "Missing item type\nCheck whether the doubly linked list contains more nodes",
+            "line": " Datastructures/DoublyLinkedList.ts:240"
+        },
+        {
+            "message": "Missing item type\nExport the list to array",
+            "line": " Datastructures/DoublyLinkedList.ts:249"
+        },
+        {
+            "message": "Missing item type\nSerializes the list to string",
+            "line": " Datastructures/DoublyLinkedList.ts:263"
+        },
+        {
+            "message": "Missing item type\nDoublyLinkedList element",
+            "line": " Datastructures/DoublyLinkedList.ts:273"
+        },
+        {
+            "message": "Missing item type\nThe Heap class provides the main functionality of a Heap.",
+            "line": " Datastructures/Heap.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " Datastructures/Heap.ts:6"
+        },
+        {
+            "message": "Missing item type",
+            "line": " Datastructures/Heap.ts:13"
+        },
+        {
+            "message": "Missing item type",
+            "line": " Datastructures/Heap.ts:26"
+        },
+        {
+            "message": "Missing item type",
+            "line": " Datastructures/Heap.ts:46"
+        },
+        {
+            "message": "Missing item type\nExtracts a node from top of the heap and sift up",
+            "line": " Datastructures/Heap.ts:66"
+        },
+        {
+            "message": "Missing item type\nInserts an element in the heap by sifting it up",
+            "line": " Datastructures/Heap.ts:77"
+        },
+        {
+            "message": "Missing item type\nPeeks at the node from the top of the heap",
+            "line": " Datastructures/Heap.ts:88"
+        },
+        {
+            "message": "Missing item type\nCounts the number of elements in the heap",
+            "line": " Datastructures/Heap.ts:96"
+        },
+        {
+            "message": "Missing item type\nChecks whether the heap is empty",
+            "line": " Datastructures/Heap.ts:105"
+        },
+        {
+            "message": "Missing item type\nRewind iterator back to the start (no-op)",
+            "line": " Datastructures/Heap.ts:114"
+        },
+        {
+            "message": "Missing item type\nReturn current node pointed by the iterator",
+            "line": " Datastructures/Heap.ts:122"
+        },
+        {
+            "message": "Missing item type\nReturn current node index",
+            "line": " Datastructures/Heap.ts:130"
+        },
+        {
+            "message": "Missing item type\nMove to the next node",
+            "line": " Datastructures/Heap.ts:138"
+        },
+        {
+            "message": "Missing item type\nCheck whether the heap contains more nodes",
+            "line": " Datastructures/Heap.ts:146"
+        },
+        {
+            "message": "Missing item type\nRecover from the corrupted state and allow further actions on the heap.",
+            "line": " Datastructures/Heap.ts:155"
+        },
+        {
+            "message": "Missing item type\nCompare elements in order to place them correctly in the heap while sifting up.",
+            "line": " Datastructures/Heap.ts:163"
+        },
+        {
+            "message": "Missing item type",
+            "line": " Datastructures/Heap.ts:174"
+        },
+        {
+            "message": "Missing item type\nSerializes the heap to string",
+            "line": " Datastructures/Heap.ts:202"
+        },
+        {
+            "message": "Missing item type\nThe MaxHeap class provides the main functionality of a heap, keeping the maximum on the top.",
+            "line": " Datastructures/MaxHeap.ts:4"
+        },
+        {
+            "message": "Missing item type\nThe MinHeap class provides the main functionality of a heap, keeping the minimum on the top.",
+            "line": " Datastructures/MinHeap.ts:5"
+        },
+        {
+            "message": "Missing item type\nThe PriorityQueue class provides the main functionality of an prioritized queue, implemented using a max heap.",
+            "line": " Datastructures/PriorityQueue.ts:4"
+        },
+        {
+            "message": "Missing item type\nThe Queue class provides the main functionality of a queue implemented using a doubly linked list.",
+            "line": " Datastructures/Queue.ts:4"
+        },
+        {
+            "message": "Missing item type\nAdds an element to the queue",
+            "line": " Datastructures/Queue.ts:9"
+        },
+        {
+            "message": "Missing item type\nDequeues a node from the queue",
+            "line": " Datastructures/Queue.ts:19"
+        }
+    ]
+}
