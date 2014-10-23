@@ -1,4 +1,4 @@
 
 console.log('Test running');
 
-throw new Error('Just standard Exception');
+// throw new Error('Just standard Exception');
