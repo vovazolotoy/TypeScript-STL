@@ -1,10 +1,10 @@
 
-var stl = require('./node-module');
+var STL = require('./node-module');
 
-var heap = new stl.Heap();
+var stack = new STL.MaxHeap();
 
-for (var i = 1; i < 10; i++) {
-	heap.insert(Math.round(Math.random() * 100));
+for (var i = 1; i < 11; i++) {
+	stack.insert(Math.round(Math.random() * 100));
 }
 
-console.log(heap + '');
+console.log(stack + '');

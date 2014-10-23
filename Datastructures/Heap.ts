@@ -181,7 +181,7 @@ class Heap {
      */
     private _displayNode(node, prefix = '', last = true) {
 
-        var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + this._tree[node];
+        var line = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + this._tree[node];
 
         if (last) {
             prefix += '   ';
@@ -190,13 +190,13 @@ class Heap {
         }
 
         if (this._tree[this._child(node)]) {
-            r += '\n' + this._displayNode(this._child(node), prefix, false);
+            line += '\n' + this._displayNode(this._child(node), prefix, false);
         }
         if (this._tree[this._child(node) + 1]) {
-            r += '\n' + this._displayNode(this._child(node) + 1, prefix, true);
+            line += '\n' + this._displayNode(this._child(node) + 1, prefix, true);
         }
 
-        return r;
+        return line;
     }
 
     /**
@@ -205,7 +205,6 @@ class Heap {
      * @return string   The serialized string.
      */
     public toString():string {
-
         // start with root and recursively goes to each node
         return this._displayNode(0);
     }

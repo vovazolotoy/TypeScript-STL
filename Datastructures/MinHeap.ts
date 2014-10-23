@@ -1,5 +1,5 @@
 
-import Heap = require('Heap');
+import Heap = require('./Heap');
 
 
 /**

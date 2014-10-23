@@ -1,5 +1,5 @@
 /**
- * Declaration
+ * STL
  * @type {{DoublyLinkedList: exports, Stack: exports, Queue: exports, Heap: exports, MaxHeap: exports, MinHeap: exports, PriorityQueue: exports}}
  */
 module.exports = {

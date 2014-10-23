@@ -161,7 +161,7 @@ var Heap = (function () {
     Heap.prototype._displayNode = function (node, prefix, last) {
         if (prefix === void 0) { prefix = ''; }
         if (last === void 0) { last = true; }
-        var r = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + this._tree[node];
+        var line = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + this._tree[node];
         if (last) {
             prefix += '   ';
         }
@@ -169,12 +169,12 @@ var Heap = (function () {
             prefix = prefix + '│  ';
         }
         if (this._tree[this._child(node)]) {
-            r += '\n' + this._displayNode(this._child(node), prefix, false);
+            line += '\n' + this._displayNode(this._child(node), prefix, false);
         }
         if (this._tree[this._child(node) + 1]) {
-            r += '\n' + this._displayNode(this._child(node) + 1, prefix, true);
+            line += '\n' + this._displayNode(this._child(node) + 1, prefix, true);
         }
-        return r;
+        return line;
     };
     /**
      * Serializes the heap to string
