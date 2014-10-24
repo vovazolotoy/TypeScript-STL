@@ -18,28 +18,36 @@
         "Datastructures/Heap.ts": {
             "name": "Datastructures/Heap.ts",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "Heap": 1
+            },
             "fors": {},
             "namespaces": {}
         },
         "Datastructures/MaxHeap.ts": {
             "name": "Datastructures/MaxHeap.ts",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "MaxHeap": 1
+            },
             "fors": {},
             "namespaces": {}
         },
         "Datastructures/MinHeap.ts": {
             "name": "Datastructures/MinHeap.ts",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "MinHeap": 1
+            },
             "fors": {},
             "namespaces": {}
         },
         "Datastructures/PriorityQueue.ts": {
             "name": "Datastructures/PriorityQueue.ts",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "PriorityQueue": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -75,6 +83,57 @@
             "file": "Datastructures/DoublyLinkedList.ts",
             "line": 1,
             "description": "The DoublyLinkedList class provides the main functionality of a doubly linked list."
+        },
+        "Heap": {
+            "name": "Heap",
+            "shortname": "Heap",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "Datastructures/Heap.ts",
+            "line": 1,
+            "description": "The Heap class provides the main functionality of a Heap."
+        },
+        "MaxHeap": {
+            "name": "MaxHeap",
+            "shortname": "MaxHeap",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "Datastructures/MaxHeap.ts",
+            "line": 4,
+            "description": "The MaxHeap class provides the main functionality of a heap, keeping the maximum on the top.",
+            "extends": "Heap"
+        },
+        "MinHeap": {
+            "name": "MinHeap",
+            "shortname": "MinHeap",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "Datastructures/MinHeap.ts",
+            "line": 4,
+            "description": "The MinHeap class provides the main functionality of a heap, keeping the minimum on the top.",
+            "extends": "Heap"
+        },
+        "PriorityQueue": {
+            "name": "PriorityQueue",
+            "shortname": "PriorityQueue",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "Datastructures/PriorityQueue.ts",
+            "line": 4,
+            "description": "The PriorityQueue class provides the main functionality of an prioritized queue, implemented using a max heap.",
+            "extends": "Heap"
         },
         "Queue": {
             "name": "Queue",
@@ -372,26 +431,24 @@
             "file": "Datastructures/DoublyLinkedList.ts",
             "line": 296,
             "description": "DoublyLinkedList element",
-            "interface": "",
             "class": "DoublyLinkedList"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 1,
-            "description": "The Heap class provides the main functionality of a Heap.",
-            "class": "Queue"
-        },
-        {
-            "file": "Datastructures/Heap.ts",
-            "line": 6,
+            "line": 8,
+            "description": "Binary tree storage array",
+            "itemtype": "property",
+            "name": "_tree",
             "type": "Array",
             "access": "private",
             "tagname": "",
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 13,
+            "line": 17,
+            "itemtype": "method",
+            "name": "_parent",
             "params": [
                 {
                     "name": "n",
@@ -401,43 +458,75 @@
             "return": {
                 "description": "number"
             },
-            "class": "Queue"
+            "access": "private",
+            "tagname": "",
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 26,
+            "line": 28,
+            "itemtype": "method",
+            "name": "_child",
             "params": [
                 {
                     "name": "n",
                     "description": ""
                 }
             ],
-            "class": "Queue"
+            "return": {
+                "description": "number"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 46,
+            "line": 39,
+            "itemtype": "method",
+            "name": "shiftUp",
             "params": [
                 {
-                    "name": "n",
+                    "name": "i",
                     "description": ""
                 }
             ],
-            "class": "Queue"
+            "access": "private",
+            "tagname": "",
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 66,
+            "line": 61,
+            "itemtype": "method",
+            "name": "shiftDown",
+            "params": [
+                {
+                    "name": "i",
+                    "description": ""
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "Heap"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 83,
             "description": "Extracts a node from top of the heap and sift up",
+            "itemtype": "method",
+            "name": "extract",
             "return": {
                 "description": "any The value of the extracted node."
             },
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 77,
+            "line": 95,
             "description": "Inserts an element in the heap by sifting it up",
+            "itemtype": "method",
+            "name": "insert",
             "params": [
                 {
                     "name": "value",
@@ -447,93 +536,113 @@
             "return": {
                 "description": "void"
             },
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 88,
+            "line": 107,
             "description": "Peeks at the node from the top of the heap",
+            "itemtype": "method",
+            "name": "top",
             "return": {
                 "description": "any The value of the node on the top."
             },
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 96,
+            "line": 117,
             "description": "Counts the number of elements in the heap",
+            "itemtype": "method",
+            "name": "count",
             "return": {
                 "description": "number the number of elements in the heap."
             },
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 105,
+            "line": 127,
             "description": "Checks whether the heap is empty",
+            "itemtype": "method",
+            "name": "isEmpty",
             "return": {
                 "description": "boolean whether the heap is empty."
             },
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 114,
+            "line": 137,
             "description": "Rewind iterator back to the start (no-op)",
+            "itemtype": "method",
+            "name": "rewind",
             "return": {
                 "description": "void"
             },
-            "class": "Queue"
-        },
-        {
-            "file": "Datastructures/Heap.ts",
-            "line": 122,
-            "description": "Return current node pointed by the iterator",
-            "return": {
-                "description": "any The current node value."
-            },
-            "class": "Queue"
-        },
-        {
-            "file": "Datastructures/Heap.ts",
-            "line": 130,
-            "description": "Return current node index",
-            "return": {
-                "description": "any The current node index."
-            },
-            "class": "Queue"
-        },
-        {
-            "file": "Datastructures/Heap.ts",
-            "line": 138,
-            "description": "Move to the next node",
-            "return": {
-                "description": "void"
-            },
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
             "line": 146,
-            "description": "Check whether the heap contains more nodes",
+            "description": "Return current node pointed by the iterator",
+            "itemtype": "method",
+            "name": "current",
             "return": {
-                "description": "boolean true if the heap contains any more nodes, false otherwise."
+                "description": "any The current node value."
             },
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
             "line": 155,
-            "description": "Recover from the corrupted state and allow further actions on the heap.",
+            "description": "Return current node index",
+            "itemtype": "method",
+            "name": "key",
             "return": {
-                "description": "void"
+                "description": "any The current node index."
             },
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 163,
+            "line": 164,
+            "description": "Move to the next node",
+            "itemtype": "method",
+            "name": "next",
+            "return": {
+                "description": "void"
+            },
+            "class": "Heap"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 173,
+            "description": "Check whether the heap contains more nodes",
+            "itemtype": "method",
+            "name": "valid",
+            "return": {
+                "description": "boolean true if the heap contains any more nodes, false otherwise."
+            },
+            "class": "Heap"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 183,
+            "description": "Recover from the corrupted state and allow further actions on the heap.",
+            "itemtype": "method",
+            "name": "recoverFromCorruption",
+            "return": {
+                "description": "void"
+            },
+            "class": "Heap"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 192,
             "description": "Compare elements in order to place them correctly in the heap while sifting up.",
+            "itemtype": "method",
+            "name": "compare",
             "params": [
                 {
                     "name": "first",
@@ -547,11 +656,13 @@
             "return": {
                 "description": "number Result of the comparison, positive integer if value1 is greater than value2, 0 if they are equal, negative integer otherwise.\nHaving multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position."
             },
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 174,
+            "line": 205,
+            "itemtype": "method",
+            "name": "_displayNode",
             "params": [
                 {
                     "name": "node",
@@ -567,39 +678,22 @@
                 }
             ],
             "return": {
-                "description": "",
-                "type": "String"
+                "description": "String"
             },
             "access": "private",
             "tagname": "",
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 202,
+            "line": 234,
             "description": "Serializes the heap to string",
+            "itemtype": "method",
+            "name": "toString",
             "return": {
                 "description": "string   The serialized string."
             },
-            "class": "Queue"
-        },
-        {
-            "file": "Datastructures/MaxHeap.ts",
-            "line": 4,
-            "description": "The MaxHeap class provides the main functionality of a heap, keeping the maximum on the top.",
-            "class": "Queue"
-        },
-        {
-            "file": "Datastructures/MinHeap.ts",
-            "line": 5,
-            "description": "The MinHeap class provides the main functionality of a heap, keeping the minimum on the top.",
-            "class": "Queue"
-        },
-        {
-            "file": "Datastructures/PriorityQueue.ts",
-            "line": 4,
-            "description": "The PriorityQueue class provides the main functionality of an prioritized queue, implemented using a max heap.",
-            "class": "Queue"
+            "class": "Heap"
         },
         {
             "file": "Datastructures/Queue.ts",
@@ -632,100 +726,8 @@
     ],
     "warnings": [
         {
-            "message": "unknown tag: interface",
-            "line": " Datastructures/DoublyLinkedList.ts:296"
-        },
-        {
             "message": "Missing item type\nDoublyLinkedList element",
             "line": " Datastructures/DoublyLinkedList.ts:296"
-        },
-        {
-            "message": "Missing item type\nThe Heap class provides the main functionality of a Heap.",
-            "line": " Datastructures/Heap.ts:1"
-        },
-        {
-            "message": "Missing item type",
-            "line": " Datastructures/Heap.ts:6"
-        },
-        {
-            "message": "Missing item type",
-            "line": " Datastructures/Heap.ts:13"
-        },
-        {
-            "message": "Missing item type",
-            "line": " Datastructures/Heap.ts:26"
-        },
-        {
-            "message": "Missing item type",
-            "line": " Datastructures/Heap.ts:46"
-        },
-        {
-            "message": "Missing item type\nExtracts a node from top of the heap and sift up",
-            "line": " Datastructures/Heap.ts:66"
-        },
-        {
-            "message": "Missing item type\nInserts an element in the heap by sifting it up",
-            "line": " Datastructures/Heap.ts:77"
-        },
-        {
-            "message": "Missing item type\nPeeks at the node from the top of the heap",
-            "line": " Datastructures/Heap.ts:88"
-        },
-        {
-            "message": "Missing item type\nCounts the number of elements in the heap",
-            "line": " Datastructures/Heap.ts:96"
-        },
-        {
-            "message": "Missing item type\nChecks whether the heap is empty",
-            "line": " Datastructures/Heap.ts:105"
-        },
-        {
-            "message": "Missing item type\nRewind iterator back to the start (no-op)",
-            "line": " Datastructures/Heap.ts:114"
-        },
-        {
-            "message": "Missing item type\nReturn current node pointed by the iterator",
-            "line": " Datastructures/Heap.ts:122"
-        },
-        {
-            "message": "Missing item type\nReturn current node index",
-            "line": " Datastructures/Heap.ts:130"
-        },
-        {
-            "message": "Missing item type\nMove to the next node",
-            "line": " Datastructures/Heap.ts:138"
-        },
-        {
-            "message": "Missing item type\nCheck whether the heap contains more nodes",
-            "line": " Datastructures/Heap.ts:146"
-        },
-        {
-            "message": "Missing item type\nRecover from the corrupted state and allow further actions on the heap.",
-            "line": " Datastructures/Heap.ts:155"
-        },
-        {
-            "message": "Missing item type\nCompare elements in order to place them correctly in the heap while sifting up.",
-            "line": " Datastructures/Heap.ts:163"
-        },
-        {
-            "message": "Missing item type",
-            "line": " Datastructures/Heap.ts:174"
-        },
-        {
-            "message": "Missing item type\nSerializes the heap to string",
-            "line": " Datastructures/Heap.ts:202"
-        },
-        {
-            "message": "Missing item type\nThe MaxHeap class provides the main functionality of a heap, keeping the maximum on the top.",
-            "line": " Datastructures/MaxHeap.ts:4"
-        },
-        {
-            "message": "Missing item type\nThe MinHeap class provides the main functionality of a heap, keeping the minimum on the top.",
-            "line": " Datastructures/MinHeap.ts:5"
-        },
-        {
-            "message": "Missing item type\nThe PriorityQueue class provides the main functionality of an prioritized queue, implemented using a max heap.",
-            "line": " Datastructures/PriorityQueue.ts:4"
         }
     ]
 }
