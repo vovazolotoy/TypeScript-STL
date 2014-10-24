@@ -7,6 +7,9 @@ var __extends = this.__extends || function (d, b) {
 var DoublyLinkedList = require('./DoublyLinkedList');
 /**
  * The Queue class provides the main functionality of a queue implemented using a doubly linked list.
+ *
+ * @class Queue
+ * @extends DoublyLinkedList
  */
 var Queue = (function (_super) {
     __extends(Queue, _super);
@@ -16,6 +19,7 @@ var Queue = (function (_super) {
     /**
      * Adds an element to the queue
      *
+     * @method enqueue
      * @param value The value to enqueue.
      * @return void
      */
@@ -24,6 +28,8 @@ var Queue = (function (_super) {
     };
     /**
      * Dequeues a node from the queue
+     *
+     * @method dequeue
      * @return any  The value of the dequeued node.
      */
     Queue.prototype.dequeue = function () {

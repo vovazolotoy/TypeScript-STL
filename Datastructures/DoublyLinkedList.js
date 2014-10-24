@@ -1,7 +1,6 @@
 /**
  * The DoublyLinkedList class provides the main functionality of a doubly linked list.
  *
- * @module Doubly Linked Lists
  * @class DoublyLinkedList
  */
 var DoublyLinkedList = (function () {

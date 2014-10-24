@@ -43,13 +43,13 @@
             
                 <li><a href="../classes/DoublyLinkedList.html">DoublyLinkedList</a></li>
             
+                <li><a href="../classes/Queue.html">Queue</a></li>
+            
                 <li><a href="../classes/Stack.html">Stack</a></li>
             
             </ul>
 
             <ul id="api-modules" class="apis modules">
-            
-                <li><a href="../modules/Doubly Linked Lists.html">Doubly Linked Lists</a></li>
             
             </ul>
         </div>
@@ -93,13 +93,13 @@
 /**
  * The DoublyLinkedList class provides the main functionality of a doubly linked list.
  *
- * @module Doubly Linked Lists
  * @class DoublyLinkedList
  */
 class DoublyLinkedList {
 
     /**
      * Count of elements in list
+     *
      * @property _length
      * @type number
      * @private
@@ -108,6 +108,8 @@ class DoublyLinkedList {
 
     /**
      * Iteration pointer
+     *
+     * @property _key
      * @type number
      * @private
      */
@@ -115,6 +117,8 @@ class DoublyLinkedList {
 
     /**
      * Reference to head(first) element in list
+     *
+     * @property _head
      * @type DoublyLinkedListNode
      * @private
      */
@@ -122,6 +126,8 @@ class DoublyLinkedList {
 
     /**
      * Reference to tail(last) element in list
+     *
+     * @property _tail
      * @type DoublyLinkedListNode
      * @private
      */
@@ -129,6 +135,8 @@ class DoublyLinkedList {
 
     /**
      * Reference to iterated element in list
+     *
+     * @property _current
      * @type DoublyLinkedListNode
      * @private
      */
