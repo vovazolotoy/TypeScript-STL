@@ -1,12 +1,14 @@
 /**
  * The DoublyLinkedList class provides the main functionality of a doubly linked list.
  *
+ * @module Doubly Linked Lists
  * @class DoublyLinkedList
  */
 var DoublyLinkedList = (function () {
     function DoublyLinkedList() {
         /**
          * Count of elements in list
+         *
          * @property _length
          * @type number
          * @private
@@ -14,24 +16,32 @@ var DoublyLinkedList = (function () {
         this._length = 0;
         /**
          * Iteration pointer
+         *
+         * @property _key
          * @type number
          * @private
          */
         this._key = 0;
         /**
          * Reference to head(first) element in list
+         *
+         * @property _head
          * @type DoublyLinkedListNode
          * @private
          */
         this._head = null;
         /**
          * Reference to tail(last) element in list
+         *
+         * @property _tail
          * @type DoublyLinkedListNode
          * @private
          */
         this._tail = null;
         /**
          * Reference to iterated element in list
+         *
+         * @property _current
          * @type DoublyLinkedListNode
          * @private
          */
@@ -112,6 +122,7 @@ var DoublyLinkedList = (function () {
     /**
      * Prepends the doubly linked list with an element
      *
+     * @method unshift
      * @param value The value to unshift.
      * @return void
      */
@@ -134,6 +145,7 @@ var DoublyLinkedList = (function () {
     /**
      * Peeks at the node from the end of the doubly linked list
      *
+     * @method top
      * @return any  The value of the last node.
      */
     DoublyLinkedList.prototype.top = function () {
@@ -142,6 +154,7 @@ var DoublyLinkedList = (function () {
     /**
      * Peeks at the node from the beginning of the doubly linked list
      *
+     * @method bottom
      * @return any  The value of the first node.
      */
     DoublyLinkedList.prototype.bottom = function () {
@@ -150,6 +163,7 @@ var DoublyLinkedList = (function () {
     /**
      * Counts the number of elements in the doubly linked list
      *
+     * @method count
      * @return number the number of elements in the doubly linked list.
      */
     DoublyLinkedList.prototype.count = function () {
@@ -158,6 +172,7 @@ var DoublyLinkedList = (function () {
     /**
      * Checks whether the doubly linked list is empty
      *
+     * @method isEmpty
      * @return boolean whether the doubly linked list is empty.
      */
     DoublyLinkedList.prototype.isEmpty = function () {
@@ -166,6 +181,7 @@ var DoublyLinkedList = (function () {
     /**
      * Rewind iterator back to the start
      *
+     * @method rewind
      * @return void
      */
     DoublyLinkedList.prototype.rewind = function () {
@@ -175,6 +191,7 @@ var DoublyLinkedList = (function () {
     /**
      * Return current list entry
      *
+     * @method current
      * @return any  The current node value.
      */
     DoublyLinkedList.prototype.current = function () {
@@ -186,6 +203,7 @@ var DoublyLinkedList = (function () {
     /**
      * Return current node index
      *
+     * @method key
      * @return any  The current node index.
      */
     DoublyLinkedList.prototype.key = function () {
@@ -194,6 +212,7 @@ var DoublyLinkedList = (function () {
     /**
      * Move to next entry
      *
+     * @method next
      * @return void
      */
     DoublyLinkedList.prototype.next = function () {
@@ -203,6 +222,7 @@ var DoublyLinkedList = (function () {
     /**
      * Move to previous entry
      *
+     * @method prev
      * @return void
      */
     DoublyLinkedList.prototype.prev = function () {
@@ -212,6 +232,7 @@ var DoublyLinkedList = (function () {
     /**
      * Check whether the doubly linked list contains more nodes
      *
+     * @method valid
      * @return boolean true if the doubly linked list contains any more nodes, false otherwise.
      */
     DoublyLinkedList.prototype.valid = function () {
@@ -219,6 +240,8 @@ var DoublyLinkedList = (function () {
     };
     /**
      * Export the list to array
+     *
+     * @method toArray
      * @return Array   The exported array
      */
     DoublyLinkedList.prototype.toArray = function () {
@@ -233,6 +256,7 @@ var DoublyLinkedList = (function () {
     /**
      * Serializes the list to string
      *
+     * @method toString
      * @return string   The serialized string.
      */
     DoublyLinkedList.prototype.toString = function () {

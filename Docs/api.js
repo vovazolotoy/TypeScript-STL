@@ -4,7 +4,15 @@ YUI.add("yuidoc-meta", function(Y) {
         "DoublyLinkedList",
         "Stack"
     ],
-    "modules": [],
-    "allModules": []
+    "modules": [
+        "Doubly Linked Lists"
+    ],
+    "allModules": [
+        {
+            "displayName": "Doubly Linked Lists",
+            "name": "Doubly Linked Lists",
+            "description": "The DoublyLinkedList class provides the main functionality of a doubly linked list."
+        }
+    ]
 } };
 });
