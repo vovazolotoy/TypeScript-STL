@@ -7,6 +7,9 @@ var __extends = this.__extends || function (d, b) {
 var Heap = require('./Heap');
 /**
  * The PriorityQueue class provides the main functionality of an prioritized queue, implemented using a max heap.
+ *
+ * @class PriorityQueue
+ * @extends Heap
  */
 var PriorityQueue = (function (_super) {
     __extends(PriorityQueue, _super);

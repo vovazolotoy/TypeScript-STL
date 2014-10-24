@@ -7,6 +7,9 @@ var __extends = this.__extends || function (d, b) {
 var Heap = require('./Heap');
 /**
  * The MaxHeap class provides the main functionality of a heap, keeping the maximum on the top.
+ *
+ * @class MaxHeap
+ * @extends Heap
  */
 var MaxHeap = (function (_super) {
     __extends(MaxHeap, _super);

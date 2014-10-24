@@ -7,6 +7,9 @@ var __extends = this.__extends || function (d, b) {
 var Heap = require('./Heap');
 /**
  * The MinHeap class provides the main functionality of a heap, keeping the minimum on the top.
+ *
+ * @class MinHeap
+ * @extends Heap
  */
 var MinHeap = (function (_super) {
     __extends(MinHeap, _super);

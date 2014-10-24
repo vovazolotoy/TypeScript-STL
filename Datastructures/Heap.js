@@ -1,10 +1,14 @@
 /**
  * The Heap class provides the main functionality of a Heap.
+ *
+ * @class Heap
  */
 var Heap = (function () {
     function Heap() {
         /**
+         * Binary tree storage array
          *
+         * @property _tree
          * @type Array
          * @private
          */
@@ -12,18 +16,29 @@ var Heap = (function () {
     }
     /**
      *
+     * @method _parent
      * @param n
      * @return number
+     * @private
      */
     Heap.prototype._parent = function (n) {
         return Math.floor(n - 1 / 2);
     };
+    /**
+     *
+     * @method _child
+     * @param n
+     * @return number
+     * @private
+     */
     Heap.prototype._child = function (n) {
         return 2 * n + 1;
     };
     /**
      *
-     * @param n
+     * @method shiftUp
+     * @param i
+     * @private
      */
     Heap.prototype.shiftUp = function (i) {
         while (i > 0) {
@@ -40,7 +55,9 @@ var Heap = (function () {
     };
     /**
      *
-     * @param n
+     * @method shiftDown
+     * @param i
+     * @private
      */
     Heap.prototype.shiftDown = function (i) {
         while (i > 0) {
@@ -57,6 +74,7 @@ var Heap = (function () {
     /**
      * Extracts a node from top of the heap and sift up
      *
+     * @method extract
      * @return any The value of the extracted node.
      */
     Heap.prototype.extract = function () {
@@ -67,6 +85,7 @@ var Heap = (function () {
     /**
      * Inserts an element in the heap by sifting it up
      *
+     * @method insert
      * @param value The value to insert.
      * @return void
      */
@@ -76,6 +95,8 @@ var Heap = (function () {
     };
     /**
      * Peeks at the node from the top of the heap
+     *
+     * @method top
      * @return any The value of the node on the top.
      */
     Heap.prototype.top = function () {
@@ -84,6 +105,7 @@ var Heap = (function () {
     /**
      * Counts the number of elements in the heap
      *
+     * @method count
      * @return number the number of elements in the heap.
      */
     Heap.prototype.count = function () {
@@ -92,6 +114,7 @@ var Heap = (function () {
     /**
      * Checks whether the heap is empty
      *
+     * @method isEmpty
      * @return boolean whether the heap is empty.
      */
     Heap.prototype.isEmpty = function () {
@@ -100,6 +123,7 @@ var Heap = (function () {
     /**
      * Rewind iterator back to the start (no-op)
      *
+     * @method rewind
      * @return void
      */
     Heap.prototype.rewind = function () {
@@ -107,6 +131,7 @@ var Heap = (function () {
     /**
      * Return current node pointed by the iterator
      *
+     * @method current
      * @return any The current node value.
      */
     Heap.prototype.current = function () {
@@ -114,6 +139,7 @@ var Heap = (function () {
     /**
      * Return current node index
      *
+     * @method key
      * @return any The current node index.
      */
     Heap.prototype.key = function () {
@@ -121,6 +147,7 @@ var Heap = (function () {
     /**
      * Move to the next node
      *
+     * @method next
      * @return void
      */
     Heap.prototype.next = function () {
@@ -128,6 +155,7 @@ var Heap = (function () {
     /**
      * Check whether the heap contains more nodes
      *
+     * @method valid
      * @return boolean true if the heap contains any more nodes, false otherwise.
      */
     Heap.prototype.valid = function () {
@@ -136,12 +164,15 @@ var Heap = (function () {
     /**
      * Recover from the corrupted state and allow further actions on the heap.
      *
+     * @method recoverFromCorruption
      * @return void
      */
     Heap.prototype.recoverFromCorruption = function () {
     };
     /**
      * Compare elements in order to place them correctly in the heap while sifting up.
+     *
+     * @method compare
      * @param first The value of the first node being compared.
      * @param second The value of the second node being compared.
      * @return number Result of the comparison, positive integer if value1 is greater than value2, 0 if they are equal, negative integer otherwise.
@@ -152,10 +183,11 @@ var Heap = (function () {
     };
     /**
      *
+     * @method _displayNode
      * @param node
      * @param prefix
      * @param last
-     * @return {string}
+     * @return String
      * @private
      */
     Heap.prototype._displayNode = function (node, prefix, last) {
@@ -179,6 +211,7 @@ var Heap = (function () {
     /**
      * Serializes the heap to string
      *
+     * @method toString
      * @return string   The serialized string.
      */
     Heap.prototype.toString = function () {

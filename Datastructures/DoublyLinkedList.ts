@@ -296,7 +296,7 @@ class DoublyLinkedList {
 /**
  * DoublyLinkedList element
  *
- * @interface
+ * @type DoublyLinkedListNode
  */
 interface DoublyLinkedListNode {
     value:any;

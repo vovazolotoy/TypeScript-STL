@@ -1,10 +1,14 @@
 /**
  * The Heap class provides the main functionality of a Heap.
+ *
+ * @class Heap
  */
 class Heap {
 
     /**
+     * Binary tree storage array
      *
+     * @property _tree
      * @type Array
      * @private
      */
@@ -12,20 +16,31 @@ class Heap {
 
     /**
      *
+     * @method _parent
      * @param n
      * @return number
+     * @private
      */
     private _parent(n:number):number {
         return Math.floor(n - 1 / 2);
     }
 
+    /**
+     *
+     * @method _child
+     * @param n
+     * @return number
+     * @private
+     */
     private _child(n:number):number {
         return 2 * n + 1;
     }
 
     /**
      *
-     * @param n
+     * @method shiftUp
+     * @param i
+     * @private
      */
     private shiftUp(i:number):void {
         while (i > 0) {
@@ -45,7 +60,9 @@ class Heap {
 
     /**
      *
-     * @param n
+     * @method shiftDown
+     * @param i
+     * @private
      */
     private shiftDown(i:number):void {
         while (i > 0) {
@@ -66,6 +83,7 @@ class Heap {
     /**
      * Extracts a node from top of the heap and sift up
      *
+     * @method extract
      * @return any The value of the extracted node.
      */
     public extract():any {
@@ -77,6 +95,7 @@ class Heap {
     /**
      * Inserts an element in the heap by sifting it up
      *
+     * @method insert
      * @param value The value to insert.
      * @return void
      */
@@ -87,6 +106,8 @@ class Heap {
 
     /**
      * Peeks at the node from the top of the heap
+     *
+     * @method top
      * @return any The value of the node on the top.
      */
     public top():any {
@@ -96,6 +117,7 @@ class Heap {
     /**
      * Counts the number of elements in the heap
      *
+     * @method count
      * @return number the number of elements in the heap.
      */
     public count():number {
@@ -105,6 +127,7 @@ class Heap {
     /**
      * Checks whether the heap is empty
      *
+     * @method isEmpty
      * @return boolean whether the heap is empty.
      */
     public isEmpty():boolean {
@@ -114,6 +137,7 @@ class Heap {
     /**
      * Rewind iterator back to the start (no-op)
      *
+     * @method rewind
      * @return void
      */
     public rewind():void {
@@ -122,6 +146,7 @@ class Heap {
     /**
      * Return current node pointed by the iterator
      *
+     * @method current
      * @return any The current node value.
      */
     public current():any {
@@ -130,6 +155,7 @@ class Heap {
     /**
      * Return current node index
      *
+     * @method key
      * @return any The current node index.
      */
     public key():any {
@@ -138,6 +164,7 @@ class Heap {
     /**
      * Move to the next node
      *
+     * @method next
      * @return void
      */
     public next():void {
@@ -146,6 +173,7 @@ class Heap {
     /**
      * Check whether the heap contains more nodes
      *
+     * @method valid
      * @return boolean true if the heap contains any more nodes, false otherwise.
      */
     public valid():boolean {
@@ -155,6 +183,7 @@ class Heap {
     /**
      * Recover from the corrupted state and allow further actions on the heap.
      *
+     * @method recoverFromCorruption
      * @return void
      */
     public recoverFromCorruption():void {
@@ -162,6 +191,8 @@ class Heap {
 
     /**
      * Compare elements in order to place them correctly in the heap while sifting up.
+     *
+     * @method compare
      * @param first The value of the first node being compared.
      * @param second The value of the second node being compared.
      * @return number Result of the comparison, positive integer if value1 is greater than value2, 0 if they are equal, negative integer otherwise.
@@ -173,10 +204,11 @@ class Heap {
 
     /**
      *
+     * @method _displayNode
      * @param node
      * @param prefix
      * @param last
-     * @return {string}
+     * @return String
      * @private
      */
     private _displayNode(node, prefix = '', last = true) {
@@ -202,6 +234,7 @@ class Heap {
     /**
      * Serializes the heap to string
      *
+     * @method toString
      * @return string   The serialized string.
      */
     public toString():string {
