@@ -1,6 +1,6 @@
 {
   "name": "js-stl",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Standard TypeScript Library",
   "keywords": ["TypeScript", "Datastructures", "DoublyLinkedList", "Stack", "Queue", "Heap","MaxHeap", "MinHeap", "PriorityQueue"],
   "main": "node-module.js",
