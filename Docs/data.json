@@ -431,6 +431,7 @@
             "line": 297,
             "description": "DoublyLinkedList element",
             "interface": "",
+            "extends": "Object",
             "class": "DoublyLinkedList"
         },
         {
