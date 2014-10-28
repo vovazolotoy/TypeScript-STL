@@ -1,0 +1,303 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.3.14
+3 info using node@v0.10.22
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/vovazolotoy/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/tmp.tgz
+12 verbose folder .
+13 info prepublish js-stl@0.0.7
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /Users/vovazolotoy/.npm/1f1177db-tar.lock
+16 silly lockFile 7e4f001d-39721-0-2099324930459261-tmp-tgz tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/tmp.tgz
+17 verbose lock tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/tmp.tgz /Users/vovazolotoy/.npm/7e4f001d-39721-0-2099324930459261-tmp-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 7e4f001d-39721-0-2099324930459261-tmp-tgz tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/tmp.tgz
+21 silly lockFile 7e4f001d-39721-0-2099324930459261-tmp-tgz tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/tmp.tgz
+22 verbose tar unpack /var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/tmp.tgz
+23 silly lockFile 71bd61a7-39721-0-2099324930459261-package tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/package
+24 verbose lock tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/package /Users/vovazolotoy/.npm/71bd61a7-39721-0-2099324930459261-package.lock
+25 silly lockFile 7e4f001d-39721-0-2099324930459261-tmp-tgz tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/tmp.tgz
+26 verbose lock tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/tmp.tgz /Users/vovazolotoy/.npm/7e4f001d-39721-0-2099324930459261-tmp-tgz.lock
+27 silly gunzTarPerm modes [ '755', '644' ]
+28 silly gunzTarPerm extractEntry package.json
+29 silly gunzTarPerm extractEntry README.md
+30 silly gunzTarPerm extractEntry node-module.js
+31 silly gunzTarPerm extractEntry Datastructures/DoublyLinkedList.js
+32 silly gunzTarPerm extractEntry Datastructures/Heap.js
+33 silly gunzTarPerm extractEntry Datastructures/MaxHeap.js
+34 silly gunzTarPerm extractEntry Datastructures/MinHeap.js
+35 silly gunzTarPerm extractEntry Datastructures/PriorityQueue.js
+36 silly gunzTarPerm extractEntry Datastructures/Queue.js
+37 silly gunzTarPerm extractEntry Datastructures/Stack.js
+38 silly gunzTarPerm extractEntry Datastructures/MaxHeap.js.map
+39 silly gunzTarPerm extractEntry Datastructures/MaxHeap.ts
+40 silly gunzTarPerm extractEntry Datastructures/Stack.ts
+41 silly gunzTarPerm extractEntry Datastructures/DoublyLinkedList.js.map
+42 silly gunzTarPerm extractEntry Datastructures/MinHeap.ts
+43 silly gunzTarPerm extractEntry Datastructures/Heap.js.map
+44 silly gunzTarPerm extractEntry Datastructures/PriorityQueue.js.map
+45 silly gunzTarPerm extractEntry Datastructures/PriorityQueue.ts
+46 silly gunzTarPerm extractEntry Datastructures/Heap.ts
+47 silly gunzTarPerm extractEntry Datastructures/Queue.js.map
+48 silly gunzTarPerm extractEntry Datastructures/Queue.ts
+49 silly gunzTarPerm extractEntry Datastructures/DoublyLinkedList.ts
+50 silly gunzTarPerm extractEntry Datastructures/Stack.js.map
+51 silly gunzTarPerm extractEntry Datastructures/MinHeap.js.map
+52 silly gunzTarPerm extractEntry Docs/api.js
+53 silly gunzTarPerm extractEntry Docs/assets/css/external-small.png
+54 silly gunzTarPerm extractEntry Docs/assets/css/logo.png
+55 silly gunzTarPerm extractEntry Docs/assets/css/main.css
+56 silly gunzTarPerm extractEntry Docs/assets/favicon.png
+57 silly gunzTarPerm extractEntry Docs/assets/img/spinner.gif
+58 silly gunzTarPerm extractEntry Docs/assets/index.html
+59 silly gunzTarPerm extractEntry Docs/assets/js/api-filter.js
+60 silly gunzTarPerm extractEntry Docs/assets/js/api-list.js
+61 silly gunzTarPerm extractEntry Docs/assets/js/api-search.js
+62 silly gunzTarPerm extractEntry Docs/assets/js/apidocs.js
+63 silly gunzTarPerm extractEntry Docs/assets/js/yui-prettify.js
+64 silly gunzTarPerm extractEntry Docs/assets/vendor/prettify/prettify-min.js
+65 silly gunzTarPerm extractEntry Docs/assets/vendor/prettify/CHANGES.html
+66 silly gunzTarPerm extractEntry Docs/assets/vendor/prettify/COPYING
+67 silly gunzTarPerm extractEntry Docs/assets/vendor/prettify/README.html
+68 silly gunzTarPerm extractEntry Docs/assets/vendor/prettify/prettify-min.css
+69 silly gunzTarPerm extractEntry Docs/classes/DoublyLinkedList.html
+70 silly gunzTarPerm extractEntry Docs/classes/Heap.html
+71 silly gunzTarPerm extractEntry Docs/classes/MaxHeap.html
+72 silly gunzTarPerm extractEntry Docs/classes/MinHeap.html
+73 silly gunzTarPerm extractEntry Docs/classes/PriorityQueue.html
+74 silly gunzTarPerm extractEntry Docs/classes/Queue.html
+75 silly gunzTarPerm extractEntry Docs/classes/Stack.html
+76 silly gunzTarPerm extractEntry Docs/classes/index.html
+77 silly gunzTarPerm extractEntry Docs/data.json
+78 silly gunzTarPerm extractEntry Docs/files/Datastructures_DoublyLinkedList.ts.html
+79 silly gunzTarPerm extractEntry Docs/files/Datastructures_Heap.ts.html
+80 silly gunzTarPerm extractEntry Docs/files/Datastructures_MaxHeap.ts.html
+81 silly gunzTarPerm extractEntry Docs/files/Datastructures_MinHeap.ts.html
+82 silly gunzTarPerm extractEntry Docs/files/Datastructures_PriorityQueue.ts.html
+83 silly gunzTarPerm extractEntry Docs/files/Datastructures_Queue.ts.html
+84 silly gunzTarPerm extractEntry Docs/files/Datastructures_Stack.ts.html
+85 silly gunzTarPerm extractEntry Docs/files/index.html
+86 silly gunzTarPerm extractEntry Docs/index.html
+87 silly gunzTarPerm extractEntry Docs/modules/index.html
+88 silly gunzTarPerm extractEntry Tests/run.js
+89 silly gunzTarPerm extractEntry yuidoc.json
+90 silly lockFile 71bd61a7-39721-0-2099324930459261-package tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/package
+91 silly lockFile 71bd61a7-39721-0-2099324930459261-package tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/package
+92 silly lockFile 7e4f001d-39721-0-2099324930459261-tmp-tgz tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/tmp.tgz
+93 silly lockFile 7e4f001d-39721-0-2099324930459261-tmp-tgz tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/tmp.tgz
+94 verbose tar pack [ '/Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz',
+94 verbose tar pack   '/var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/package' ]
+95 verbose tarball /Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz
+96 verbose folder /var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/package
+97 silly lockFile 71bd61a7-39721-0-2099324930459261-package tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/package
+98 verbose lock tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/package /Users/vovazolotoy/.npm/71bd61a7-39721-0-2099324930459261-package.lock
+99 silly lockFile 29f9f0a1-toy-npm-js-stl-0-0-7-package-tgz tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz
+100 verbose lock tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz /Users/vovazolotoy/.npm/29f9f0a1-toy-npm-js-stl-0-0-7-package-tgz.lock
+101 silly lockFile 71bd61a7-39721-0-2099324930459261-package tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/package
+102 silly lockFile 71bd61a7-39721-0-2099324930459261-package tar:///var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-15238-Tvntv_om/1414173139721-0.2099324930459261/package
+103 silly lockFile 29f9f0a1-toy-npm-js-stl-0-0-7-package-tgz tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz
+104 silly lockFile 29f9f0a1-toy-npm-js-stl-0-0-7-package-tgz tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz
+105 silly lockFile 167cfe6a-zolotoy-npm-js-stl-0-0-7-package /Users/vovazolotoy/.npm/js-stl/0.0.7/package
+106 verbose lock /Users/vovazolotoy/.npm/js-stl/0.0.7/package /Users/vovazolotoy/.npm/167cfe6a-zolotoy-npm-js-stl-0-0-7-package.lock
+107 silly lockFile 167cfe6a-zolotoy-npm-js-stl-0-0-7-package /Users/vovazolotoy/.npm/js-stl/0.0.7/package
+108 silly lockFile 167cfe6a-zolotoy-npm-js-stl-0-0-7-package /Users/vovazolotoy/.npm/js-stl/0.0.7/package
+109 verbose tar unpack /Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz
+110 silly lockFile 35c61140-zolotoy-npm-js-stl-0-0-7-package tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package
+111 verbose lock tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package /Users/vovazolotoy/.npm/35c61140-zolotoy-npm-js-stl-0-0-7-package.lock
+112 silly lockFile 29f9f0a1-toy-npm-js-stl-0-0-7-package-tgz tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz
+113 verbose lock tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz /Users/vovazolotoy/.npm/29f9f0a1-toy-npm-js-stl-0-0-7-package-tgz.lock
+114 silly gunzTarPerm modes [ '755', '644' ]
+115 silly gunzTarPerm extractEntry package.json
+116 silly gunzTarPerm extractEntry README.md
+117 silly gunzTarPerm extractEntry node-module.js
+118 silly gunzTarPerm extractEntry Datastructures/DoublyLinkedList.js
+119 silly gunzTarPerm extractEntry Datastructures/Heap.js
+120 silly gunzTarPerm extractEntry Datastructures/MaxHeap.js
+121 silly gunzTarPerm extractEntry Datastructures/MinHeap.js
+122 silly gunzTarPerm extractEntry Datastructures/PriorityQueue.js
+123 silly gunzTarPerm extractEntry Datastructures/Queue.js
+124 silly gunzTarPerm extractEntry Datastructures/Stack.js
+125 silly gunzTarPerm extractEntry Datastructures/MaxHeap.js.map
+126 silly gunzTarPerm extractEntry Datastructures/MaxHeap.ts
+127 silly gunzTarPerm extractEntry Datastructures/Stack.ts
+128 silly gunzTarPerm extractEntry Datastructures/DoublyLinkedList.js.map
+129 silly gunzTarPerm extractEntry Datastructures/MinHeap.ts
+130 silly gunzTarPerm extractEntry Datastructures/Heap.js.map
+131 silly gunzTarPerm extractEntry Datastructures/PriorityQueue.js.map
+132 silly gunzTarPerm extractEntry Datastructures/PriorityQueue.ts
+133 silly gunzTarPerm extractEntry Datastructures/Heap.ts
+134 silly gunzTarPerm extractEntry Datastructures/Queue.js.map
+135 silly gunzTarPerm extractEntry Datastructures/Queue.ts
+136 silly gunzTarPerm extractEntry Datastructures/DoublyLinkedList.ts
+137 silly gunzTarPerm extractEntry Datastructures/Stack.js.map
+138 silly gunzTarPerm extractEntry Datastructures/MinHeap.js.map
+139 silly gunzTarPerm extractEntry Docs/api.js
+140 silly gunzTarPerm extractEntry Docs/assets/css/external-small.png
+141 silly gunzTarPerm extractEntry Docs/assets/css/logo.png
+142 silly gunzTarPerm extractEntry Docs/assets/css/main.css
+143 silly gunzTarPerm extractEntry Docs/assets/favicon.png
+144 silly gunzTarPerm extractEntry Docs/assets/img/spinner.gif
+145 silly gunzTarPerm extractEntry Docs/assets/index.html
+146 silly gunzTarPerm extractEntry Docs/assets/js/api-filter.js
+147 silly gunzTarPerm extractEntry Docs/assets/js/api-list.js
+148 silly gunzTarPerm extractEntry Docs/assets/js/api-search.js
+149 silly gunzTarPerm extractEntry Docs/assets/js/apidocs.js
+150 silly gunzTarPerm extractEntry Docs/assets/js/yui-prettify.js
+151 silly gunzTarPerm extractEntry Docs/assets/vendor/prettify/prettify-min.js
+152 silly gunzTarPerm extractEntry Docs/assets/vendor/prettify/CHANGES.html
+153 silly gunzTarPerm extractEntry Docs/assets/vendor/prettify/COPYING
+154 silly gunzTarPerm extractEntry Docs/assets/vendor/prettify/README.html
+155 silly gunzTarPerm extractEntry Docs/assets/vendor/prettify/prettify-min.css
+156 silly gunzTarPerm extractEntry Docs/classes/DoublyLinkedList.html
+157 silly gunzTarPerm extractEntry Docs/classes/Heap.html
+158 silly gunzTarPerm extractEntry Docs/classes/MaxHeap.html
+159 silly gunzTarPerm extractEntry Docs/classes/MinHeap.html
+160 silly gunzTarPerm extractEntry Docs/classes/PriorityQueue.html
+161 silly gunzTarPerm extractEntry Docs/classes/Queue.html
+162 silly gunzTarPerm extractEntry Docs/classes/Stack.html
+163 silly gunzTarPerm extractEntry Docs/classes/index.html
+164 silly gunzTarPerm extractEntry Docs/data.json
+165 silly gunzTarPerm extractEntry Docs/files/Datastructures_DoublyLinkedList.ts.html
+166 silly gunzTarPerm extractEntry Docs/files/Datastructures_Heap.ts.html
+167 silly gunzTarPerm extractEntry Docs/files/Datastructures_MaxHeap.ts.html
+168 silly gunzTarPerm extractEntry Docs/files/Datastructures_MinHeap.ts.html
+169 silly gunzTarPerm extractEntry Docs/files/Datastructures_PriorityQueue.ts.html
+170 silly gunzTarPerm extractEntry Docs/files/Datastructures_Queue.ts.html
+171 silly gunzTarPerm extractEntry Docs/files/Datastructures_Stack.ts.html
+172 silly gunzTarPerm extractEntry Docs/files/index.html
+173 silly gunzTarPerm extractEntry Docs/index.html
+174 silly gunzTarPerm extractEntry Docs/modules/index.html
+175 silly gunzTarPerm extractEntry Tests/run.js
+176 silly gunzTarPerm extractEntry yuidoc.json
+177 silly lockFile 35c61140-zolotoy-npm-js-stl-0-0-7-package tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package
+178 silly lockFile 35c61140-zolotoy-npm-js-stl-0-0-7-package tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package
+179 silly lockFile 29f9f0a1-toy-npm-js-stl-0-0-7-package-tgz tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz
+180 silly lockFile 29f9f0a1-toy-npm-js-stl-0-0-7-package-tgz tar:///Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz
+181 verbose chmod /Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz 644
+182 verbose chown /Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz [ 501, 20 ]
+183 silly lockFile 3a52ce78- .
+184 silly lockFile 3a52ce78- .
+185 silly publish { name: 'js-stl',
+185 silly publish   version: '0.0.7',
+185 silly publish   description: 'Standard TypeScript Library',
+185 silly publish   keywords:
+185 silly publish    [ 'TypeScript',
+185 silly publish      'Datastructures',
+185 silly publish      'DoublyLinkedList',
+185 silly publish      'Stack',
+185 silly publish      'Queue',
+185 silly publish      'Heap',
+185 silly publish      'MaxHeap',
+185 silly publish      'MinHeap',
+185 silly publish      'PriorityQueue' ],
+185 silly publish   main: 'node-module.js',
+185 silly publish   scripts: { test: 'node Tests/run.js && exit 0' },
+185 silly publish   repository:
+185 silly publish    { type: 'git',
+185 silly publish      url: 'https://github.com/vovazolotoy/TypeScript-STL.git' },
+185 silly publish   author: { name: 'Vova Zolotoy', email: 'vovazolotoy@gmail.com' },
+185 silly publish   license: 'MIT',
+185 silly publish   bugs: { url: 'https://github.com/vovazolotoy/TypeScript-STL/issues' },
+185 silly publish   homepage: 'https://github.com/vovazolotoy/TypeScript-STL',
+185 silly publish   readme: '# Introduction\n\nThe Standard TypeScript Library (STL) is a collection of interfaces and classes that are meant to solve common problems.\n\nSTL provides a set of standard datastructures. They are grouped here by their underlying implementation which usually defines their general field of application.\n\n[API Documentation can be found here](http://vovazolotoy.github.io/docs/)\n\n# Table of Contents\n\n* [DoublyLinkedList](#DoublyLinkedList)\n* [Stack](#Stack)\n* [Queue](#Queue)\n* [Heap](#Heap)\n* [MaxHeap](#MaxHeap)\n* [MinHeap](#MinHeap)\n* [PriorityQueue](#PriorityQueue)\n\n## Doubly Linked Lists\n\nA Doubly Linked List (DLL) is a list of nodes linked in both directions to each others. Iterator\'s operations, access to both ends, addition or removal of nodes have a cost of O(1) when the underlying structure is a DLL. It hence provides a decent implementation for stacks and queues.\n\n* [DoublyLinkedList](#DoublyLinkedList)\n* [Stack](#Stack)\n* [Queue](#Queue)\n\n## Heaps\n\nHeaps are tree-like structures that follow the heap-property: each node is greater than or equal to its children, when compared using the implemented compare method which is global to the heap.\n\n* [Heap](#Heap)\n* [MaxHeap](#MaxHeap)\n* [MinHeap](#MinHeap)\n* [PriorityQueue](#PriorityQueue)',
+185 silly publish   readmeFilename: 'README.md',
+185 silly publish   _id: 'js-stl@0.0.7',
+185 silly publish   dist: { shasum: 'd942eea8d2bb5876a267520756abc5afaaf124af' },
+185 silly publish   _from: '.' }
+186 verbose url raw js-stl
+187 verbose url resolving [ 'https://registry.npmjs.org/', './js-stl' ]
+188 verbose url resolved https://registry.npmjs.org/js-stl
+189 info trying registry request attempt 1 at 10:52:20
+190 http PUT https://registry.npmjs.org/js-stl
+191 http 201 https://registry.npmjs.org/js-stl
+192 verbose url raw js-stl
+193 verbose url resolving [ 'https://registry.npmjs.org/', './js-stl' ]
+194 verbose url resolved https://registry.npmjs.org/js-stl
+195 info trying registry request attempt 1 at 10:52:20
+196 http GET https://registry.npmjs.org/js-stl
+197 http 200 https://registry.npmjs.org/js-stl
+198 verbose uploading [ 'js-stl/-/js-stl-0.0.7.tgz/-rev/29-28ee6b1ad4018e51aba707b19f5fd173',
+198 verbose uploading   '/Users/vovazolotoy/.npm/js-stl/0.0.7/package.tgz' ]
+199 verbose url raw js-stl/-/js-stl-0.0.7.tgz/-rev/29-28ee6b1ad4018e51aba707b19f5fd173
+200 verbose url resolving [ 'https://registry.npmjs.org/',
+200 verbose url resolving   './js-stl/-/js-stl-0.0.7.tgz/-rev/29-28ee6b1ad4018e51aba707b19f5fd173' ]
+201 verbose url resolved https://registry.npmjs.org/js-stl/-/js-stl-0.0.7.tgz/-rev/29-28ee6b1ad4018e51aba707b19f5fd173
+202 info trying registry request attempt 1 at 10:52:20
+203 http PUT https://registry.npmjs.org/js-stl/-/js-stl-0.0.7.tgz/-rev/29-28ee6b1ad4018e51aba707b19f5fd173
+204 http 500 https://registry.npmjs.org/js-stl/-/js-stl-0.0.7.tgz/-rev/29-28ee6b1ad4018e51aba707b19f5fd173
+205 info retry will retry, error on last attempt: Error: pound_internal_server_error : js-stl/-/js-stl-0.0.7.tgz/-rev/29-28ee6b1ad4018e51aba707b19f5fd173
+206 info trying registry request attempt 2 at 10:52:30
+207 http PUT https://registry.npmjs.org/js-stl/-/js-stl-0.0.7.tgz/-rev/29-28ee6b1ad4018e51aba707b19f5fd173
+208 http 400 https://registry.npmjs.org/js-stl/-/js-stl-0.0.7.tgz/-rev/29-28ee6b1ad4018e51aba707b19f5fd173
+209 verbose bad json <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+209 verbose bad json <html><head>
+209 verbose bad json <title>400 Bad Request</title>
+209 verbose bad json </head><body>
+209 verbose bad json <h1>Bad Request</h1>
+209 verbose bad json <p>Your browser sent a request that this server could not understand.<br />
+209 verbose bad json </p>
+209 verbose bad json </body></html>
+210 error registry error parsing json
+211 info trying registry request attempt 1 at 10:53:32
+212 http PUT https://registry.npmjs.org/js-stl/-/js-stl-0.0.7.tgz/-rev/29-28ee6b1ad4018e51aba707b19f5fd173
+213 http 400 https://registry.npmjs.org/js-stl/-/js-stl-0.0.7.tgz/-rev/29-28ee6b1ad4018e51aba707b19f5fd173
+214 verbose bad json <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+214 verbose bad json <html><head>
+214 verbose bad json <title>400 Bad Request</title>
+214 verbose bad json </head><body>
+214 verbose bad json <h1>Bad Request</h1>
+214 verbose bad json <p>Your browser sent a request that this server could not understand.<br />
+214 verbose bad json </p>
+214 verbose bad json </body></html>
+215 error registry error parsing json
+216 error publish Error uploading package
+217 error SyntaxError: Unexpected token <
+217 error <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+217 error <html><head>
+217 error <title>400 Bad Request</title>
+217 error </head><body>
+217 error <h1>Bad Request</h1>
+217 error <p>Your browser sent a request that this server could not understand.<br />
+217 error </p>
+217 error </body></html>
+217 error
+217 error     at Object.parse (native)
+217 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:238:23)
+217 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:129:22)
+217 error     at Request.EventEmitter.emit (events.js:98:17)
+217 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:873:14)
+217 error     at Request.EventEmitter.emit (events.js:117:20)
+217 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:824:12)
+217 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+217 error     at _stream_readable.js:920:16
+217 error     at process._tickCallback (node.js:415:13)
+218 error If you need help, you may report this log at:
+218 error     <http://github.com/isaacs/npm/issues>
+218 error or email it to:
+218 error     <npm-@googlegroups.com>
+219 error System Darwin 14.0.0
+220 error command "node" "/usr/local/bin/npm" "publish"
+221 error cwd /Users/vovazolotoy/Documents/Dev/Apps/TypeScript/TypeScript-STL
+222 error node -v v0.10.22
+223 error npm -v 1.3.14
+224 error type unexpected_token
+225 verbose exit [ 1, true ]
