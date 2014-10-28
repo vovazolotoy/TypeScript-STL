@@ -2,7 +2,7 @@
     "project": {
         "name": "STL",
         "description": "The Standard TypeScript Library (STL) is a collection of interfaces and classes that are meant to solve common problems.",
-        "version": "0.0.6"
+        "version": "0.0.7"
     },
     "files": {
         "Datastructures/DoublyLinkedList.ts": {
@@ -428,8 +428,9 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 296,
+            "line": 297,
             "description": "DoublyLinkedList element",
+            "interface": "",
             "class": "DoublyLinkedList"
         },
         {
@@ -725,8 +726,12 @@
     ],
     "warnings": [
         {
+            "message": "unknown tag: interface",
+            "line": " Datastructures/DoublyLinkedList.ts:297"
+        },
+        {
             "message": "Missing item type\nDoublyLinkedList element",
-            "line": " Datastructures/DoublyLinkedList.ts:296"
+            "line": " Datastructures/DoublyLinkedList.ts:297"
         }
     ]
 }

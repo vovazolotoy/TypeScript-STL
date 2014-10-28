@@ -293,8 +293,10 @@ class DoublyLinkedList {
     }
 }
 
+
 /**
  * DoublyLinkedList element
+ * @interface
  */
 interface DoublyLinkedListNode {
     value:any;
