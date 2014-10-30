@@ -2,6 +2,7 @@
     "project": {
         "name": "STL",
         "description": "The Standard TypeScript Library (STL) is a collection of interfaces and classes that are meant to solve common problems.",
+        "theme": "simple",
         "version": "0.0.7"
     },
     "files": {
@@ -431,7 +432,6 @@
             "line": 297,
             "description": "DoublyLinkedList element",
             "interface": "",
-            "extends": "Object",
             "class": "DoublyLinkedList"
         },
         {

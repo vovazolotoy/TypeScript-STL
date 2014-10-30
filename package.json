@@ -1,8 +1,18 @@
 {
-  "name": "js-stl",
-  "version": "0.0.7",
+  "name": "libstl",
+  "version": "0.0.1",
   "description": "Standard TypeScript Library",
-  "keywords": ["TypeScript", "Datastructures", "DoublyLinkedList", "Stack", "Queue", "Heap","MaxHeap", "MinHeap", "PriorityQueue"],
+  "keywords": [
+    "TypeScript",
+    "Datastructures",
+    "DoublyLinkedList",
+    "Stack",
+    "Queue",
+    "Heap",
+    "MaxHeap",
+    "MinHeap",
+    "PriorityQueue"
+  ],
   "main": "node-module.js",
   "scripts": {
     "test": "node Tests/run.js && exit 0"
