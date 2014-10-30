@@ -1,9 +1,8 @@
 {
     "project": {
-        "name": "STL",
-        "description": "The Standard TypeScript Library (STL) is a collection of interfaces and classes that are meant to solve common problems.",
-        "theme": "simple",
-        "version": "0.0.7"
+        "name": "libstl",
+        "description": "Standard TypeScript/JavaScript Library: Including DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue",
+        "version": "0.0.2"
     },
     "files": {
         "Datastructures/DoublyLinkedList.ts": {
