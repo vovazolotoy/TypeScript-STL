@@ -59,7 +59,19 @@ class DoublyLinkedList {
      * @return void
      */
     public add(index:any, value:any):void {
-        // TODO:
+
+        if (index < 0 || index >= this._length) {
+            throw new Error("Out of bounds");
+        }
+
+        var i = 0;
+        var current = this._head;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+
+        current.value = value;
     }
 
     /**

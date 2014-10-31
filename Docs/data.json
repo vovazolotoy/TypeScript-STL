@@ -1,8 +1,8 @@
 {
     "project": {
         "name": "libstl",
-        "description": "Standard TypeScript/JavaScript Library: Including DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue",
-        "version": "0.0.2"
+        "description": "Standard TypeScript/JavaScript Library: DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue",
+        "version": "0.0.3"
     },
     "files": {
         "Datastructures/DoublyLinkedList.ts": {
@@ -240,7 +240,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 65,
+            "line": 77,
             "description": "Pops a node from the end of the doubly linked list",
             "itemtype": "method",
             "name": "pop",
@@ -251,7 +251,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 89,
+            "line": 101,
             "description": "Shifts a node from the beginning of the doubly linked list",
             "itemtype": "method",
             "name": "shift",
@@ -262,7 +262,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 113,
+            "line": 125,
             "description": "Pushes an element at the end of the doubly linked list",
             "itemtype": "method",
             "name": "push",
@@ -279,7 +279,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 138,
+            "line": 150,
             "description": "Prepends the doubly linked list with an element",
             "itemtype": "method",
             "name": "unshift",
@@ -296,7 +296,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 163,
+            "line": 175,
             "description": "Peeks at the node from the end of the doubly linked list",
             "itemtype": "method",
             "name": "top",
@@ -307,7 +307,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 173,
+            "line": 185,
             "description": "Peeks at the node from the beginning of the doubly linked list",
             "itemtype": "method",
             "name": "bottom",
@@ -318,7 +318,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 183,
+            "line": 195,
             "description": "Counts the number of elements in the doubly linked list",
             "itemtype": "method",
             "name": "count",
@@ -329,7 +329,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 193,
+            "line": 205,
             "description": "Checks whether the doubly linked list is empty",
             "itemtype": "method",
             "name": "isEmpty",
@@ -340,7 +340,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 203,
+            "line": 215,
             "description": "Rewind iterator back to the start",
             "itemtype": "method",
             "name": "rewind",
@@ -351,7 +351,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 214,
+            "line": 226,
             "description": "Return current list entry",
             "itemtype": "method",
             "name": "current",
@@ -362,7 +362,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 227,
+            "line": 239,
             "description": "Return current node index",
             "itemtype": "method",
             "name": "key",
@@ -373,7 +373,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 237,
+            "line": 249,
             "description": "Move to next entry",
             "itemtype": "method",
             "name": "next",
@@ -384,7 +384,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 248,
+            "line": 260,
             "description": "Move to previous entry",
             "itemtype": "method",
             "name": "prev",
@@ -395,7 +395,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 259,
+            "line": 271,
             "description": "Check whether the doubly linked list contains more nodes",
             "itemtype": "method",
             "name": "valid",
@@ -406,7 +406,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 269,
+            "line": 281,
             "description": "Export the list to array",
             "itemtype": "method",
             "name": "toArray",
@@ -417,7 +417,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 285,
+            "line": 297,
             "description": "Serializes the list to string",
             "itemtype": "method",
             "name": "toString",
@@ -428,7 +428,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 297,
+            "line": 309,
             "description": "DoublyLinkedList element",
             "interface": "",
             "class": "DoublyLinkedList"
@@ -727,11 +727,11 @@
     "warnings": [
         {
             "message": "unknown tag: interface",
-            "line": " Datastructures/DoublyLinkedList.ts:297"
+            "line": " Datastructures/DoublyLinkedList.ts:309"
         },
         {
             "message": "Missing item type\nDoublyLinkedList element",
-            "line": " Datastructures/DoublyLinkedList.ts:297"
+            "line": " Datastructures/DoublyLinkedList.ts:309"
         }
     ]
 }

@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.2</em>
+            <em>API Docs for: 0.0.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -159,7 +159,19 @@ class DoublyLinkedList {
      * @return void
      */
     public add(index:any, value:any):void {
-        // TODO:
+
+        if (index &lt; 0 || index &gt;= this._length) {
+            throw new Error(&quot;Out of bounds&quot;);
+        }
+
+        var i = 0;
+        var current = this._head;
+        while (i &lt; index) {
+            current = current.next;
+            i++;
+        }
+
+        current.value = value;
     }
 
     /**

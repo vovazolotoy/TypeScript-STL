@@ -55,7 +55,16 @@ var DoublyLinkedList = (function () {
      * @return void
      */
     DoublyLinkedList.prototype.add = function (index, value) {
-        // TODO:
+        if (index < 0 || index >= this._length) {
+            throw new Error("Out of bounds");
+        }
+        var i = 0;
+        var current = this._head;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        current.value = value;
     };
     /**
      * Pops a node from the end of the doubly linked list
