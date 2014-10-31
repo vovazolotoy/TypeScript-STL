@@ -1,3 +1,5 @@
+![libstl](libstl.png?raw=true "libstl")
+
 # Introduction
 
 The Standard TypeScript Library (STL) is a collection of interfaces and classes that are meant to solve common problems.
