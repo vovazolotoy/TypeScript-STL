@@ -1,113 +1,174 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'yuidoc2md' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.33
-4 verbose publish [ '.' ]
-5 verbose cache add [ '.', null ]
-6 verbose cache add name=undefined spec="." args=[".",null]
-7 verbose parsed url { protocol: null,
-7 verbose parsed url   slashes: null,
-7 verbose parsed url   auth: null,
-7 verbose parsed url   host: null,
-7 verbose parsed url   port: null,
-7 verbose parsed url   hostname: null,
-7 verbose parsed url   hash: null,
-7 verbose parsed url   search: null,
-7 verbose parsed url   query: null,
-7 verbose parsed url   pathname: '.',
-7 verbose parsed url   path: '.',
-7 verbose parsed url   href: '.' }
-8 silly lockFile 3a52ce78- .
-9 verbose lock . /Users/vovazolotoy/.npm/3a52ce78-.lock
-10 verbose tar pack [ '/Users/vovazolotoy/.npm/libstl/0.0.3/package.tgz', '.' ]
-11 verbose tarball /Users/vovazolotoy/.npm/libstl/0.0.3/package.tgz
-12 verbose folder .
-13 info prepublish libstl@0.0.3
-14 silly lockFile 1f1177db-tar tar://.
-15 verbose lock tar://. /Users/vovazolotoy/.npm/1f1177db-tar.lock
-16 silly lockFile 1b93fd97-toy-npm-libstl-0-0-3-package-tgz tar:///Users/vovazolotoy/.npm/libstl/0.0.3/package.tgz
-17 verbose lock tar:///Users/vovazolotoy/.npm/libstl/0.0.3/package.tgz /Users/vovazolotoy/.npm/1b93fd97-toy-npm-libstl-0-0-3-package-tgz.lock
-18 silly lockFile 1f1177db-tar tar://.
-19 silly lockFile 1f1177db-tar tar://.
-20 silly lockFile 1b93fd97-toy-npm-libstl-0-0-3-package-tgz tar:///Users/vovazolotoy/.npm/libstl/0.0.3/package.tgz
-21 silly lockFile 1b93fd97-toy-npm-libstl-0-0-3-package-tgz tar:///Users/vovazolotoy/.npm/libstl/0.0.3/package.tgz
-22 silly lockFile 77e2a734-zolotoy-npm-libstl-0-0-3-package /Users/vovazolotoy/.npm/libstl/0.0.3/package
-23 verbose lock /Users/vovazolotoy/.npm/libstl/0.0.3/package /Users/vovazolotoy/.npm/77e2a734-zolotoy-npm-libstl-0-0-3-package.lock
-24 silly lockFile 77e2a734-zolotoy-npm-libstl-0-0-3-package /Users/vovazolotoy/.npm/libstl/0.0.3/package
-25 silly lockFile 77e2a734-zolotoy-npm-libstl-0-0-3-package /Users/vovazolotoy/.npm/libstl/0.0.3/package
-26 silly lockFile 3a52ce78- .
-27 silly lockFile 3a52ce78- .
-28 silly publish { name: 'libstl',
-28 silly publish   version: '0.0.3',
-28 silly publish   description: 'Standard TypeScript/JavaScript Library: DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue',
-28 silly publish   keywords:
-28 silly publish    [ 'TypeScript',
-28 silly publish      'Datastructures',
-28 silly publish      'DoublyLinkedList',
-28 silly publish      'Stack',
-28 silly publish      'Queue',
-28 silly publish      'Heap',
-28 silly publish      'MaxHeap',
-28 silly publish      'MinHeap',
-28 silly publish      'PriorityQueue' ],
-28 silly publish   main: 'node-module.js',
-28 silly publish   scripts: { test: 'node Tests/run.js && exit 0' },
-28 silly publish   repository:
-28 silly publish    { type: 'git',
-28 silly publish      url: 'https://github.com/vovazolotoy/TypeScript-STL.git' },
-28 silly publish   author: { name: 'Vova Zolotoy', email: 'vovazolotoy@gmail.com' },
-28 silly publish   license: 'MIT',
-28 silly publish   bugs: { url: 'https://github.com/vovazolotoy/TypeScript-STL/issues' },
-28 silly publish   homepage: 'https://github.com/vovazolotoy/TypeScript-STL',
-28 silly publish   readme: '# Introduction\n\nThe Standard TypeScript Library (STL) is a collection of interfaces and classes that are meant to solve common problems.\n\nSTL provides a set of standard datastructures. They are grouped here by their underlying implementation which usually defines their general field of application.\n\n[API Documentation can be found here](http://vovazolotoy.github.io/docs/)\n\n# Table of Contents\n\n* [DoublyLinkedList](#DoublyLinkedList)\n* [Stack](#Stack)\n* [Queue](#Queue)\n* [Heap](#Heap)\n* [MaxHeap](#MaxHeap)\n* [MinHeap](#MinHeap)\n* [PriorityQueue](#PriorityQueue)\n\n## Doubly Linked Lists\n\nA Doubly Linked List (DLL) is a list of nodes linked in both directions to each others. Iterator\'s operations, access to both ends, addition or removal of nodes have a cost of O(1) when the underlying structure is a DLL. It hence provides a decent implementation for stacks and queues.\n\n* [DoublyLinkedList](#DoublyLinkedList)\n* [Stack](#Stack)\n* [Queue](#Queue)\n\n## Heaps\n\nHeaps are tree-like structures that follow the heap-property: each node is greater than or equal to its children, when compared using the implemented compare method which is global to the heap.\n\n* [Heap](#Heap)\n* [MaxHeap](#MaxHeap)\n* [MinHeap](#MinHeap)\n* [PriorityQueue](#PriorityQueue)',
-28 silly publish   readmeFilename: 'README.md',
-28 silly publish   gitHead: 'ca2d36ca9b135c686f030f3eedb170907ff9971f',
-28 silly publish   _id: 'libstl@0.0.3',
-28 silly publish   _shasum: '309c9b16e89f16395c2f098f2f9f9d7e6ceb6330',
-28 silly publish   _from: '.' }
-29 verbose request where is /libstl
-30 verbose request registry https://registry.npmjs.org/
-31 verbose request id a4e1a661343966ef
-32 verbose url raw /libstl
-33 verbose url resolving [ 'https://registry.npmjs.org/', './libstl' ]
-34 verbose url resolved https://registry.npmjs.org/libstl
-35 verbose request where is https://registry.npmjs.org/libstl
-36 info trying registry request attempt 1 at 00:03:12
-37 http PUT https://registry.npmjs.org/libstl
-38 http 403 https://registry.npmjs.org/libstl
-39 verbose headers { date: 'Fri, 31 Oct 2014 07:03:14 GMT',
-39 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-39 verbose headers   'content-type': 'application/json',
-39 verbose headers   'cache-control': 'max-age=60',
-39 verbose headers   'content-length': '3990',
-39 verbose headers   'accept-ranges': 'bytes',
-39 verbose headers   via: '1.1 varnish',
-39 verbose headers   'x-served-by': 'cache-sjc3134-SJC',
-39 verbose headers   'x-cache': 'MISS',
-39 verbose headers   'x-cache-hits': '0',
-39 verbose headers   'x-timer': 'S1414738993.488992,VS0,VE985',
-39 verbose headers   'keep-alive': 'timeout=10, max=50',
-39 verbose headers   connection: 'Keep-Alive' }
-40 error publish Failed PUT 403
-41 error Error: forbidden cannot modify pre-existing version: 0.0.3
-41 error old={"name":"libstl","version":"0.0.3","description":"Standard TypeScript/JavaScript Library: DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue","keywords":["TypeScript","Datastructures","DoublyLinkedList","Stack","Queue","Heap","MaxHeap","MinHeap","PriorityQueue"],"main":"node-module.js","scripts":{"test":"node Tests/run.js && exit 0"},"repository":{"type":"git","url":"https://github.com/vovazolotoy/TypeScript-STL.git"},"author":{"name":"Vova Zolotoy","email":"vovazolotoy@gmail.com"},"license":"MIT","bugs":{"url":"https://github.com/vovazolotoy/TypeScript-STL/issues"},"homepage":"https://github.com/vovazolotoy/TypeScript-STL","gitHead":"92087217fb3b170b8067e99d3f237ce358b56e4c","_id":"libstl@0.0.3","_shasum":"5618b9c55ca2fe75b9c48188c60351d1597607f2","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"vovazolotoy","email":"vovazolotoy@gmail.com"},"maintainers":[{"name":"vovazolotoy","email":"vovazolotoy@gmail.com"}],"dist":{"shasum":"5618b9c55ca2fe75b9c48188c60351d1597607f2","tarball":"http://registry.npmjs.org/libstl/-/libstl-0.0.3.tgz"}}
-41 error new={"name":"libstl","version":"0.0.3","description":"Standard TypeScript/JavaScript Library: DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue","keywords":["TypeScript","Datastructures","DoublyLinkedList","Stack","Queue","Heap","MaxHeap","MinHeap","PriorityQueue"],"main":"node-module.js","scripts":{"test":"node Tests/run.js && exit 0"},"repository":{"type":"git","url":"https://github.com/vovazolotoy/TypeScript-STL.git"},"author":{"name":"Vova Zolotoy","email":"vovazolotoy@gmail.com"},"license":"MIT","bugs":{"url":"https://github.com/vovazolotoy/TypeScript-STL/issues"},"homepage":"https://github.com/vovazolotoy/TypeScript-STL","readme":"# Introduction\u000a\u000aThe Standard TypeScript Library (STL) is a collection of interfaces and classes that are meant to solve common problems.\u000a\u000aSTL provides a set of standard datastructures. They are grouped here by their underlying implementation which usually defines their general field of application.\u000a\u000a[API Documentation can be found here](http://vovazolotoy.github.io/docs/)\u000a\u000a# Table of Contents\u000a\u000a* [DoublyLinkedList](#DoublyLinkedList)\u000a* [Stack](#Stack)\u000a* [Queue](#Queue)\u000a* [Heap](#Heap)\u000a* [MaxHeap](#MaxHeap)\u000a* [MinHeap](#MinHeap)\u000a* [PriorityQueue](#PriorityQueue)\u000a\u000a## Doubly Linked Lists\u000a\u000aA Doubly Linked List (DLL) is a list of nodes linked in both directions to each others. Iterator's operations, access to both ends, addition or removal of nodes have a cost of O(1) when the underlying structure is a DLL. It hence provides a decent implementation for stacks and queues.\u000a\u000a* [DoublyLinkedList](#DoublyLinkedList)\u000a* [Stack](#Stack)\u000a* [Queue](#Queue)\u000a\u000a## Heaps\u000a\u000aHeaps are tree-like structures that follow the heap-property: each node is greater than or equal to its children, when compared using the implemented compare method which is global to the heap.\u000a\u000a* [Heap](#Heap)\u000a* [MaxHeap](#MaxHeap)\u000a* [MinHeap](#MinHeap)\u000a* [PriorityQueue](#PriorityQueue)","readmeFilename":"README.md","gitHead":"ca2d36ca9b135c686f030f3eedb170907ff9971f","_id":"libstl@0.0.3","_shasum":"309c9b16e89f16395c2f098f2f9f9d7e6ceb6330","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"vovazolotoy","email":"vovazolotoy@gmail.com"},"maintainers":[{"name":"vovazolotoy","email":"vovazolotoy@gmail.com"}],"dist":{"shasum":"309c9b16e89f16395c2f098f2f9f9d7e6ceb6330","tarball":"http://registry.npmjs.org/libstl/-/libstl-0.0.3.tgz"}}: libstl
-41 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
-41 error     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:246:65)
-41 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:236:22)
-41 error     at Request.emit (events.js:98:17)
-41 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1142:14)
-41 error     at Request.emit (events.js:117:20)
-41 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1096:12)
-41 error     at IncomingMessage.emit (events.js:117:20)
-41 error     at _stream_readable.js:943:16
-41 error     at process._tickCallback (node.js:419:13)
-42 error If you need help, you may report this *entire* log,
-42 error including the npm and node versions, at:
-42 error     <http://github.com/npm/npm/issues>
-43 error System Darwin 14.0.0
-44 error command "node" "/usr/local/bin/npm" "publish"
-45 error cwd /Users/vovazolotoy/Documents/Dev/Apps/TypeScript/TypeScript-STL
-46 error node -v v0.10.33
-47 error npm -v 1.4.28
-48 verbose exit [ 1, true ]
+4 verbose cache add [ 'yuidoc2md', null ]
+5 verbose cache add name=undefined spec="yuidoc2md" args=["yuidoc2md",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'yuidoc2md',
+6 verbose parsed url   path: 'yuidoc2md',
+6 verbose parsed url   href: 'yuidoc2md' }
+7 silly lockFile f9b39c92-yuidoc2md yuidoc2md
+8 verbose lock yuidoc2md /Users/vovazolotoy/.npm/f9b39c92-yuidoc2md.lock
+9 silly lockFile f9b39c92-yuidoc2md yuidoc2md
+10 silly lockFile f9b39c92-yuidoc2md yuidoc2md
+11 verbose addNamed [ 'yuidoc2md', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 758b6e65-yuidoc2md yuidoc2md@
+14 verbose lock yuidoc2md@ /Users/vovazolotoy/.npm/758b6e65-yuidoc2md.lock
+15 silly addNameRange { name: 'yuidoc2md', range: '*', hasData: false }
+16 verbose request where is /yuidoc2md
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id 761b8cf3faae8a78
+19 verbose url raw /yuidoc2md
+20 verbose url resolving [ 'https://registry.npmjs.org/', './yuidoc2md' ]
+21 verbose url resolved https://registry.npmjs.org/yuidoc2md
+22 verbose request where is https://registry.npmjs.org/yuidoc2md
+23 info trying registry request attempt 1 at 14:39:55
+24 http GET https://registry.npmjs.org/yuidoc2md
+25 http 200 https://registry.npmjs.org/yuidoc2md
+26 silly registry.get cb [ 200,
+26 silly registry.get   { date: 'Fri, 31 Oct 2014 21:39:56 GMT',
+26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+26 silly registry.get     etag: '"3363QY28K8N2H05UTQQGGW7DQ"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '33425',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     'x-served-by': 'cache-lax1420-LAX',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1414791596.244246,VS0,VE388',
+26 silly registry.get     vary: 'Accept',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 silly addNameRange number 2 { name: 'yuidoc2md', range: '*', hasData: true }
+28 silly addNameRange versions [ 'yuidoc2md',
+28 silly addNameRange   [ '0.0.0',
+28 silly addNameRange     '0.0.1',
+28 silly addNameRange     '0.0.2',
+28 silly addNameRange     '0.0.3',
+28 silly addNameRange     '0.0.4',
+28 silly addNameRange     '0.1.0',
+28 silly addNameRange     '0.2.0',
+28 silly addNameRange     '0.2.1',
+28 silly addNameRange     '0.2.2',
+28 silly addNameRange     '0.2.3',
+28 silly addNameRange     '0.2.4',
+28 silly addNameRange     '0.2.5',
+28 silly addNameRange     '0.2.6',
+28 silly addNameRange     '0.2.7',
+28 silly addNameRange     '0.2.8',
+28 silly addNameRange     '0.2.9',
+28 silly addNameRange     '0.3.0',
+28 silly addNameRange     '0.3.1',
+28 silly addNameRange     '0.4.0',
+28 silly addNameRange     '0.4.1',
+28 silly addNameRange     '0.4.2',
+28 silly addNameRange     '0.4.3',
+28 silly addNameRange     '0.4.4',
+28 silly addNameRange     '0.4.5',
+28 silly addNameRange     '0.4.6',
+28 silly addNameRange     '0.4.7',
+28 silly addNameRange     '0.4.8' ] ]
+29 verbose addNamed [ 'yuidoc2md', '0.4.8' ]
+30 verbose addNamed [ '0.4.8', '0.4.8' ]
+31 silly lockFile 602091c8-yuidoc2md-0-4-8 yuidoc2md@0.4.8
+32 verbose lock yuidoc2md@0.4.8 /Users/vovazolotoy/.npm/602091c8-yuidoc2md-0-4-8.lock
+33 silly lockFile 571a6204-rg-yuidoc2md-yuidoc2md-0-4-8-tgz https://registry.npmjs.org/yuidoc2md/-/yuidoc2md-0.4.8.tgz
+34 verbose lock https://registry.npmjs.org/yuidoc2md/-/yuidoc2md-0.4.8.tgz /Users/vovazolotoy/.npm/571a6204-rg-yuidoc2md-yuidoc2md-0-4-8-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/yuidoc2md/-/yuidoc2md-0.4.8.tgz',
+35 verbose addRemoteTarball   '683b708035b88b379f462d5915281e17306cb32c' ]
+36 info retry fetch attempt 1 at 14:39:56
+37 verbose fetch to= /var/folders/49/pwh4ftgn6jx5bx7l06htz1sc0000gn/T/npm-26161-5k_oWNZ1/registry.npmjs.org/yuidoc2md/-/yuidoc2md-0.4.8.tgz
+38 http GET https://registry.npmjs.org/yuidoc2md/-/yuidoc2md-0.4.8.tgz
+39 http 200 https://registry.npmjs.org/yuidoc2md/-/yuidoc2md-0.4.8.tgz
+40 silly lockFile 571a6204-rg-yuidoc2md-yuidoc2md-0-4-8-tgz https://registry.npmjs.org/yuidoc2md/-/yuidoc2md-0.4.8.tgz
+41 silly lockFile 571a6204-rg-yuidoc2md-yuidoc2md-0-4-8-tgz https://registry.npmjs.org/yuidoc2md/-/yuidoc2md-0.4.8.tgz
+42 silly lockFile 602091c8-yuidoc2md-0-4-8 yuidoc2md@0.4.8
+43 silly lockFile 602091c8-yuidoc2md-0-4-8 yuidoc2md@0.4.8
+44 silly lockFile 758b6e65-yuidoc2md yuidoc2md@
+45 silly lockFile 758b6e65-yuidoc2md yuidoc2md@
+46 silly resolved [ { name: 'yuidoc2md',
+46 silly resolved     version: '0.4.8',
+46 silly resolved     description: 'A yuidoc-to-markdown generator.',
+46 silly resolved     keywords: [ 'generator', 'yuidoc', 'markdown' ],
+46 silly resolved     repository: { type: 'git', url: 'https://github.com/75lb/yuidoc2md' },
+46 silly resolved     main: 'lib/yuidoc2md',
+46 silly resolved     bin: { yuidoc2md: 'bin/cli.js' },
+46 silly resolved     author: { name: 'Lloyd Brookes' },
+46 silly resolved     license: 'MIT',
+46 silly resolved     scripts:
+46 silly resolved      { test: 'mocha --reporter spec test/*.js',
+46 silly resolved        lint: 'jshint bin/*.js lib/*.js test/*.js; echo' },
+46 silly resolved     dependencies:
+46 silly resolved      { 'array-tools': '^1.0.6',
+46 silly resolved        'command-line-args': '^0.2.0',
+46 silly resolved        'console-dope': '~0.3.2',
+46 silly resolved        'file-set': '~0.1',
+46 silly resolved        handlebars: '~2.0',
+46 silly resolved        'more-fs': '~0.4.0',
+46 silly resolved        yuidocjs: '~0.3.44' },
+46 silly resolved     devDependencies: { mocha: '~1.18.0' },
+46 silly resolved     gitHead: '78df0a51cd8ebadaa2b629aed476aa21dca10e82',
+46 silly resolved     bugs: { url: 'https://github.com/75lb/yuidoc2md/issues' },
+46 silly resolved     homepage: 'https://github.com/75lb/yuidoc2md',
+46 silly resolved     _id: 'yuidoc2md@0.4.8',
+46 silly resolved     _shasum: '683b708035b88b379f462d5915281e17306cb32c',
+46 silly resolved     _from: 'yuidoc2md@',
+46 silly resolved     _npmVersion: '1.4.16',
+46 silly resolved     _npmUser: { name: '75lb', email: '75pound@gmail.com' },
+46 silly resolved     maintainers: [ [Object] ],
+46 silly resolved     dist:
+46 silly resolved      { shasum: '683b708035b88b379f462d5915281e17306cb32c',
+46 silly resolved        tarball: 'http://registry.npmjs.org/yuidoc2md/-/yuidoc2md-0.4.8.tgz' },
+46 silly resolved     directories: {},
+46 silly resolved     _resolved: 'https://registry.npmjs.org/yuidoc2md/-/yuidoc2md-0.4.8.tgz' } ]
+47 info install yuidoc2md@0.4.8 into /usr/local/lib
+48 info installOne yuidoc2md@0.4.8
+49 verbose lib/node_modules/yuidoc2md unbuild
+50 verbose tar unpack /Users/vovazolotoy/.npm/yuidoc2md/0.4.8/package.tgz
+51 silly lockFile 623594b9-local-lib-node-modules-yuidoc2md tar:///usr/local/lib/node_modules/yuidoc2md
+52 verbose lock tar:///usr/local/lib/node_modules/yuidoc2md /Users/vovazolotoy/.npm/623594b9-local-lib-node-modules-yuidoc2md.lock
+53 silly lockFile 78c2e814--npm-yuidoc2md-0-4-8-package-tgz tar:///Users/vovazolotoy/.npm/yuidoc2md/0.4.8/package.tgz
+54 verbose lock tar:///Users/vovazolotoy/.npm/yuidoc2md/0.4.8/package.tgz /Users/vovazolotoy/.npm/78c2e814--npm-yuidoc2md-0-4-8-package-tgz.lock
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/yuidoc2md'
+56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/yuidoc2md']
+56 error   errno: 3,
+56 error   code: 'EACCES',
+56 error   path: '/usr/local/lib/node_modules/yuidoc2md',
+56 error   fstream_type: 'Directory',
+56 error   fstream_path: '/usr/local/lib/node_modules/yuidoc2md',
+56 error   fstream_class: 'DirWriter',
+56 error   fstream_stack:
+56 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+56 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+56 error      'Object.oncomplete (fs.js:107:15)' ] }
+57 error Please try running this command again as root/Administrator.
+58 error System Darwin 14.0.0
+59 error command "node" "/usr/local/bin/npm" "install" "-g" "yuidoc2md"
+60 error cwd /Users/vovazolotoy/Documents/Dev/Apps/TypeScript/TypeScript-STL
+61 error node -v v0.10.33
+62 error npm -v 1.4.28
+63 error path /usr/local/lib/node_modules/yuidoc2md
+64 error fstream_path /usr/local/lib/node_modules/yuidoc2md
+65 error fstream_type Directory
+66 error fstream_class DirWriter
+67 error code EACCES
+68 error errno 3
+69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/yuidoc2md'
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+70 error fstream_stack Object.oncomplete (fs.js:107:15)
+71 verbose exit [ 3, true ]
