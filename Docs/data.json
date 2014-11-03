@@ -3,7 +3,7 @@
         "name": "libstl",
         "description": "Standard TypeScript/JavaScript Library: DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue",
         "logo": "https://vovazolotoy.github.io/docs/libstl.png",
-        "version": "0.0.3"
+        "version": "0.0.4"
     },
     "files": {
         "Datastructures/DoublyLinkedList.ts": {
