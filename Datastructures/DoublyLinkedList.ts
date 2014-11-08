@@ -179,7 +179,8 @@ class DoublyLinkedList {
      * @return any  The value of the last node.
      */
     public top():any {
-        return this._tail.value;
+        if (this._tail)
+            return this._tail.value;
     }
 
     /**
@@ -189,7 +190,8 @@ class DoublyLinkedList {
      * @return any  The value of the first node.
      */
     public bottom():any {
-        return this._head.value;
+        if (this._head)
+            return this._head.value;
     }
 
     /**

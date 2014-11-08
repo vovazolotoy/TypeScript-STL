@@ -157,7 +157,8 @@ var DoublyLinkedList = (function () {
      * @return any  The value of the last node.
      */
     DoublyLinkedList.prototype.top = function () {
-        return this._tail.value;
+        if (this._tail)
+            return this._tail.value;
     };
     /**
      * Peeks at the node from the beginning of the doubly linked list
@@ -166,7 +167,8 @@ var DoublyLinkedList = (function () {
      * @return any  The value of the first node.
      */
     DoublyLinkedList.prototype.bottom = function () {
-        return this._head.value;
+        if (this._head)
+            return this._head.value;
     };
     /**
      * Counts the number of elements in the doubly linked list
