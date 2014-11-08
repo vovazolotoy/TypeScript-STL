@@ -86,4 +86,4 @@ assert(JSON.stringify(stack.toArray()) === JSON.stringify(stack2.toArray()));
 assert(JSON.stringify(stack) === JSON.stringify(stack2));
 assert(JSON.stringify(stack.toArray()) !== JSON.stringify([1]));
 
-console.log('...Done');
+console.log('...Done, Success!');
