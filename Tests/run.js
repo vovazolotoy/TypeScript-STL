@@ -26,6 +26,7 @@ var list3 = new DoublyLinkedList();
 var list4 = new DoublyLinkedList();
 
 // DoublyLinkedList::push
+// DoublyLinkedList::toArray
 assert(list.push(1) === undefined);
 assert(JSON.stringify(list.toArray()) === JSON.stringify([1]));
 assert(list.push(2) === undefined);
@@ -64,7 +65,13 @@ assert(list4.top() === undefined);
 assert(list.bottom() === 1);
 assert(list2.bottom() === undefined);
 assert(list3.bottom() === 100000000);
-assert(list4.top() === undefined);
+assert(list4.bottom() === undefined);
+
+// DoublyLinkedList::toString
+assert(list.toString() === "{1->2->3->4}");
+assert(list2.toString() === "{->->false}");
+assert(list3.toString() === "{100000000}");
+assert(list4.toString() === "{}");
 
 
 
@@ -78,3 +85,5 @@ assert(JSON.stringify(stack.toArray()) === JSON.stringify([]));
 assert(JSON.stringify(stack.toArray()) === JSON.stringify(stack2.toArray()));
 assert(JSON.stringify(stack) === JSON.stringify(stack2));
 assert(JSON.stringify(stack.toArray()) !== JSON.stringify([1]));
+
+console.log('...Done');
