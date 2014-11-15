@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.6</em>
+            <em>API Docs for: 0.0.7</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -279,7 +279,8 @@ class DoublyLinkedList {
      * @return any  The value of the last node.
      */
     public top():any {
-        return this._tail.value;
+        if (this._tail)
+            return this._tail.value;
     }
 
     /**
@@ -289,7 +290,8 @@ class DoublyLinkedList {
      * @return any  The value of the first node.
      */
     public bottom():any {
-        return this._head.value;
+        if (this._head)
+            return this._head.value;
     }
 
     /**

@@ -3,7 +3,7 @@
         "name": "libstl",
         "description": "Standard TypeScript/JavaScript Library: DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue",
         "logo": "https://vovazolotoy.github.io/docs/libstl.png",
-        "version": "0.0.6"
+        "version": "0.0.7"
     },
     "files": {
         "Datastructures/DoublyLinkedList.ts": {
@@ -308,7 +308,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 185,
+            "line": 186,
             "description": "Peeks at the node from the beginning of the doubly linked list",
             "itemtype": "method",
             "name": "bottom",
@@ -319,7 +319,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 195,
+            "line": 197,
             "description": "Counts the number of elements in the doubly linked list",
             "itemtype": "method",
             "name": "count",
@@ -330,7 +330,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 205,
+            "line": 207,
             "description": "Checks whether the doubly linked list is empty",
             "itemtype": "method",
             "name": "isEmpty",
@@ -341,7 +341,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 215,
+            "line": 217,
             "description": "Rewind iterator back to the start",
             "itemtype": "method",
             "name": "rewind",
@@ -352,7 +352,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 226,
+            "line": 228,
             "description": "Return current list entry",
             "itemtype": "method",
             "name": "current",
@@ -363,7 +363,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 239,
+            "line": 241,
             "description": "Return current node index",
             "itemtype": "method",
             "name": "key",
@@ -374,7 +374,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 249,
+            "line": 251,
             "description": "Move to next entry",
             "itemtype": "method",
             "name": "next",
@@ -385,7 +385,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 260,
+            "line": 262,
             "description": "Move to previous entry",
             "itemtype": "method",
             "name": "prev",
@@ -396,7 +396,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 271,
+            "line": 273,
             "description": "Check whether the doubly linked list contains more nodes",
             "itemtype": "method",
             "name": "valid",
@@ -407,7 +407,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 281,
+            "line": 283,
             "description": "Export the list to array",
             "itemtype": "method",
             "name": "toArray",
@@ -418,7 +418,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 297,
+            "line": 299,
             "description": "Serializes the list to string",
             "itemtype": "method",
             "name": "toString",
@@ -429,7 +429,7 @@
         },
         {
             "file": "Datastructures/DoublyLinkedList.ts",
-            "line": 309,
+            "line": 311,
             "description": "DoublyLinkedList element",
             "interface": "",
             "class": "DoublyLinkedList"
@@ -728,11 +728,11 @@
     "warnings": [
         {
             "message": "unknown tag: interface",
-            "line": " Datastructures/DoublyLinkedList.ts:309"
+            "line": " Datastructures/DoublyLinkedList.ts:311"
         },
         {
             "message": "Missing item type\nDoublyLinkedList element",
-            "line": " Datastructures/DoublyLinkedList.ts:309"
+            "line": " Datastructures/DoublyLinkedList.ts:311"
         }
     ]
 }
