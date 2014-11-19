@@ -73,6 +73,51 @@ assert(list2.toString() === "{->->false}");
 assert(list3.toString() === "{100000000}");
 assert(list4.toString() === "{}");
 
+// DoublyLinkedList::add
+assert(list.add(1,1) === undefined);
+assert(JSON.stringify(list.toArray()) === JSON.stringify([1,1,3,4]));
+assert(list.add(0,0.5) === undefined);
+assert(JSON.stringify(list.toArray()) === JSON.stringify([0.5,1,3,4]));
+assert(list.add(2,2) === undefined);
+assert(JSON.stringify(list.toArray()) === JSON.stringify([0.5,1,2,4]));
+assert(list.add(3,3) === undefined);
+assert(JSON.stringify(list.toArray()) === JSON.stringify([0.5,1,2,3]));
+
+// DoublyLinkedList::pop
+assert(list.pop() === 3);
+assert(list.pop() === 2);
+assert(list.pop() === 1);
+assert(list.pop() === 0.5);
+
+// DoublyLinkedList::shift
+list.push(1);
+list.push(2);
+list.push(3);
+list.push(4);
+assert(list.shift() === 1);
+assert(list.shift() === 2);
+assert(list.shift() === 3);
+assert(list.shift() === 4);
+
+// DoublyLinkedList::unshift
+assert(list.unshift(1) === undefined);
+assert(JSON.stringify(list.toArray()) === JSON.stringify([1]));
+assert(list.unshift(2) === undefined);
+assert(JSON.stringify(list.toArray()) === JSON.stringify([2, 1]));
+assert(list.unshift(3) === undefined);
+assert(JSON.stringify(list.toArray()) === JSON.stringify([3, 2, 1]));
+assert(list.unshift(4) === undefined);
+assert(JSON.stringify(list.toArray()) === JSON.stringify([4, 3, 2, 1]));
+
+/**
+
+ current
+ key
+ next
+ prev
+ rewind
+ valid
+ */
 
 
 Stack = require('./../Datastructures/Stack.js');
