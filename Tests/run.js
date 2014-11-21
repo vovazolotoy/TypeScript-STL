@@ -14,5 +14,7 @@ global.assert = function(condition, message) {
 }
 
 require('./doublylinkedlist.js');
+require('./stack.js');
+require('./queue.js');
 
 console.log('Testing: Done, Success!');
