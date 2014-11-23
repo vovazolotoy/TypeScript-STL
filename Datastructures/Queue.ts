@@ -27,7 +27,7 @@ class Queue extends DoublyLinkedList {
      * @return any  The value of the dequeued node.
      */
     public dequeue() {
-        return this.pop();
+        return this.shift();
     }
 }
 

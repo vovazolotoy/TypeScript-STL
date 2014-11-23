@@ -33,7 +33,7 @@ var Queue = (function (_super) {
      * @return any  The value of the dequeued node.
      */
     Queue.prototype.dequeue = function () {
-        return this.pop();
+        return this.shift();
     };
     return Queue;
 })(DoublyLinkedList);

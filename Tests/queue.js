@@ -27,6 +27,18 @@ assert(JSON.stringify(queue2.toArray()) === JSON.stringify([undefined, null]));
 assert(queue2.enqueue(false) === undefined);
 assert(JSON.stringify(queue2.toArray()) === JSON.stringify([undefined, null, false]));
 
-/**
- dequeue
- */
+// Queue::dequeue
+assert(queue.dequeue() === 1);
+assert(JSON.stringify(queue.toArray()) === JSON.stringify([2, 3, 4]));
+assert(queue.dequeue() === 2);
+assert(JSON.stringify(queue.toArray()) === JSON.stringify([3, 4]));
+assert(queue.dequeue() === 3);
+assert(JSON.stringify(queue.toArray()) === JSON.stringify([4]));
+assert(queue.dequeue() === 4);
+assert(JSON.stringify(queue.toArray()) === JSON.stringify([]));
+assert(queue2.dequeue() === undefined);
+assert(JSON.stringify(queue2.toArray()) === JSON.stringify([null, false]));
+assert(queue2.dequeue() === null);
+assert(JSON.stringify(queue2.toArray()) === JSON.stringify([false]));
+assert(queue2.dequeue() === false);
+assert(JSON.stringify(queue2.toArray()) === JSON.stringify([]));
