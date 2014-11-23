@@ -83,6 +83,10 @@ var DoublyLinkedList = (function () {
             this._tail.next = null;
         }
         this._length--;
+        if (this._length === 0) {
+            delete this._head;
+            this._head = null;
+        }
         return value;
     };
     /**

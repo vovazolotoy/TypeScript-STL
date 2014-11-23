@@ -95,6 +95,11 @@ class DoublyLinkedList {
 
         this._length--;
 
+        if (this._length === 0) {
+            delete this._head;
+            this._head = null;
+        }
+
         return value;
     }
 
