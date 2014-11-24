@@ -7,7 +7,7 @@ console.log('Testing: Queue');
  */
 var Queue = require('./../Datastructures/Queue.js');
 
-// testing stacks
+// testing Queue
 var queue = new Queue();
 var queue2 = new Queue();
 
