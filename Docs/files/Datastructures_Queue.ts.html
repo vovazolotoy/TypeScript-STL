@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.8</em>
+            <em>API Docs for: 0.0.10</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -127,7 +127,7 @@ class Queue extends DoublyLinkedList {
      * @return any  The value of the dequeued node.
      */
     public dequeue() {
-        return this.pop();
+        return this.shift();
     }
 }
 

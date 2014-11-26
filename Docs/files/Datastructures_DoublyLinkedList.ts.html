@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.8</em>
+            <em>API Docs for: 0.0.10</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -194,6 +194,11 @@ class DoublyLinkedList {
         }
 
         this._length--;
+
+        if (this._length === 0) {
+            delete this._head;
+            this._head = null;
+        }
 
         return value;
     }
