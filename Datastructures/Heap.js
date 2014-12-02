@@ -218,6 +218,15 @@ var Heap = (function () {
         // start with root and recursively goes to each node
         return this._displayNode(0);
     };
+    /**
+     * Serializes the heap to array
+     *
+     * @method toArray
+     * @return Array   The serialized array.
+     */
+    Heap.prototype.toArray = function () {
+        return this._tree;
+    };
     return Heap;
 })();
 module.exports = Heap;
