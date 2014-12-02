@@ -44,13 +44,17 @@ class Heap {
      */
     private shiftUp(i:number):void {
         while (i > 0) {
-            if (this._tree[i] <= this._tree[this._parent(i)]) {
-
+            var p = this._parent(i);
+            console.log('Compare i=' + i + ' [' + this._tree[i] + '] with parent '
+            + p + ' [' + this._tree[p] + '] ');
+            var compare = this.compare(this._tree[i], this._tree[p]);
+            if (compare < 0) {
+                console.log(' ... swap +');
                 var swap = this._tree[i];
-                this._tree[i] = this._tree[this._parent(i)];
-                this._tree[this._parent(i)] = swap;
-
+                this._tree[i] = this._tree[p];
+                this._tree[p] = swap;
             } else {
+                console.log(' ... swap -/ BREAK');
                 break;
             }
 
@@ -101,7 +105,7 @@ class Heap {
      */
     public insert(value:any):void {
         this._tree.push(value);
-        this.shiftUp(this._tree.length);
+        this.shiftUp(this._tree.length - 1);
     }
 
     /**
@@ -199,7 +203,13 @@ class Heap {
      * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
      */
     public compare(first:any, second:any):number {
-        return 1;
+        if (first > second) {
+            return 1;
+        } else if (first == second) {
+            return 0;
+        } else {
+            return -1;
+        }
     }
 
     /**
