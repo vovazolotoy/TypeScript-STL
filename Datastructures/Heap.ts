@@ -45,16 +45,12 @@ class Heap {
     private shiftUp(i:number):void {
         while (i > 0) {
             var p = this._parent(i);
-            console.log('Compare i=' + i + ' [' + this._tree[i] + '] with parent '
-            + p + ' [' + this._tree[p] + '] ');
             var compare = this.compare(this._tree[i], this._tree[p]);
             if (compare < 0) {
-                console.log(' ... swap +');
                 var swap = this._tree[i];
                 this._tree[i] = this._tree[p];
                 this._tree[p] = swap;
             } else {
-                console.log(' ... swap -/ BREAK');
                 break;
             }
 
