@@ -44,12 +44,12 @@ class Heap {
      */
     private shiftUp(i:number):void {
         while (i > 0) {
-            var p = this._parent(i);
-            var compare = this.compare(this._tree[i], this._tree[p]);
+            var parent = this._parent(i);
+            var compare = this.compare(this._tree[i], this._tree[parent]);
             if (compare < 0) {
                 var swap = this._tree[i];
-                this._tree[i] = this._tree[p];
-                this._tree[p] = swap;
+                this._tree[i] = this._tree[parent];
+                this._tree[parent] = swap;
             } else {
                 break;
             }
@@ -66,14 +66,14 @@ class Heap {
      */
     private shiftDown(i:number):void {
         while (i > 0) {
-            if (this._tree[i] <= this._tree[this._parent(i)]) {
-
+            var parent = this._parent(i);
+            var compare = this.compare(this._tree[i], this._tree[parent]);
+            if (compare > 0) {
                 var swap = this._tree[i];
-                this._tree[i] = this._tree[this._parent(i)];
-                this._tree[this._parent(i)] = swap;
-
+                this._tree[i] = this._tree[parent];
+                this._tree[parent] = swap;
             } else {
-                //return;
+                break;
             }
 
             i = this._parent(i);
