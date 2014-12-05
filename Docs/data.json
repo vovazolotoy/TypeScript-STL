@@ -661,7 +661,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 205,
+            "line": 211,
             "itemtype": "method",
             "name": "_displayNode",
             "params": [
@@ -687,12 +687,23 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 234,
+            "line": 240,
             "description": "Serializes the heap to string",
             "itemtype": "method",
             "name": "toString",
             "return": {
                 "description": "string   The serialized string."
+            },
+            "class": "Heap"
+        },
+        {
+            "file": "Datastructures/Heap.ts",
+            "line": 251,
+            "description": "Serializes the heap to array",
+            "itemtype": "method",
+            "name": "toArray",
+            "return": {
+                "description": "Array   The serialized array."
             },
             "class": "Heap"
         },
