@@ -15,6 +15,7 @@ var Heap = (function () {
         this._tree = [];
     }
     /**
+     * Get index of parent element in binary tree stored in array
      *
      * @method _parent
      * @param n
@@ -25,6 +26,7 @@ var Heap = (function () {
         return Math.floor(n - 1 / 2);
     };
     /**
+     * Get index of right child element in binary tree stored in array
      *
      * @method _child
      * @param n
@@ -35,6 +37,7 @@ var Heap = (function () {
         return 2 * n + 1;
     };
     /**
+     * Shift elements in binary tree
      *
      * @method shiftUp
      * @param i
@@ -43,8 +46,7 @@ var Heap = (function () {
     Heap.prototype.shiftUp = function (i) {
         while (i > 0) {
             var parent = this._parent(i);
-            var compare = this.compare(this._tree[i], this._tree[parent]);
-            if (compare < 0) {
+            if (this.compare(this._tree[i], this._tree[parent]) < 0) {
                 var swap = this._tree[i];
                 this._tree[i] = this._tree[parent];
                 this._tree[parent] = swap;
@@ -56,24 +58,24 @@ var Heap = (function () {
         }
     };
     /**
+     * Shift elements in binary tree
      *
      * @method shiftDown
      * @param i
      * @private
      */
     Heap.prototype.shiftDown = function (i) {
-        while (i > 0) {
-            var parent = this._parent(i);
-            var compare = this.compare(this._tree[i], this._tree[parent]);
-            if (compare > 0) {
+        while (i < this._tree.length) {
+            var child = this._child(i);
+            if (this.compare(this._tree[i], this._tree[child]) > 0) {
                 var swap = this._tree[i];
-                this._tree[i] = this._tree[parent];
-                this._tree[parent] = swap;
+                this._tree[i] = this._tree[child];
+                this._tree[child] = swap;
             }
             else {
                 break;
             }
-            i = this._parent(i);
+            i = this._child(i);
         }
     };
     /**
@@ -85,6 +87,7 @@ var Heap = (function () {
     Heap.prototype.extract = function () {
         var extracted = this._tree[0];
         this._tree[0] = this._tree.pop();
+        this.shiftDown(0);
         return extracted;
     };
     /**
@@ -105,7 +108,11 @@ var Heap = (function () {
      * @return any The value of the node on the top.
      */
     Heap.prototype.top = function () {
-        return this._tree[0];
+        var top = this._tree[0];
+        this._tree[0] = this._tree[this._tree.length - 1];
+        delete this._tree[this._tree.length - 1];
+        this.shiftDown(0);
+        return top;
     };
     /**
      * Counts the number of elements in the heap

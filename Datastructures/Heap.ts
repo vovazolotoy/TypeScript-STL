@@ -15,6 +15,7 @@ class Heap {
     private _tree:Array<any> = [];
 
     /**
+     * Get index of parent element in binary tree stored in array
      *
      * @method _parent
      * @param n
@@ -26,6 +27,7 @@ class Heap {
     }
 
     /**
+     * Get index of right child element in binary tree stored in array
      *
      * @method _child
      * @param n
@@ -37,6 +39,7 @@ class Heap {
     }
 
     /**
+     * Shift elements in binary tree
      *
      * @method shiftUp
      * @param i
@@ -45,8 +48,7 @@ class Heap {
     private shiftUp(i:number):void {
         while (i > 0) {
             var parent = this._parent(i);
-            var compare = this.compare(this._tree[i], this._tree[parent]);
-            if (compare < 0) {
+            if (this.compare(this._tree[i], this._tree[parent]) < 0) {
                 var swap = this._tree[i];
                 this._tree[i] = this._tree[parent];
                 this._tree[parent] = swap;
@@ -59,24 +61,24 @@ class Heap {
     }
 
     /**
+     * Shift elements in binary tree
      *
      * @method shiftDown
      * @param i
      * @private
      */
     private shiftDown(i:number):void {
-        while (i > 0) {
-            var parent = this._parent(i);
-            var compare = this.compare(this._tree[i], this._tree[parent]);
-            if (compare > 0) {
+        while (i < this._tree.length) {
+            var child = this._child(i);
+            if (this.compare(this._tree[i], this._tree[child]) > 0) {
                 var swap = this._tree[i];
-                this._tree[i] = this._tree[parent];
-                this._tree[parent] = swap;
+                this._tree[i] = this._tree[child];
+                this._tree[child] = swap;
             } else {
                 break;
             }
 
-            i = this._parent(i);
+            i = this._child(i);
         }
     }
 
@@ -89,6 +91,9 @@ class Heap {
     public extract():any {
         var extracted:any = this._tree[0];
         this._tree[0] = this._tree.pop();
+
+        this.shiftDown(0);
+
         return extracted;
     }
 
@@ -111,7 +116,12 @@ class Heap {
      * @return any The value of the node on the top.
      */
     public top():any {
-        return this._tree[0];
+        var top = this._tree[0];
+        this._tree[0] = this._tree[this._tree.length - 1];
+        delete this._tree[this._tree.length - 1];
+
+        this.shiftDown(0);
+        return top;
     }
 
     /**

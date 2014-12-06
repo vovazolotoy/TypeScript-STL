@@ -10,6 +10,7 @@ var Heap = require('./../Datastructures/Heap.js');
 // testing Heap
 var heap = new Heap();
 var heap2 = new Heap();
+var heap3 = new Heap();
 
 // Heap::insert
 // Heap::toArray
@@ -37,6 +38,20 @@ assert(heap2.insert(0) === undefined);
 assert(JSON.stringify(heap2.toArray()) === JSON.stringify([0,1,2,3,10]));
 assert(heap2.insert(null) === undefined);
 assert(JSON.stringify(heap2.toArray()) === JSON.stringify([null, 0,1,2,3,10]));
+assert(heap3.insert(11) === undefined);
+assert(heap3.insert(3) === undefined);
+assert(heap3.insert(4) === undefined);
+assert(heap3.insert(5) === undefined);
+assert(heap3.insert(8) === undefined);
+assert(heap3.insert(2) === undefined);
+assert(heap3.insert(7) === undefined);
+console.log(heap3+"");
+heap3.extract();
+console.log(heap3+"");
+heap3.extract();
+console.log(heap3+"");
+heap3.extract();
+console.log(heap3+"");
 
 /*
  compare
