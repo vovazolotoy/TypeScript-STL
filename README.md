@@ -34,3 +34,14 @@ Heaps are tree-like structures that follow the heap-property: each node is great
 * [MaxHeap](#MaxHeap)
 * [MinHeap](#MinHeap)
 * [PriorityQueue](#PriorityQueue)
+
+## DoublyLinkedList
+```
+var DoublyLinkedList = require('libstl').DoublyLinkedList;
+
+var list = new DoublyLinkedList();
+list.push(1);
+list.push(2);
+list.push(3);
+```
+
