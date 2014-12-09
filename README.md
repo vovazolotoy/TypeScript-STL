@@ -43,7 +43,6 @@ var list = new DoublyLinkedList();
 list.push(1);
 list.push(2);
 list.push(3);
-list.pop();
 ```
 
 ## Stack
@@ -51,6 +50,10 @@ list.pop();
 var Stack = require('libstl').Stack;
 
 var stack = new Stack();
+stack.push('A');
+stack.push('B');
+stack.push('C');
+stack.pop(); // = 'C'
 ```
 
 ## Queue
@@ -58,6 +61,10 @@ var stack = new Stack();
 var Queue = require('libstl').Queue;
 
 var queue = new Queue();
+queue.enqueue('A');
+queue.enqueue('B');
+queue.enqueue('C');
+queue.dequeue() // = 'A'
 ```
 
 ## Heap
