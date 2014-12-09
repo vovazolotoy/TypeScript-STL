@@ -43,6 +43,7 @@ var list = new DoublyLinkedList();
 list.push(1);
 list.push(2);
 list.push(3);
+list.toString(); // = {1->2->3}
 ```
 
 ## Stack
@@ -64,7 +65,7 @@ var queue = new Queue();
 queue.enqueue('A');
 queue.enqueue('B');
 queue.enqueue('C');
-queue.dequeue() // = 'A'
+queue.dequeue(); // = 'A'
 ```
 
 ## Heap
@@ -72,6 +73,10 @@ queue.dequeue() // = 'A'
 var Heap = require('libstl').Heap;
 
 var heap = new Heap();
+heap.insert(1);
+heap.insert(2);
+heap.insert(3);
+heap.top(); // = 1
 ```
 
 ## MaxHeap
@@ -79,6 +84,10 @@ var heap = new Heap();
 var MaxHeap = require('libstl').MaxHeap;
 
 var heap = new MaxHeap();
+heap.insert(1);
+heap.insert(2);
+heap.insert(3);
+heap.top(); // = 3
 ```
 
 ## MinHeap
@@ -86,6 +95,10 @@ var heap = new MaxHeap();
 var MinHeap = require('libstl').MinHeap;
 
 var heap = new MinHeap();
+heap.insert(1);
+heap.insert(2);
+heap.insert(3);
+heap.top(); // = 1
 ```
 
 ## PriorityQueue
