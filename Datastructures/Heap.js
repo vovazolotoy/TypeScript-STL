@@ -15,7 +15,7 @@ var Heap = (function () {
         this._tree = [];
     }
     /**
-     * Get index of right child element in binary tree stored in array
+     * Get index of left child element in binary tree stored in array
      *
      * @method _child
      * @param n
@@ -37,13 +37,13 @@ var Heap = (function () {
         return Math.floor(n - 1 / 2);
     };
     /**
-     * Shift elements in binary tree
+     * Sift elements in binary tree
      *
-     * @method shiftUp
+     * @method siftUp
      * @param i
      * @private
      */
-    Heap.prototype.shiftUp = function (i) {
+    Heap.prototype.siftUp = function (i) {
         while (i > 0) {
             var parent = this._parent(i);
             if (this.compare(this._tree[i], this._tree[parent]) < 0) {
@@ -60,17 +60,22 @@ var Heap = (function () {
     /**
      * Shift elements in binary tree
      *
-     * @method shiftDown
+     * @method siftDown
      * @param i
      * @private
      */
-    Heap.prototype.shiftDown = function (i) {
+    Heap.prototype.siftDown = function (i) {
         while (i < this._tree.length) {
             var child = this._child(i);
             if (this.compare(this._tree[i], this._tree[child]) > 0) {
                 var swap = this._tree[i];
                 this._tree[i] = this._tree[child];
                 this._tree[child] = swap;
+            }
+            else if (this.compare(this._tree[i], this._tree[child + 1]) > 0) {
+                var swap = this._tree[i];
+                this._tree[i] = this._tree[child + 1];
+                this._tree[child + 1] = swap;
             }
             else {
                 break;
@@ -81,13 +86,12 @@ var Heap = (function () {
     /**
      * Extracts a node from top of the heap and sift up
      *
-     * @method extract
      * @return any The value of the extracted node.
      */
     Heap.prototype.extract = function () {
         var extracted = this._tree[0];
         this._tree[0] = this._tree.pop();
-        this.shiftDown(0);
+        this.siftDown(0);
         return extracted;
     };
     /**
@@ -99,7 +103,7 @@ var Heap = (function () {
      */
     Heap.prototype.insert = function (value) {
         this._tree.push(value);
-        this.shiftUp(this._tree.length - 1);
+        this.siftUp(this._tree.length - 1);
     };
     /**
      * Peeks at the node from the top of the heap

@@ -48,7 +48,7 @@ class Heap {
     private siftUp(i:number):void {
         while (i > 0) {
             var parent = this._parent(i);
-            if (this.compare(this._tree[i], this._tree[parent]) * this.TYPE < 0) {
+            if (this.compare(this._tree[i], this._tree[parent]) < 0) {
                 var swap = this._tree[i];
                 this._tree[i] = this._tree[parent];
                 this._tree[parent] = swap;
@@ -104,7 +104,6 @@ class Heap {
                 this._tree[i] = this._tree[child + 1];
                 this._tree[child + 1] = swap;
             } else {
-                {
                 break;
             }
 
@@ -112,12 +111,11 @@ class Heap {
         }
     }
 
-    /**
-     * Extracts a node from top of the heap and sift up
-     *
-     * @method extract
-     * @return any The value of the extracted node.
-     */
+	/**
+	 * Extracts a node from top of the heap and sift up
+	 *
+	 * @return any The value of the extracted node.
+	 */
     public extract():any {
         var extracted:any = this._tree[0];
         this._tree[0] = this._tree.pop();
