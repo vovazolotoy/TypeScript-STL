@@ -95,19 +95,19 @@ class Heap {
          */
         while (i < this._tree.length) {
             var child = this._child(i);
-            if (this.compare(this._tree[i], this._tree[child]) > 0) {
+            if (this.compare(this._tree[i], this._tree[child]) > 0 ||
+				this.compare(this._tree[i], this._tree[child + 1]) > 0) {
+				var si = child;
+				if (this._tree[si] > this._tree[si+1]) {
+					si++;
+				}
                 var swap = this._tree[i];
-                this._tree[i] = this._tree[child];
-                this._tree[child] = swap;
-            } else if (this.compare(this._tree[i], this._tree[child + 1]) > 0) {
-                var swap = this._tree[i];
-                this._tree[i] = this._tree[child + 1];
-                this._tree[child + 1] = swap;
+                this._tree[i] = this._tree[si];
+                this._tree[si] = swap;
             } else {
                 break;
             }
-
-            i = this._child(i);
+			i = si;
         }
     }
 
@@ -117,10 +117,18 @@ class Heap {
 	 * @return any The value of the extracted node.
 	 */
     public extract():any {
-        var extracted:any = this._tree[0];
-        this._tree[0] = this._tree.pop();
+		if (this._tree.length === 0) {
+			throw new Error("Can't extract from an empty data structure");
+		}
 
-        this.siftDown(0);
+		var extracted:any = this._tree[0];
+
+		if (this._tree.length === 1) {
+			this._tree = [];
+		} else {
+			this._tree[0] = this._tree.pop();
+			this.siftDown(0);
+		}
 
         return extracted;
     }
@@ -252,7 +260,7 @@ class Heap {
      */
     private _displayNode(node, prefix = '', last = true) {
 
-        var line = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + this._tree[node];
+		var line = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + (this._tree[node] || '*');
 
         if (last) {
             prefix += '   ';
