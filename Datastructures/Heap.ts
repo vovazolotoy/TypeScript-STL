@@ -39,21 +39,16 @@ class Heap {
     }
 
     /**
-     * Shift elements in binary tree
+     * Sift elements in binary tree
      *
-     * @method shiftUp
+     * @method siftUp
      * @param i
      * @private
      */
-    private shiftUp(i:number):void {
-        /*
-        for (i = heap->count++; i > 0 && heap->cmp(&heap->elements[(i-1)/2], elem, cmp_userdata TSRMLS_CC) < 0; i = (i-1)/2) {
-            heap->elements[i] = heap->elements[(i-1)/2];
-        }
-        */
+    private siftUp(i:number):void {
         while (i > 0) {
             var parent = this._parent(i);
-            if (this.compare(this._tree[i], this._tree[parent]) < 0) {
+            if (this.compare(this._tree[i], this._tree[parent]) * this.TYPE < 0) {
                 var swap = this._tree[i];
                 this._tree[i] = this._tree[parent];
                 this._tree[parent] = swap;
@@ -68,11 +63,11 @@ class Heap {
     /**
      * Shift elements in binary tree
      *
-     * @method shiftDown
+     * @method siftDown
      * @param i
      * @private
      */
-    private shiftDown(i:number):void {
+    private siftDown(i:number):void {
         /*
          for (i = 0; i < limit; i = j) {
 		 Find smaller child
@@ -127,7 +122,7 @@ class Heap {
         var extracted:any = this._tree[0];
         this._tree[0] = this._tree.pop();
 
-        this.shiftDown(0);
+        this.siftDown(0);
 
         return extracted;
     }
@@ -141,7 +136,7 @@ class Heap {
      */
     public insert(value:any):void {
         this._tree.push(value);
-        this.shiftUp(this._tree.length - 1);
+        this.siftUp(this._tree.length - 1);
     }
 
     /**
