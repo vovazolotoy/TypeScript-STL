@@ -15,17 +15,6 @@ var Heap = (function () {
         this._tree = [];
     }
     /**
-     * Get index of parent element in binary tree stored in array
-     *
-     * @method _parent
-     * @param n
-     * @return number
-     * @private
-     */
-    Heap.prototype._parent = function (n) {
-        return Math.floor(n - 1 / 2);
-    };
-    /**
      * Get index of right child element in binary tree stored in array
      *
      * @method _child
@@ -35,6 +24,17 @@ var Heap = (function () {
      */
     Heap.prototype._child = function (n) {
         return 2 * n + 1;
+    };
+    /**
+     * Get index of parent element in binary tree stored in array
+     *
+     * @method _parent
+     * @param n
+     * @return number
+     * @private
+     */
+    Heap.prototype._parent = function (n) {
+        return Math.floor(n - 1 / 2);
     };
     /**
      * Shift elements in binary tree
@@ -108,11 +108,7 @@ var Heap = (function () {
      * @return any The value of the node on the top.
      */
     Heap.prototype.top = function () {
-        var top = this._tree[0];
-        this._tree[0] = this._tree[this._tree.length - 1];
-        delete this._tree[this._tree.length - 1];
-        this.shiftDown(0);
-        return top;
+        return this._tree[0];
     };
     /**
      * Counts the number of elements in the heap
@@ -187,7 +183,7 @@ var Heap = (function () {
      * @method compare
      * @param first The value of the first node being compared.
      * @param second The value of the second node being compared.
-     * @return number Result of the comparison, positive integer if value1 is greater than value2, 0 if they are equal, negative integer otherwise.
+     * @return number Result of the comparison, positive integer if first is greater than second, 0 if they are equal, negative integer otherwise.
      * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
      */
     Heap.prototype.compare = function (first, second) {

@@ -15,6 +15,18 @@ class Heap {
     private _tree:Array<any> = [];
 
     /**
+     * Get index of left child element in binary tree stored in array
+     *
+     * @method _child
+     * @param n
+     * @return number
+     * @private
+     */
+    private _child(n:number):number {
+        return 2 * n + 1;
+    }
+
+    /**
      * Get index of parent element in binary tree stored in array
      *
      * @method _parent
@@ -27,18 +39,6 @@ class Heap {
     }
 
     /**
-     * Get index of right child element in binary tree stored in array
-     *
-     * @method _child
-     * @param n
-     * @return number
-     * @private
-     */
-    private _child(n:number):number {
-        return 2 * n + 1;
-    }
-
-    /**
      * Shift elements in binary tree
      *
      * @method shiftUp
@@ -46,6 +46,11 @@ class Heap {
      * @private
      */
     private shiftUp(i:number):void {
+        /*
+        for (i = heap->count++; i > 0 && heap->cmp(&heap->elements[(i-1)/2], elem, cmp_userdata TSRMLS_CC) < 0; i = (i-1)/2) {
+            heap->elements[i] = heap->elements[(i-1)/2];
+        }
+        */
         while (i > 0) {
             var parent = this._parent(i);
             if (this.compare(this._tree[i], this._tree[parent]) < 0) {
@@ -68,13 +73,43 @@ class Heap {
      * @private
      */
     private shiftDown(i:number):void {
+        /*
+         for (i = 0; i < limit; i = j) {
+		 Find smaller child
+        j = i * 2 + 1;
+        if(j != heap->count && heap->cmp(&heap->elements[j+1], &heap->elements[j], cmp_userdata TSRMLS_CC) > 0) {
+            j++; /* next child is bigger
+        }
+
+         swap elements between two levels
+        if(heap->cmp(bottom, &heap->elements[j], cmp_userdata TSRMLS_CC) < 0) {
+            heap->elements[i] = heap->elements[j];
+        } else {
+            break;
+        }
+    }
+
+         Delete[edit]
+         The procedure for deleting the root from the heap (effectively extracting the maximum element in a max-heap or the minimum element in a min-heap) and restoring the properties is called down-heap (also known as bubble-down, percolate-down, sift-down, trickle down, heapify-down, cascade-down and extract-min/max).
+
+         Replace the root of the heap with the last element on the last level.
+         Compare the new root with its children; if they are in the correct order, stop.
+         If not, swap the element with one of its children and return to the previous step. (Swap with its smaller child in a min-heap and its larger child in a max-heap.)
+         So, if we have the same max-heap as before
+
+         */
         while (i < this._tree.length) {
             var child = this._child(i);
             if (this.compare(this._tree[i], this._tree[child]) > 0) {
                 var swap = this._tree[i];
                 this._tree[i] = this._tree[child];
                 this._tree[child] = swap;
+            } else if (this.compare(this._tree[i], this._tree[child + 1]) > 0) {
+                var swap = this._tree[i];
+                this._tree[i] = this._tree[child + 1];
+                this._tree[child + 1] = swap;
             } else {
+                {
                 break;
             }
 
@@ -116,12 +151,7 @@ class Heap {
      * @return any The value of the node on the top.
      */
     public top():any {
-        var top = this._tree[0];
-        this._tree[0] = this._tree[this._tree.length - 1];
-        delete this._tree[this._tree.length - 1];
-
-        this.shiftDown(0);
-        return top;
+        return this._tree[0];
     }
 
     /**
@@ -205,7 +235,7 @@ class Heap {
      * @method compare
      * @param first The value of the first node being compared.
      * @param second The value of the second node being compared.
-     * @return number Result of the comparison, positive integer if value1 is greater than value2, 0 if they are equal, negative integer otherwise.
+     * @return number Result of the comparison, positive integer if first is greater than second, 0 if they are equal, negative integer otherwise.
      * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
      */
     public compare(first:any, second:any):number {
