@@ -17,7 +17,7 @@
                 <h1><img src="https://vovazolotoy.github.io/docs/libstl.png" title="libstl"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.11</em>
+            <em>API Docs for: 0.0.14</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -102,6 +102,18 @@
                             private _tree:Array&lt;any&gt; = [];
                         
                             /**
+                             * Get index of left child element in binary tree stored in array
+                             *
+                             * @method _child
+                             * @param n
+                             * @return number
+                             * @private
+                             */
+                            private _child(n:number):number {
+                                return 2 * n + 1;
+                            }
+                        
+                            /**
                              * Get index of parent element in binary tree stored in array
                              *
                              * @method _parent
@@ -114,72 +126,82 @@
                             }
                         
                             /**
-                             * Get index of right child element in binary tree stored in array
+                             * Swap 2 elements in binary tree
                              *
-                             * @method _child
-                             * @param n
-                             * @return number
+                             * @method _swap
+                             * @param first
+                             * @param second
                              * @private
                              */
-                            private _child(n:number):number {
-                                return 2 * n + 1;
+                            private _swap(first:number, second:number):void {
+                                var swap = this._tree[first];
+                                this._tree[first] = this._tree[second];
+                                this._tree[second] = swap;
                             }
                         
                             /**
-                             * Shift elements in binary tree
+                             * Sift elements in binary tree
                              *
-                             * @method shiftUp
+                             * @method _siftUp
                              * @param i
                              * @private
                              */
-                            private shiftUp(i:number):void {
+                            private _siftUp(i:number):void {
                                 while (i &gt; 0) {
                                     var parent = this._parent(i);
                                     if (this.compare(this._tree[i], this._tree[parent]) &lt; 0) {
-                                        var swap = this._tree[i];
-                                        this._tree[i] = this._tree[parent];
-                                        this._tree[parent] = swap;
+                                        this._swap(i, parent);
                                     } else {
                                         break;
                                     }
-                        
-                                    i = this._parent(i);
+                                    i = parent;
                                 }
                             }
                         
                             /**
                              * Shift elements in binary tree
                              *
-                             * @method shiftDown
+                             * @method _siftDown
                              * @param i
                              * @private
                              */
-                            private shiftDown(i:number):void {
+                            private _siftDown(i:number):void {
                                 while (i &lt; this._tree.length) {
                                     var child = this._child(i);
-                                    if (this.compare(this._tree[i], this._tree[child]) &gt; 0) {
+                                    if (this.compare(this._tree[i], this._tree[child]) &gt; 0 ||
+                                        this.compare(this._tree[i], this._tree[child + 1]) &gt; 0) {
+                                        var si = child;
+                                        if (this._tree[si] &gt; this._tree[si+1]) {
+                                            si++;
+                                        }
                                         var swap = this._tree[i];
-                                        this._tree[i] = this._tree[child];
-                                        this._tree[child] = swap;
+                                        this._tree[i] = this._tree[si];
+                                        this._tree[si] = swap;
                                     } else {
                                         break;
                                     }
-                        
-                                    i = this._child(i);
+                                    i = si;
                                 }
                             }
                         
                             /**
                              * Extracts a node from top of the heap and sift up
                              *
-                             * @method extract
                              * @return any The value of the extracted node.
                              */
                             public extract():any {
-                                var extracted:any = this._tree[0];
-                                this._tree[0] = this._tree.pop();
+                                if (this._tree.length === 0) {
+                                    throw new Error(&quot;Can&#x27;t extract from an empty data structure&quot;);
+                                }
                         
-                                this.shiftDown(0);
+                                var extracted:any = this._tree[0];
+                        
+                                if (this._tree.length === 1) {
+                                    this._tree = [];
+                                } else {
+                                    this._tree[0] = this._tree.pop();
+                                    this._siftDown(0);
+                                }
                         
                                 return extracted;
                             }
@@ -193,7 +215,7 @@
                              */
                             public insert(value:any):void {
                                 this._tree.push(value);
-                                this.shiftUp(this._tree.length - 1);
+                                this._siftUp(this._tree.length - 1);
                             }
                         
                             /**
@@ -203,12 +225,7 @@
                              * @return any The value of the node on the top.
                              */
                             public top():any {
-                                var top = this._tree[0];
-                                this._tree[0] = this._tree[this._tree.length - 1];
-                                delete this._tree[this._tree.length - 1];
-                        
-                                this.shiftDown(0);
-                                return top;
+                                return this._tree[0];
                             }
                         
                             /**
@@ -292,7 +309,7 @@
                              * @method compare
                              * @param first The value of the first node being compared.
                              * @param second The value of the second node being compared.
-                             * @return number Result of the comparison, positive integer if value1 is greater than value2, 0 if they are equal, negative integer otherwise.
+                             * @return number Result of the comparison, positive integer if first is greater than second, 0 if they are equal, negative integer otherwise.
                              * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
                              */
                             public compare(first:any, second:any):number {
@@ -316,7 +333,7 @@
                              */
                             private _displayNode(node, prefix = &#x27;&#x27;, last = true) {
                         
-                                var line = prefix + (last ? (prefix ? &#x27;└──&#x27; : &#x27;   &#x27;) : &#x27;├──&#x27;) + this._tree[node];
+                                var line = prefix + (last ? (prefix ? &#x27;└──&#x27; : &#x27;   &#x27;) : &#x27;├──&#x27;) + (this._tree[node] || &#x27;*&#x27;);
                         
                                 if (last) {
                                     prefix += &#x27;   &#x27;;
