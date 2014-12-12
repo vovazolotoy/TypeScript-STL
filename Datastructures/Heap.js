@@ -37,34 +37,45 @@ var Heap = (function () {
         return Math.floor(n - 1 / 2);
     };
     /**
+     * Swap 2 elements in binary tree
+     *
+     * @method _swap
+     * @param first
+     * @param second
+     * @private
+     */
+    Heap.prototype._swap = function (first, second) {
+        var swap = this._tree[first];
+        this._tree[first] = this._tree[second];
+        this._tree[second] = swap;
+    };
+    /**
      * Sift elements in binary tree
      *
-     * @method siftUp
+     * @method _siftUp
      * @param i
      * @private
      */
-    Heap.prototype.siftUp = function (i) {
+    Heap.prototype._siftUp = function (i) {
         while (i > 0) {
             var parent = this._parent(i);
             if (this.compare(this._tree[i], this._tree[parent]) < 0) {
-                var swap = this._tree[i];
-                this._tree[i] = this._tree[parent];
-                this._tree[parent] = swap;
+                this._swap(i, parent);
             }
             else {
                 break;
             }
-            i = this._parent(i);
+            i = parent;
         }
     };
     /**
      * Shift elements in binary tree
      *
-     * @method siftDown
+     * @method _siftDown
      * @param i
      * @private
      */
-    Heap.prototype.siftDown = function (i) {
+    Heap.prototype._siftDown = function (i) {
         while (i < this._tree.length) {
             var child = this._child(i);
             if (this.compare(this._tree[i], this._tree[child]) > 0 || this.compare(this._tree[i], this._tree[child + 1]) > 0) {
@@ -97,7 +108,7 @@ var Heap = (function () {
         }
         else {
             this._tree[0] = this._tree.pop();
-            this.siftDown(0);
+            this._siftDown(0);
         }
         return extracted;
     };
@@ -110,7 +121,7 @@ var Heap = (function () {
      */
     Heap.prototype.insert = function (value) {
         this._tree.push(value);
-        this.siftUp(this._tree.length - 1);
+        this._siftUp(this._tree.length - 1);
     };
     /**
      * Peeks at the node from the top of the heap

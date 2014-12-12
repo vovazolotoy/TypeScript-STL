@@ -38,61 +38,47 @@ class Heap {
         return Math.floor(n - 1 / 2);
     }
 
+	/**
+	 * Swap 2 elements in binary tree
+	 *
+	 * @method _swap
+	 * @param first
+	 * @param second
+	 * @private
+	 */
+	private _swap(first:number, second:number):void {
+		var swap = this._tree[first];
+		this._tree[first] = this._tree[second];
+		this._tree[second] = swap;
+	}
+
     /**
      * Sift elements in binary tree
      *
-     * @method siftUp
+     * @method _siftUp
      * @param i
      * @private
      */
-    private siftUp(i:number):void {
+    private _siftUp(i:number):void {
         while (i > 0) {
             var parent = this._parent(i);
             if (this.compare(this._tree[i], this._tree[parent]) < 0) {
-                var swap = this._tree[i];
-                this._tree[i] = this._tree[parent];
-                this._tree[parent] = swap;
+				this._swap(i, parent);
             } else {
                 break;
             }
-
-            i = this._parent(i);
+            i = parent;
         }
     }
 
     /**
      * Shift elements in binary tree
      *
-     * @method siftDown
+     * @method _siftDown
      * @param i
-     * @private
+	 * @private
      */
-    private siftDown(i:number):void {
-        /*
-         for (i = 0; i < limit; i = j) {
-		 Find smaller child
-        j = i * 2 + 1;
-        if(j != heap->count && heap->cmp(&heap->elements[j+1], &heap->elements[j], cmp_userdata TSRMLS_CC) > 0) {
-            j++; /* next child is bigger
-        }
-
-         swap elements between two levels
-        if(heap->cmp(bottom, &heap->elements[j], cmp_userdata TSRMLS_CC) < 0) {
-            heap->elements[i] = heap->elements[j];
-        } else {
-            break;
-        }
-    }
-
-         Delete[edit]
-         The procedure for deleting the root from the heap (effectively extracting the maximum element in a max-heap or the minimum element in a min-heap) and restoring the properties is called down-heap (also known as bubble-down, percolate-down, sift-down, trickle down, heapify-down, cascade-down and extract-min/max).
-
-         Replace the root of the heap with the last element on the last level.
-         Compare the new root with its children; if they are in the correct order, stop.
-         If not, swap the element with one of its children and return to the previous step. (Swap with its smaller child in a min-heap and its larger child in a max-heap.)
-         So, if we have the same max-heap as before
-
-         */
+    private _siftDown(i:number):void {
         while (i < this._tree.length) {
             var child = this._child(i);
             if (this.compare(this._tree[i], this._tree[child]) > 0 ||
@@ -127,7 +113,7 @@ class Heap {
 			this._tree = [];
 		} else {
 			this._tree[0] = this._tree.pop();
-			this.siftDown(0);
+			this._siftDown(0);
 		}
 
         return extracted;
@@ -142,7 +128,7 @@ class Heap {
      */
     public insert(value:any):void {
         this._tree.push(value);
-        this.siftUp(this._tree.length - 1);
+        this._siftUp(this._tree.length - 1);
     }
 
     /**
