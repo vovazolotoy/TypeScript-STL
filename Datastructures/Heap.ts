@@ -38,19 +38,19 @@ class Heap {
         return Math.floor(n - 1 / 2);
     }
 
-	/**
-	 * Swap 2 elements in binary tree
-	 *
-	 * @method _swap
-	 * @param first
-	 * @param second
-	 * @private
-	 */
-	private _swap(first:number, second:number):void {
-		var swap = this._tree[first];
-		this._tree[first] = this._tree[second];
-		this._tree[second] = swap;
-	}
+    /**
+     * Swap 2 elements in binary tree
+     *
+     * @method _swap
+     * @param first
+     * @param second
+     * @private
+     */
+    private _swap(first:number, second:number):void {
+        var swap = this._tree[first];
+        this._tree[first] = this._tree[second];
+        this._tree[second] = swap;
+    }
 
     /**
      * Sift elements in binary tree
@@ -63,7 +63,7 @@ class Heap {
         while (i > 0) {
             var parent = this._parent(i);
             if (this.compare(this._tree[i], this._tree[parent]) < 0) {
-				this._swap(i, parent);
+                this._swap(i, parent);
             } else {
                 break;
             }
@@ -76,45 +76,45 @@ class Heap {
      *
      * @method _siftDown
      * @param i
-	 * @private
+     * @private
      */
     private _siftDown(i:number):void {
         while (i < this._tree.length) {
             var child = this._child(i);
             if (this.compare(this._tree[i], this._tree[child]) > 0 ||
-				this.compare(this._tree[i], this._tree[child + 1]) > 0) {
-				var si = child;
-				if (this._tree[si] > this._tree[si+1]) {
-					si++;
-				}
+                this.compare(this._tree[i], this._tree[child + 1]) > 0) {
+                var si = child;
+                if (this._tree[si] > this._tree[si+1]) {
+                    si++;
+                }
                 var swap = this._tree[i];
                 this._tree[i] = this._tree[si];
                 this._tree[si] = swap;
             } else {
                 break;
             }
-			i = si;
+            i = si;
         }
     }
 
-	/**
-	 * Extracts a node from top of the heap and sift up
-	 *
-	 * @return any The value of the extracted node.
-	 */
+    /**
+     * Extracts a node from top of the heap and sift up
+     *
+     * @return any The value of the extracted node.
+     */
     public extract():any {
-		if (this._tree.length === 0) {
-			throw new Error("Can't extract from an empty data structure");
-		}
+        if (this._tree.length === 0) {
+            throw new Error("Can't extract from an empty data structure");
+        }
 
-		var extracted:any = this._tree[0];
+        var extracted:any = this._tree[0];
 
-		if (this._tree.length === 1) {
-			this._tree = [];
-		} else {
-			this._tree[0] = this._tree.pop();
-			this._siftDown(0);
-		}
+        if (this._tree.length === 1) {
+            this._tree = [];
+        } else {
+            this._tree[0] = this._tree.pop();
+            this._siftDown(0);
+        }
 
         return extracted;
     }
@@ -246,7 +246,7 @@ class Heap {
      */
     private _displayNode(node, prefix = '', last = true) {
 
-		var line = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + (this._tree[node] || '*');
+        var line = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + (this._tree[node] || '*');
 
         if (last) {
             prefix += '   ';
