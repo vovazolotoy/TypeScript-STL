@@ -15,6 +15,7 @@ var MaxHeap = (function (_super) {
     __extends(MaxHeap, _super);
     function MaxHeap() {
         _super.apply(this, arguments);
+        this._type = Heap.MAX;
     }
     return MaxHeap;
 })(Heap);

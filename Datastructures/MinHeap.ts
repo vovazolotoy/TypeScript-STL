@@ -9,6 +9,8 @@ import Heap = require('./Heap');
  */
 class MinHeap extends Heap {
 
+    protected _type = Heap.MIN;
+
 }
 
 export = MinHeap;

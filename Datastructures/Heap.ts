@@ -6,6 +6,18 @@
 class Heap {
 
     /**
+     *
+     * @type {number}
+     */
+    public static MAX:number = 1;
+
+    /**
+     *
+     * @type {number}
+     */
+    public static MIN:number = -1;
+
+    /**
      * Binary tree storage array
      *
      * @property _tree
@@ -13,6 +25,13 @@ class Heap {
      * @private
      */
     private _tree:Array<any> = [];
+
+    /**
+     *
+     * @type {number}
+     * @private
+     */
+    protected _type:number = Heap.MIN;
 
     /**
      * Get index of left child element in binary tree stored in array
@@ -62,7 +81,7 @@ class Heap {
     private _siftUp(i:number):void {
         while (i > 0) {
             var parent = this._parent(i);
-            if (this.compare(this._tree[i], this._tree[parent]) < 0) {
+            if (this.compare(this._tree[i], this._tree[parent]) * this._type > 0) {
                 this._swap(i, parent);
             } else {
                 break;
@@ -84,7 +103,7 @@ class Heap {
             if (this.compare(this._tree[i], this._tree[child]) > 0 ||
                 this.compare(this._tree[i], this._tree[child + 1]) > 0) {
                 var si = child;
-                if (this._tree[si] > this._tree[si+1]) {
+                if ((this._tree[si] - this._tree[si+1]) * this._type > 0) {
                     si++;
                 }
                 var swap = this._tree[i];

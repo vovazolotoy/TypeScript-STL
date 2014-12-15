@@ -13,6 +13,12 @@ var Heap = (function () {
          * @private
          */
         this._tree = [];
+        /**
+         *
+         * @type {number}
+         * @private
+         */
+        this._type = Heap.MIN;
     }
     /**
      * Get index of left child element in binary tree stored in array
@@ -59,7 +65,7 @@ var Heap = (function () {
     Heap.prototype._siftUp = function (i) {
         while (i > 0) {
             var parent = this._parent(i);
-            if (this.compare(this._tree[i], this._tree[parent]) < 0) {
+            if (this.compare(this._tree[i], this._tree[parent]) * this._type > 0) {
                 this._swap(i, parent);
             }
             else {
@@ -80,7 +86,7 @@ var Heap = (function () {
             var child = this._child(i);
             if (this.compare(this._tree[i], this._tree[child]) > 0 || this.compare(this._tree[i], this._tree[child + 1]) > 0) {
                 var si = child;
-                if (this._tree[si] > this._tree[si + 1]) {
+                if ((this._tree[si] - this._tree[si + 1]) * this._type > 0) {
                     si++;
                 }
                 var swap = this._tree[i];
@@ -265,6 +271,16 @@ var Heap = (function () {
     Heap.prototype.toArray = function () {
         return this._tree;
     };
+    /**
+     *
+     * @type {number}
+     */
+    Heap.MAX = 1;
+    /**
+     *
+     * @type {number}
+     */
+    Heap.MIN = -1;
     return Heap;
 })();
 module.exports = Heap;

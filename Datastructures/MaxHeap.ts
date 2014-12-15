@@ -9,6 +9,8 @@ import Heap = require('./Heap');
  */
 class MaxHeap extends Heap {
 
+    protected _type = Heap.MAX;
+
 }
 
 export = MaxHeap;

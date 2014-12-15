@@ -15,6 +15,7 @@ var MinHeap = (function (_super) {
     __extends(MinHeap, _super);
     function MinHeap() {
         _super.apply(this, arguments);
+        this._type = Heap.MIN;
     }
     return MinHeap;
 })(Heap);
