@@ -7,13 +7,13 @@ class Heap {
 
     /**
      *
-     * @type {number}
+     * @type number
      */
     public static MAX:number = 1;
 
     /**
      *
-     * @type {number}
+     * @type number
      */
     public static MIN:number = -1;
 
@@ -28,10 +28,10 @@ class Heap {
 
     /**
      *
-     * @type {number}
+     * @type number
      * @private
      */
-    protected _type:number = Heap.MIN;
+    protected _type:number = Heap.MAX;
 
     /**
      * Get index of left child element in binary tree stored in array
@@ -91,7 +91,7 @@ class Heap {
     }
 
     /**
-     * Shift elements in binary tree
+     * Sift down elements in binary tree
      *
      * @method _siftDown
      * @param i
@@ -100,19 +100,17 @@ class Heap {
     private _siftDown(i:number):void {
         while (i < this._tree.length) {
             var child = this._child(i);
-            if (this.compare(this._tree[i], this._tree[child]) > 0 ||
-                this.compare(this._tree[i], this._tree[child + 1]) > 0) {
-                var si = child;
-                if ((this._tree[si] - this._tree[si+1]) * this._type > 0) {
-                    si++;
+            if (this.compare(this._tree[i], this._tree[child]) * this._type < 0 ||
+                this.compare(this._tree[i], this._tree[child + 1]) * this._type < 0) {
+                var sift = child;
+                if ((this._tree[sift] - this._tree[sift+1]) * this._type < 0) {
+                    sift = child + 1;
                 }
-                var swap = this._tree[i];
-                this._tree[i] = this._tree[si];
-                this._tree[si] = swap;
+                this._swap(i, sift);
             } else {
                 break;
             }
-            i = si;
+            i = sift;
         }
     }
 
@@ -122,6 +120,7 @@ class Heap {
      * @return any The value of the extracted node.
      */
     public extract():any {
+        //console.log(this._tree);
         if (this._tree.length === 0) {
             throw new Error("Can't extract from an empty data structure");
         }
@@ -134,6 +133,8 @@ class Heap {
             this._tree[0] = this._tree.pop();
             this._siftDown(0);
         }
+        //console.log(this._tree);
+        //console.log("---");
 
         return extracted;
     }

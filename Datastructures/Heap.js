@@ -15,10 +15,10 @@ var Heap = (function () {
         this._tree = [];
         /**
          *
-         * @type {number}
+         * @type number
          * @private
          */
-        this._type = Heap.MIN;
+        this._type = Heap.MAX;
     }
     /**
      * Get index of left child element in binary tree stored in array
@@ -75,7 +75,7 @@ var Heap = (function () {
         }
     };
     /**
-     * Shift elements in binary tree
+     * Sift down elements in binary tree
      *
      * @method _siftDown
      * @param i
@@ -84,19 +84,17 @@ var Heap = (function () {
     Heap.prototype._siftDown = function (i) {
         while (i < this._tree.length) {
             var child = this._child(i);
-            if (this.compare(this._tree[i], this._tree[child]) > 0 || this.compare(this._tree[i], this._tree[child + 1]) > 0) {
-                var si = child;
-                if ((this._tree[si] - this._tree[si + 1]) * this._type > 0) {
-                    si++;
+            if (this.compare(this._tree[i], this._tree[child]) * this._type < 0 || this.compare(this._tree[i], this._tree[child + 1]) * this._type < 0) {
+                var sift = child;
+                if ((this._tree[sift] - this._tree[sift + 1]) * this._type < 0) {
+                    sift = child + 1;
                 }
-                var swap = this._tree[i];
-                this._tree[i] = this._tree[si];
-                this._tree[si] = swap;
+                this._swap(i, sift);
             }
             else {
                 break;
             }
-            i = si;
+            i = sift;
         }
     };
     /**
@@ -105,6 +103,7 @@ var Heap = (function () {
      * @return any The value of the extracted node.
      */
     Heap.prototype.extract = function () {
+        //console.log(this._tree);
         if (this._tree.length === 0) {
             throw new Error("Can't extract from an empty data structure");
         }
@@ -116,6 +115,8 @@ var Heap = (function () {
             this._tree[0] = this._tree.pop();
             this._siftDown(0);
         }
+        //console.log(this._tree);
+        //console.log("---");
         return extracted;
     };
     /**
@@ -273,12 +274,12 @@ var Heap = (function () {
     };
     /**
      *
-     * @type {number}
+     * @type number
      */
     Heap.MAX = 1;
     /**
      *
-     * @type {number}
+     * @type number
      */
     Heap.MIN = -1;
     return Heap;
