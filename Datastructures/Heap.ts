@@ -83,10 +83,10 @@ class Heap {
             var parent = this._parent(i);
             if (this.compare(this._tree[i], this._tree[parent]) * this._type > 0) {
                 this._swap(i, parent);
+                i = parent;
             } else {
                 break;
             }
-            i = parent;
         }
     }
 
@@ -133,8 +133,6 @@ class Heap {
             this._tree[0] = this._tree.pop();
             this._siftDown(0);
         }
-        //console.log(this._tree);
-        //console.log("---");
 
         return extracted;
     }
