@@ -17,7 +17,7 @@
                 <h1><img src="https://vovazolotoy.github.io/docs/libstl.png" title="libstl"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.14</em>
+            <em>API Docs for: 0.0.18</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -93,6 +93,18 @@
                         class Heap {
                         
                             /**
+                             *
+                             * @type number
+                             */
+                            public static MAX:number = 1;
+                        
+                            /**
+                             *
+                             * @type number
+                             */
+                            public static MIN:number = -1;
+                        
+                            /**
                              * Binary tree storage array
                              *
                              * @property _tree
@@ -100,6 +112,13 @@
                              * @private
                              */
                             private _tree:Array&lt;any&gt; = [];
+                        
+                            /**
+                             *
+                             * @type number
+                             * @private
+                             */
+                            protected _type:number = Heap.MAX;
                         
                             /**
                              * Get index of left child element in binary tree stored in array
@@ -149,17 +168,17 @@
                             private _siftUp(i:number):void {
                                 while (i &gt; 0) {
                                     var parent = this._parent(i);
-                                    if (this.compare(this._tree[i], this._tree[parent]) &lt; 0) {
+                                    if (this.compare(this._tree[i], this._tree[parent]) * this._type &gt; 0) {
                                         this._swap(i, parent);
+                                        i = parent;
                                     } else {
                                         break;
                                     }
-                                    i = parent;
                                 }
                             }
                         
                             /**
-                             * Shift elements in binary tree
+                             * Sift down elements in binary tree
                              *
                              * @method _siftDown
                              * @param i
@@ -168,19 +187,17 @@
                             private _siftDown(i:number):void {
                                 while (i &lt; this._tree.length) {
                                     var child = this._child(i);
-                                    if (this.compare(this._tree[i], this._tree[child]) &gt; 0 ||
-                                        this.compare(this._tree[i], this._tree[child + 1]) &gt; 0) {
-                                        var si = child;
-                                        if (this._tree[si] &gt; this._tree[si+1]) {
-                                            si++;
+                                    if (this.compare(this._tree[i], this._tree[child]) * this._type &lt; 0 ||
+                                        this.compare(this._tree[i], this._tree[child + 1]) * this._type &lt; 0) {
+                                        var sift = child;
+                                        if ((this._tree[sift] - this._tree[sift+1]) * this._type &lt; 0) {
+                                            sift = child + 1;
                                         }
-                                        var swap = this._tree[i];
-                                        this._tree[i] = this._tree[si];
-                                        this._tree[si] = swap;
+                                        this._swap(i, sift);
                                     } else {
                                         break;
                                     }
-                                    i = si;
+                                    i = sift;
                                 }
                             }
                         
@@ -190,6 +207,7 @@
                              * @return any The value of the extracted node.
                              */
                             public extract():any {
+                                //console.log(this._tree);
                                 if (this._tree.length === 0) {
                                     throw new Error(&quot;Can&#x27;t extract from an empty data structure&quot;);
                                 }
