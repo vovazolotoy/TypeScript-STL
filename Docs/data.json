@@ -3,7 +3,7 @@
         "name": "libstl",
         "description": "Standard TypeScript/JavaScript Library: DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue",
         "logo": "https://vovazolotoy.github.io/docs/libstl.png",
-        "version": "0.0.18"
+        "version": "0.0.20"
     },
     "files": {
         "Datastructures/DoublyLinkedList.ts": {
@@ -748,6 +748,38 @@
                 "description": "Array   The serialized array."
             },
             "class": "Heap"
+        },
+        {
+            "file": "Datastructures/PriorityQueue.ts",
+            "line": 14,
+            "description": "Adds an element to the queue",
+            "itemtype": "method",
+            "name": "enqueue",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The value to enqueue."
+                },
+                {
+                    "name": "priority",
+                    "description": "The priority of value."
+                }
+            ],
+            "return": {
+                "description": "void"
+            },
+            "class": "PriorityQueue"
+        },
+        {
+            "file": "Datastructures/PriorityQueue.ts",
+            "line": 26,
+            "description": "Dequeues a node from the queue",
+            "itemtype": "method",
+            "name": "dequeue",
+            "return": {
+                "description": "any  The value of the dequeued node."
+            },
+            "class": "PriorityQueue"
         },
         {
             "file": "Datastructures/Queue.ts",

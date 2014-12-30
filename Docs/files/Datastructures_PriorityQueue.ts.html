@@ -17,7 +17,7 @@
                 <h1><img src="https://vovazolotoy.github.io/docs/libstl.png" title="libstl"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.18</em>
+            <em>API Docs for: 0.0.20</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -95,6 +95,30 @@
                          * @extends Heap
                          */
                         class PriorityQueue extends Heap {
+                        
+                            protected _type = Heap.MAX;
+                        
+                            /**
+                             * Adds an element to the queue
+                             *
+                             * @method enqueue
+                             * @param value The value to enqueue.
+                             * @param priority The priority of value.
+                             * @return void
+                             */
+                            public enqueue(value:any, priority:any) {
+                                //return this.push(value);
+                            }
+                        
+                            /**
+                             * Dequeues a node from the queue
+                             *
+                             * @method dequeue
+                             * @return any  The value of the dequeued node.
+                             */
+                            public dequeue() {
+                                // return this.shift();
+                            }
                         
                         }
                         

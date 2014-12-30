@@ -6,7 +6,7 @@
 class Heap {
 
     /**
-     *
+     * 
      * @type number
      */
     public static MAX:number = 1;
