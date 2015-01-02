@@ -9,4 +9,3 @@ var MinHeap = require('./../Datastructures/MinHeap.js');
 
 // testing MinHeap
 var heap = new MinHeap();
-var heap2 = new MinHeap();
