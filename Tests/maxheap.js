@@ -31,3 +31,15 @@ assert(JSON.stringify(heap.toArray()) === JSON.stringify([1000, 90, 10, 5, 4, 3,
 assert(heap.insert(7) === undefined);
 assert(JSON.stringify(heap.toArray()) === JSON.stringify([1000, 90, 10, 7, 5, 4, 3, 2, 1]));
 
+// MaxHeap::extract
+assert(heap.extract() === 1000);
+assert(heap.extract() === 90);
+assert(heap.extract() === 10);
+assert(heap.extract() === 7);
+assert(heap.extract() === 5);
+assert(heap.extract() === 4);
+assert(heap.extract() === 3);
+assert(heap.extract() === 2);
+assert(heap.extract() === 1);
+/*
+ */
