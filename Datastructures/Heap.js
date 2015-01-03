@@ -51,6 +51,7 @@ var Heap = (function () {
      * @private
      */
     Heap.prototype._swap = function (first, second) {
+        console.log('swap ' + first + ' ' + second);
         var swap = this._tree[first];
         this._tree[first] = this._tree[second];
         this._tree[second] = swap;
@@ -63,6 +64,7 @@ var Heap = (function () {
      * @private
      */
     Heap.prototype._siftUp = function (i) {
+        console.log('_siftUp ' + i + '   // tree length ' + this._tree.length);
         while (i > 0) {
             var parent = this._parent(i);
             if (this.compare(this._tree[i], this._tree[parent]) * this._type > 0) {
@@ -82,6 +84,7 @@ var Heap = (function () {
      * @private
      */
     Heap.prototype._siftDown = function (i) {
+        console.log('_siftDown ' + i + '   // tree length ' + this._tree.length);
         while (i < this._tree.length) {
             var child = this._child(i);
             if (this.compare(this._tree[i], this._tree[child]) * this._type < 0 || this.compare(this._tree[i], this._tree[child + 1]) * this._type < 0) {
@@ -89,7 +92,8 @@ var Heap = (function () {
                 if ((this._tree[sift] - this._tree[sift + 1]) * this._type < 0) {
                     sift = child + 1;
                 }
-                this._swap(i, sift);
+                if (sift < this._tree.length)
+                    this._swap(i, sift);
             }
             else {
                 break;
@@ -258,6 +262,7 @@ var Heap = (function () {
      * @return string   The serialized string.
      */
     Heap.prototype.toString = function () {
+        console.log('Tree Length ' + this._tree.length);
         // start with root and recursively goes to each node
         return this._displayNode(0);
     };

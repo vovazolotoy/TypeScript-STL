@@ -66,6 +66,7 @@ class Heap {
      * @private
      */
     private _swap(first:number, second:number):void {
+        console.log('swap ' + first + ' ' + second);
         var swap = this._tree[first];
         this._tree[first] = this._tree[second];
         this._tree[second] = swap;
@@ -79,6 +80,7 @@ class Heap {
      * @private
      */
     private _siftUp(i:number):void {
+        console.log('_siftUp ' + i + '   // tree length ' + this._tree.length);
         while (i > 0) {
             var parent = this._parent(i);
             if (this.compare(this._tree[i], this._tree[parent]) * this._type > 0) {
@@ -98,6 +100,7 @@ class Heap {
      * @private
      */
     private _siftDown(i:number):void {
+        console.log('_siftDown ' + i + '   // tree length ' + this._tree.length);
         while (i < this._tree.length) {
             var child = this._child(i);
             if (this.compare(this._tree[i], this._tree[child]) * this._type < 0 ||
@@ -106,6 +109,7 @@ class Heap {
                 if ((this._tree[sift] - this._tree[sift+1]) * this._type < 0) {
                     sift = child + 1;
                 }
+                if (sift < this._tree.length)
                 this._swap(i, sift);
             } else {
                 break;
@@ -289,6 +293,7 @@ class Heap {
      * @return string   The serialized string.
      */
     public toString():string {
+        console.log('Tree Length ' + this._tree.length);
         // start with root and recursively goes to each node
         return this._displayNode(0);
     }
