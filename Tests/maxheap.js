@@ -41,5 +41,7 @@ assert(heap.extract() === 4);
 assert(heap.extract() === 3);
 assert(heap.extract() === 2);
 assert(heap.extract() === 1);
+
 /*
- */
+
+*/

@@ -66,7 +66,6 @@ class Heap {
      * @private
      */
     private _swap(first:number, second:number):void {
-        console.log('swap ' + first + ' ' + second);
         var swap = this._tree[first];
         this._tree[first] = this._tree[second];
         this._tree[second] = swap;
@@ -80,7 +79,6 @@ class Heap {
      * @private
      */
     private _siftUp(i:number):void {
-        console.log('_siftUp ' + i + '   // tree length ' + this._tree.length);
         while (i > 0) {
             var parent = this._parent(i);
             if (this.compare(this._tree[i], this._tree[parent]) * this._type > 0) {
@@ -100,7 +98,6 @@ class Heap {
      * @private
      */
     private _siftDown(i:number):void {
-        console.log('_siftDown ' + i + '   // tree length ' + this._tree.length);
         while (i < this._tree.length) {
             var child = this._child(i);
             if (this.compare(this._tree[i], this._tree[child]) * this._type < 0 ||

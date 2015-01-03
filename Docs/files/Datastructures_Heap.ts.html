@@ -17,7 +17,7 @@
                 <h1><img src="https://vovazolotoy.github.io/docs/libstl.png" title="libstl"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.20</em>
+            <em>API Docs for: 0.1.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -193,6 +193,7 @@
                                         if ((this._tree[sift] - this._tree[sift+1]) * this._type &lt; 0) {
                                             sift = child + 1;
                                         }
+                                        if (sift &lt; this._tree.length)
                                         this._swap(i, sift);
                                     } else {
                                         break;
@@ -376,6 +377,7 @@
                              * @return string   The serialized string.
                              */
                             public toString():string {
+                                console.log(&#x27;Tree Length &#x27; + this._tree.length);
                                 // start with root and recursively goes to each node
                                 return this._displayNode(0);
                             }
