@@ -86,9 +86,13 @@ var Heap = (function () {
     Heap.prototype._siftDown = function (i) {
         while (i < this._tree.length) {
             var child = this._child(i);
-            if (this.compare(this._tree[i], this._tree[child]) * this._type < 0 || this.compare(this._tree[i], this._tree[child + 1]) * this._type < 0) {
+            var left = this.compare(this._tree[i], this._tree[child]);
+            var right = this.compare(this._tree[i], this._tree[child + 1]);
+            // if there is element in order to sift
+            if (left * this._type < 0 || right * this._type < 0) {
+                // get correct element to sift down
                 var sift = child;
-                if ((this._tree[sift] - this._tree[sift + 1]) * this._type < 0) {
+                if ((this._tree[child] - this._tree[child + 1]) * this._type < 0) {
                     sift = child + 1;
                 }
                 if (sift < this._tree.length)
