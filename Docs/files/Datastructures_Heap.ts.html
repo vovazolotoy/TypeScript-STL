@@ -203,10 +203,10 @@
                                         }
                                         if (sift &lt; this._tree.length)
                                         this._swap(i, sift);
+                                        i = sift;
                                     } else {
                                         break;
                                     }
-                                    i = sift;
                                 }
                             }
                         
@@ -217,7 +217,6 @@
                              * @return any The value of the extracted node.
                              */
                             public extract():any {
-                                //console.log(this._tree);
                                 if (this._tree.length === 0) {
                                     throw new Error(&quot;Can&#x27;t extract from an empty data structure&quot;);
                                 }
@@ -398,7 +397,7 @@
                              * @method toArray
                              * @return Array   The serialized array.
                              */
-                            public toArray():any[] {
+                            public toArray():Array&lt;any&gt; {
                                 return this._tree;
                             }
                         }

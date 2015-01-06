@@ -579,7 +579,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 150,
+            "line": 149,
             "description": "Inserts an element in the heap by sifting it up",
             "itemtype": "method",
             "name": "insert",
@@ -596,7 +596,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 162,
+            "line": 161,
             "description": "Peeks at the node from the top of the heap",
             "itemtype": "method",
             "name": "top",
@@ -607,7 +607,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 172,
+            "line": 171,
             "description": "Counts the number of elements in the heap",
             "itemtype": "method",
             "name": "count",
@@ -618,7 +618,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 182,
+            "line": 181,
             "description": "Checks whether the heap is empty",
             "itemtype": "method",
             "name": "isEmpty",
@@ -629,7 +629,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 192,
+            "line": 191,
             "description": "Rewind iterator back to the start (no-op)",
             "itemtype": "method",
             "name": "rewind",
@@ -640,7 +640,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 201,
+            "line": 200,
             "description": "Return current node pointed by the iterator",
             "itemtype": "method",
             "name": "current",
@@ -651,7 +651,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 210,
+            "line": 209,
             "description": "Return current node index",
             "itemtype": "method",
             "name": "key",
@@ -662,7 +662,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 219,
+            "line": 218,
             "description": "Move to the next node",
             "itemtype": "method",
             "name": "next",
@@ -673,7 +673,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 228,
+            "line": 227,
             "description": "Check whether the heap contains more nodes",
             "itemtype": "method",
             "name": "valid",
@@ -684,7 +684,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 238,
+            "line": 237,
             "description": "Recover from the corrupted state and allow further actions on the heap.",
             "itemtype": "method",
             "name": "recoverFromCorruption",
@@ -695,7 +695,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 247,
+            "line": 246,
             "description": "Compare elements in order to place them correctly in the heap while sifting up.",
             "itemtype": "method",
             "name": "compare",
@@ -716,7 +716,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 266,
+            "line": 265,
             "description": "Visually display heap tree",
             "itemtype": "method",
             "name": "_displayNode",
@@ -743,7 +743,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 296,
+            "line": 295,
             "description": "Serializes the heap to string",
             "itemtype": "method",
             "name": "toString",
@@ -754,7 +754,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 308,
+            "line": 307,
             "description": "Serializes the heap to array",
             "itemtype": "method",
             "name": "toArray",

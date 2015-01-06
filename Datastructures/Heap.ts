@@ -310,7 +310,7 @@ class Heap {
      * @method toArray
      * @return Array   The serialized array.
      */
-    public toArray():any[] {
+    public toArray():Array<any> {
         return this._tree;
     }
 }
