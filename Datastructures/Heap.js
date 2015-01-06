@@ -14,7 +14,9 @@ var Heap = (function () {
          */
         this._tree = [];
         /**
+         * Heap type
          *
+         * @property _type
          * @type number
          * @private
          */
@@ -101,6 +103,7 @@ var Heap = (function () {
     /**
      * Extracts a node from top of the heap and sift up
      *
+     * @method extract
      * @return any The value of the extracted node.
      */
     Heap.prototype.extract = function () {
@@ -226,6 +229,7 @@ var Heap = (function () {
         }
     };
     /**
+     * Visually display heap tree
      *
      * @method _displayNode
      * @param node
@@ -273,13 +277,19 @@ var Heap = (function () {
         return this._tree;
     };
     /**
+     * Max heap flag
      *
+     * @property MAX
      * @type number
+     * @static
      */
     Heap.MAX = 1;
     /**
+     * Min heap flag
      *
+     * @property MIN
      * @type number
+     * @static
      */
     Heap.MIN = -1;
     return Heap;

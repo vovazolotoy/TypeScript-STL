@@ -17,7 +17,7 @@
                 <h1><img src="https://vovazolotoy.github.io/docs/libstl.png" title="libstl"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.1</em>
+            <em>API Docs for: 0.1.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -93,14 +93,20 @@
                         class Heap {
                         
                             /**
-                             * 
+                             * Max heap flag
+                             *
+                             * @property MAX
                              * @type number
+                             * @static
                              */
                             public static MAX:number = 1;
                         
                             /**
+                             * Min heap flag
                              *
+                             * @property MIN
                              * @type number
+                             * @static
                              */
                             public static MIN:number = -1;
                         
@@ -114,7 +120,9 @@
                             private _tree:Array&lt;any&gt; = [];
                         
                             /**
+                             * Heap type
                              *
+                             * @property _type
                              * @type number
                              * @private
                              */
@@ -205,6 +213,7 @@
                             /**
                              * Extracts a node from top of the heap and sift up
                              *
+                             * @method extract
                              * @return any The value of the extracted node.
                              */
                             public extract():any {
@@ -342,6 +351,7 @@
                             }
                         
                             /**
+                             * Visually display heap tree
                              *
                              * @method _displayNode
                              * @param node

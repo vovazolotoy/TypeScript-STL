@@ -6,14 +6,20 @@
 class Heap {
 
     /**
-     * 
+     * Max heap flag
+     *
+     * @property MAX
      * @type number
+     * @static
      */
     public static MAX:number = 1;
 
     /**
+     * Min heap flag
      *
+     * @property MIN
      * @type number
+     * @static
      */
     public static MIN:number = -1;
 
@@ -27,7 +33,9 @@ class Heap {
     private _tree:Array<any> = [];
 
     /**
+     * Heap type
      *
+     * @property _type
      * @type number
      * @private
      */
@@ -118,6 +126,7 @@ class Heap {
     /**
      * Extracts a node from top of the heap and sift up
      *
+     * @method extract
      * @return any The value of the extracted node.
      */
     public extract():any {
@@ -255,6 +264,7 @@ class Heap {
     }
 
     /**
+     * Visually display heap tree
      *
      * @method _displayNode
      * @param node
