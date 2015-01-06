@@ -116,10 +116,10 @@ class Heap {
                 }
                 if (sift < this._tree.length)
                 this._swap(i, sift);
+                i = sift;
             } else {
                 break;
             }
-            i = sift;
         }
     }
 
@@ -130,7 +130,6 @@ class Heap {
      * @return any The value of the extracted node.
      */
     public extract():any {
-        //console.log(this._tree);
         if (this._tree.length === 0) {
             throw new Error("Can't extract from an empty data structure");
         }

@@ -93,11 +93,11 @@ var Heap = (function () {
                 }
                 if (sift < this._tree.length)
                     this._swap(i, sift);
+                i = sift;
             }
             else {
                 break;
             }
-            i = sift;
         }
     };
     /**
@@ -107,7 +107,6 @@ var Heap = (function () {
      * @return any The value of the extracted node.
      */
     Heap.prototype.extract = function () {
-        //console.log(this._tree);
         if (this._tree.length === 0) {
             throw new Error("Can't extract from an empty data structure");
         }
