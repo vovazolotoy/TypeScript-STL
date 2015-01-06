@@ -32,16 +32,34 @@ assert(heap.insert(7) === undefined);
 assert(JSON.stringify(heap.toArray()) === JSON.stringify([1000, 90, 10, 7, 5, 4, 3, 2, 1]));
 
 // MaxHeap::extract
+// MaxHeap::count
+assert(heap.count() === 9);
 assert(heap.extract() === 1000);
 assert(heap.extract() === 90);
 assert(heap.extract() === 10);
 assert(heap.extract() === 7);
+assert(heap.count() === 5);
 assert(heap.extract() === 5);
 assert(heap.extract() === 4);
 assert(heap.extract() === 3);
+assert(heap.count() === 2);
 assert(heap.extract() === 2);
 assert(heap.extract() === 1);
+assert(heap.count() === 0);
+assert(heap.count() === 0);
 
 /*
+ compare
+ count
+ insert
+ isEmpty
+ recoverFromCorruption
+ toString
 
+ key
+ next
+ valid
+ current
+ rewind
+ top
 */
