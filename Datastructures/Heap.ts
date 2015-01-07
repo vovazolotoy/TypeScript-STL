@@ -107,19 +107,27 @@ class Heap {
      */
     private _siftDown(i:number):void {
         while (i < this._tree.length) {
-            var child = this._child(i);
-            var left = this.compare(this._tree[i], this._tree[child]);
-            var right = this.compare(this._tree[i], this._tree[child + 1]);
-            // if there is element in order to sift
-            if (left * this._type < 0 || right * this._type < 0) {
+            var left = this._child(i);
+            var right = left + 1;
+
+            if ((left < this._tree.length) && (right < this._tree.length) &&
+                (this.compare(this._tree[i], this._tree[left]) * this._type < 0 ||
+                this.compare(this._tree[i], this._tree[right]) * this._type < 0))
+            {
+                // there is 2 children and one of them must be swapped
                 // get correct element to sift down
-                var sift = child;
-                if ((this._tree[child] - this._tree[child + 1]) * this._type < 0) {
-                    sift = child + 1;
+                var sift = left;
+                if ((this._tree[left] - this._tree[right]) * this._type < 0) {
+                    sift = right;
                 }
-                if (sift < this._tree.length)
-                    this._swap(i, sift);
+                this._swap(i, sift);
                 i = sift;
+            }
+            else if (left < this._tree.length &&
+                    this.compare(this._tree[i], this._tree[left]) * this._type < 0) {
+                // only one child exists
+                this._swap(i, left);
+                i = left;
             } else {
                 break;
             }
@@ -302,7 +310,6 @@ class Heap {
      * @return string   The serialized string.
      */
     public toString():string {
-        console.log('Tree Length ' + this._tree.length);
         // start with root and recursively goes to each node
         return this._displayNode(0);
     }
