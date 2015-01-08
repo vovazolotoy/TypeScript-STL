@@ -247,18 +247,23 @@ var Heap = (function () {
     Heap.prototype._displayNode = function (node, prefix, last) {
         if (prefix === void 0) { prefix = ''; }
         if (last === void 0) { last = true; }
-        var line = prefix + (last ? (prefix ? '└──' : '   ') : '├──') + (this._tree[node] || '*');
+        var line = prefix;
+        // get child indexes
+        var left = this._child(node);
+        var right = left + 1;
         if (last) {
-            prefix += '   ';
+            line += (prefix ? '└─' : '  ');
         }
         else {
-            prefix = prefix + '│  ';
+            line += '├─';
         }
-        if (this._tree[this._child(node)]) {
-            line += '\n' + this._displayNode(this._child(node), prefix, false);
+        line += this._tree[node];
+        prefix += (last ? '  ' : '│ ');
+        if (left < this._tree.length) {
+            line += '\n' + this._displayNode(left, prefix, (!this._tree[right] ? true : false));
         }
-        if (this._tree[this._child(node) + 1]) {
-            line += '\n' + this._displayNode(this._child(node) + 1, prefix, true);
+        if (right < this._tree.length) {
+            line += '\n' + this._displayNode(right, prefix, true);
         }
         return line;
     };
