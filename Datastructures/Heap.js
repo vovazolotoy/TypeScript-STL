@@ -145,6 +145,9 @@ var Heap = (function () {
      * @return any The value of the node on the top.
      */
     Heap.prototype.top = function () {
+        if (this._tree.length === 0) {
+            throw new Error("Can't peek at an empty heap");
+        }
         return this._tree[0];
     };
     /**

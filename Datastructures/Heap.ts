@@ -176,6 +176,10 @@ class Heap {
      * @return any The value of the node on the top.
      */
     public top():any {
+        if (this._tree.length === 0) {
+            throw new Error("Can't peek at an empty heap");
+        }
+
         return this._tree[0];
     }
 
