@@ -53,11 +53,18 @@ assert(heap3.insert(71) === undefined);
 assert(heap3.insert(6) === undefined);
 
 // Heap::extract
+// Heap::count
 assert(heap3.extract() === 71);
+assert(heap3.count() === 12);
+assert(heap2.count() === 6);
+assert(heap.count() === 6);
 assert(heap3.extract() === 70);
 assert(heap3.extract() === 69);
+assert(heap3.count() === 10);
 assert(heap3.extract() === 17);
 assert(heap3.extract() === 11);
+assert(heap3.count() === 8);
+assert(heap3.count() === 8);
 assert(heap3.extract() === 8);
 assert(heap3.extract() === 7);
 assert(heap3.extract() === 6);
@@ -67,7 +74,10 @@ assert(heap3.extract() === 5);
 assert(heap3.extract() === 4);
 assert(heap3.extract() === 3);
 assert(heap3.extract() === 2);
+assert(heap3.count() === 1);
 assert(heap3.extract() === 1);
+assert(heap3.count() === 0);
+assert(heap3.count() === 0);
 
 /**
  compare
