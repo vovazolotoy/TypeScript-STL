@@ -568,7 +568,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 126,
+            "line": 137,
             "description": "Extracts a node from top of the heap and sift up",
             "itemtype": "method",
             "name": "extract",
@@ -579,7 +579,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 149,
+            "line": 160,
             "description": "Inserts an element in the heap by sifting it up",
             "itemtype": "method",
             "name": "insert",
@@ -596,7 +596,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 161,
+            "line": 172,
             "description": "Peeks at the node from the top of the heap",
             "itemtype": "method",
             "name": "top",
@@ -607,7 +607,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 171,
+            "line": 182,
             "description": "Counts the number of elements in the heap",
             "itemtype": "method",
             "name": "count",
@@ -618,7 +618,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 181,
+            "line": 192,
             "description": "Checks whether the heap is empty",
             "itemtype": "method",
             "name": "isEmpty",
@@ -629,7 +629,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 191,
+            "line": 202,
             "description": "Rewind iterator back to the start (no-op)",
             "itemtype": "method",
             "name": "rewind",
@@ -640,7 +640,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 200,
+            "line": 211,
             "description": "Return current node pointed by the iterator",
             "itemtype": "method",
             "name": "current",
@@ -651,7 +651,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 209,
+            "line": 220,
             "description": "Return current node index",
             "itemtype": "method",
             "name": "key",
@@ -662,7 +662,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 218,
+            "line": 229,
             "description": "Move to the next node",
             "itemtype": "method",
             "name": "next",
@@ -673,7 +673,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 227,
+            "line": 238,
             "description": "Check whether the heap contains more nodes",
             "itemtype": "method",
             "name": "valid",
@@ -684,7 +684,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 237,
+            "line": 248,
             "description": "Recover from the corrupted state and allow further actions on the heap.",
             "itemtype": "method",
             "name": "recoverFromCorruption",
@@ -695,7 +695,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 246,
+            "line": 257,
             "description": "Compare elements in order to place them correctly in the heap while sifting up.",
             "itemtype": "method",
             "name": "compare",
@@ -716,7 +716,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 265,
+            "line": 276,
             "description": "Visually display heap tree",
             "itemtype": "method",
             "name": "_displayNode",
@@ -743,7 +743,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 295,
+            "line": 314,
             "description": "Serializes the heap to string",
             "itemtype": "method",
             "name": "toString",
@@ -754,7 +754,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 307,
+            "line": 325,
             "description": "Serializes the heap to array",
             "itemtype": "method",
             "name": "toArray",

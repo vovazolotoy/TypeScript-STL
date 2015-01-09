@@ -194,16 +194,27 @@
                              */
                             private _siftDown(i:number):void {
                                 while (i &lt; this._tree.length) {
-                                    var child = this._child(i);
-                                    if (this.compare(this._tree[i], this._tree[child]) * this._type &lt; 0 ||
-                                        this.compare(this._tree[i], this._tree[child + 1]) * this._type &lt; 0) {
-                                        var sift = child;
-                                        if ((this._tree[sift] - this._tree[sift+1]) * this._type &lt; 0) {
-                                            sift = child + 1;
+                                    var left = this._child(i);
+                                    var right = left + 1;
+                        
+                                    if ((left &lt; this._tree.length) &amp;&amp; (right &lt; this._tree.length) &amp;&amp;
+                                        (this.compare(this._tree[i], this._tree[left]) * this._type &lt; 0 ||
+                                        this.compare(this._tree[i], this._tree[right]) * this._type &lt; 0))
+                                    {
+                                        // there is 2 children and one of them must be swapped
+                                        // get correct element to sift down
+                                        var sift = left;
+                                        if ((this._tree[left] - this._tree[right]) * this._type &lt; 0) {
+                                            sift = right;
                                         }
-                                        if (sift &lt; this._tree.length)
                                         this._swap(i, sift);
                                         i = sift;
+                                    }
+                                    else if (left &lt; this._tree.length &amp;&amp;
+                                            this.compare(this._tree[i], this._tree[left]) * this._type &lt; 0) {
+                                        // only one child exists
+                                        this._swap(i, left);
+                                        i = left;
                                     } else {
                                         break;
                                     }
@@ -360,20 +371,28 @@
                              * @private
                              */
                             private _displayNode(node, prefix = &#x27;&#x27;, last = true) {
+                                var line = prefix;
                         
-                                var line = prefix + (last ? (prefix ? &#x27;└──&#x27; : &#x27;   &#x27;) : &#x27;├──&#x27;) + (this._tree[node] || &#x27;*&#x27;);
+                                // get child indexes
+                                var left = this._child(node);
+                                var right = left + 1;
                         
                                 if (last) {
-                                    prefix += &#x27;   &#x27;;
+                                    line += (prefix ? &#x27;└─&#x27; : &#x27;  &#x27;);
                                 } else {
-                                    prefix = prefix + &#x27;│  &#x27;;
+                                    line += &#x27;├─&#x27;;
                                 }
                         
-                                if (this._tree[this._child(node)]) {
-                                    line += &#x27;\n&#x27; + this._displayNode(this._child(node), prefix, false);
+                                line += this._tree[node];
+                        
+                                prefix += (last ? &#x27;  &#x27; : &#x27;│ &#x27;);
+                        
+                                if (left &lt; this._tree.length) {
+                                    line += &#x27;\n&#x27; + this._displayNode(left, prefix, (!this._tree[right] ? true : false));
                                 }
-                                if (this._tree[this._child(node) + 1]) {
-                                    line += &#x27;\n&#x27; + this._displayNode(this._child(node) + 1, prefix, true);
+                        
+                                if (right &lt; this._tree.length) {
+                                    line += &#x27;\n&#x27; + this._displayNode(right, prefix, true);
                                 }
                         
                                 return line;
@@ -386,7 +405,6 @@
                              * @return string   The serialized string.
                              */
                             public toString():string {
-                                console.log(&#x27;Tree Length &#x27; + this._tree.length);
                                 // start with root and recursively goes to each node
                                 return this._displayNode(0);
                             }
