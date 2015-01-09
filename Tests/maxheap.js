@@ -47,24 +47,22 @@ assert(heap.extract() === 2);
 assert(heap.extract() === 1);
 assert(heap.count() === 0);
 assert(heap.count() === 0);
-
-heap.insert(123131232);
-heap.insert(32313151232);
-heap.insert(2231311232);
-heap.insert(1231311232);
-heap.insert(5231131232);
-heap.insert(1);
-heap.insert(10);
-heap.insert(100);
-heap.insert(1000);
-heap.insert(10000);
-heap.insert(100000);
-heap.insert(12113131232);
-console.log(heap + "");
+assert(heap.insert(123131232) === undefined);
+assert(heap.insert(32313151232) === undefined);
+assert(heap.insert(2231311232) === undefined);
+assert(heap.insert(1231311232) === undefined);
+assert(heap.insert(5231131232) === undefined);
+assert(heap.insert(1) === undefined);
+assert(heap.insert(10) === undefined);
+assert(heap.insert(100) === undefined);
+assert(heap.insert(1000) === undefined);
+assert(heap.insert(10000) === undefined);
+assert(heap.insert(100000) === undefined);
+assert(heap.insert(12113131232) === undefined);
+assert(heap.count() === 12);
 
 /*
  compare
- count
  insert
  isEmpty
  recoverFromCorruption
