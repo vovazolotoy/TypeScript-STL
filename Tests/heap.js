@@ -12,8 +12,8 @@ var heap = new Heap();
 var heap2 = new Heap();
 var heap3 = new Heap();
 
-// Heap::insert
-// Heap::toArray
+// Heap.insert
+// Heap.toArray
 assert(heap.insert(1) === undefined);
 assert(JSON.stringify(heap.toArray()) === JSON.stringify([1]));
 assert(heap.insert(2) === undefined);
@@ -52,8 +52,8 @@ assert(heap3.insert(69) === undefined);
 assert(heap3.insert(71) === undefined);
 assert(heap3.insert(6) === undefined);
 
-// Heap::extract
-// Heap::count
+// Heap.extract
+// Heap.count
 assert(heap3.extract() === 71);
 assert(heap3.count() === 12);
 assert(heap2.count() === 6);
@@ -79,8 +79,22 @@ assert(heap3.extract() === 1);
 assert(heap3.count() === 0);
 assert(heap3.count() === 0);
 
+// Heap.compare
+assert(heap.compare(0,0) == 0);
+assert(heap.compare('A', 'A') == 0);
+assert(heap.compare(-101, -101) == 0);
+assert(heap.compare(0.0001, 0.0001) == 0);
+assert(heap.compare(0.0001, 0.0002) == -1);
+assert(heap.compare(1, 2) == -1);
+assert(heap.compare('A', 'Z') == -1);
+assert(heap.compare(-102, -101) == -1);
+assert(heap.compare(0.001, 0.0002) == 1);
+assert(heap.compare(2, 1) == 1);
+assert(heap.compare('Z', 'B') == 1);
+assert(heap.compare(-102, -103) == 1);
+
+
 /**
- compare
  count
  current
  isEmpty
