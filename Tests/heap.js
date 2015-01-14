@@ -101,6 +101,12 @@ assert(heap.top() === heap.extract());
 assert(heap.top() === 4);
 assert(heap2.top() === 10);
 
+// Heap.isEmpty
+assert(heap3.isEmpty() === true);
+assert(heap.extract() === 4);
+assert(heap.extract() === 3);
+assert(heap.extract() === 2);
+assert(heap.extract() === 1);
 
 /**
  current
