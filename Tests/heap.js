@@ -93,16 +93,21 @@ assert(heap.compare(2, 1) == 1);
 assert(heap.compare('Z', 'B') == 1);
 assert(heap.compare(-102, -103) == 1);
 
+// Heap.top
+assert(heap.top() === 10);
+assert(heap.top() === heap.extract());
+assert(heap.top() === 5);
+assert(heap.top() === heap.extract());
+assert(heap.top() === 4);
+assert(heap2.top() === 10);
+
 
 /**
- count
  current
  isEmpty
  key
  next
  recoverFromCorruption
- toString
  rewind
- top
  valid
 */
