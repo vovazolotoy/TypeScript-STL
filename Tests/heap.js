@@ -110,7 +110,6 @@ assert(heap.extract() === 1);
 
 /**
  current
- isEmpty
  key
  next
  recoverFromCorruption

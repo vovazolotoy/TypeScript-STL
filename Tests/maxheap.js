@@ -61,9 +61,37 @@ assert(heap.insert(100000) === undefined);
 assert(heap.insert(12113131232) === undefined);
 assert(heap.count() === 12);
 
+// Heap.compare
+assert(heap.compare(0,0) == 0);
+assert(heap.compare('A', 'A') == 0);
+assert(heap.compare(-101, -101) == 0);
+assert(heap.compare(0.0001, 0.0001) == 0);
+assert(heap.compare(0.0001, 0.0002) == -1);
+assert(heap.compare(1, 2) == -1);
+assert(heap.compare('A', 'Z') == -1);
+assert(heap.compare(-102, -101) == -1);
+assert(heap.compare(0.001, 0.0002) == 1);
+assert(heap.compare(2, 1) == 1);
+assert(heap.compare('Z', 'B') == 1);
+assert(heap.compare(-102, -103) == 1);
+
+// Heap.top
+assert(heap.top() === 32313151232);
+assert(heap.top() === heap.extract());
+assert(heap.top() === 12113131232);
+assert(heap.top() === heap.extract());
+assert(heap.top() === 5231131232);
+assert(heap.top() === heap.extract());
+assert(heap.top() === 2231311232);
+
+// Heap.isEmpty
+assert(heap.isEmpty() === false);
+var heap2 = new MaxHeap();
+assert(heap2.isEmpty() === true);
+assert(heap2.insert(1) === undefined);
+assert(heap2.isEmpty() === false);
+
 /*
- compare
- insert
  isEmpty
  recoverFromCorruption
  toString
