@@ -61,7 +61,7 @@ assert(heap.insert(100000) === undefined);
 assert(heap.insert(12113131232) === undefined);
 assert(heap.count() === 12);
 
-// Heap.compare
+// MaxHeap.compare
 assert(heap.compare(0,0) == 0);
 assert(heap.compare('A', 'A') == 0);
 assert(heap.compare(-101, -101) == 0);
@@ -75,7 +75,7 @@ assert(heap.compare(2, 1) == 1);
 assert(heap.compare('Z', 'B') == 1);
 assert(heap.compare(-102, -103) == 1);
 
-// Heap.top
+// MaxHeap.top
 assert(heap.top() === 32313151232);
 assert(heap.top() === heap.extract());
 assert(heap.top() === 12113131232);
@@ -84,22 +84,19 @@ assert(heap.top() === 5231131232);
 assert(heap.top() === heap.extract());
 assert(heap.top() === 2231311232);
 
-// Heap.isEmpty
+// MaxHeap.isEmpty
 assert(heap.isEmpty() === false);
 var heap2 = new MaxHeap();
 assert(heap2.isEmpty() === true);
 assert(heap2.insert(1) === undefined);
 assert(heap2.isEmpty() === false);
 
-/*
- isEmpty
- recoverFromCorruption
+/**
  toString
-
+ current
  key
  next
- valid
- current
+ recoverFromCorruption
  rewind
- top
-*/
+ valid
+ */

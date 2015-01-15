@@ -50,18 +50,43 @@ assert(heap.extract() === 90);
 assert(heap.extract() === 1000);
 assert(heap.count() === 0);
 
-/*
- compare
- count
- insert
- isEmpty
- recoverFromCorruption
- toString
+// MinHeap.compare
+assert(heap.compare(0,0) === 0);
+assert(heap.compare('A', 'A') === 0);
+assert(heap.compare(-101, -101) === 0);
+assert(heap.compare(0.0001, 0.0001) === 0);
+assert(heap.compare(0.0001, 0.0002) === -1);
+assert(heap.compare(1, 2) === -1);
+assert(heap.compare('A', 'Z') === -1);
+assert(heap.compare(-102, -101) === -1);
+assert(heap.compare(0.001, 0.0002) === 1);
+assert(heap.compare(2, 1) === 1);
+assert(heap.compare('Z', 'B') === 1);
+assert(heap.compare(-102, -103) === 1);
 
+// MinHeap.top
+// MinHeap.isEmpty
+assert(heap.isEmpty() === true);
+assert(heap.insert(-1) === undefined);
+assert(heap.isEmpty() === false);
+assert(heap.top() === -1);
+assert(heap.insert(5) === undefined);
+assert(heap.top() === -1);
+assert(heap.insert(-10) === undefined);
+assert(heap.top() === -10);
+assert(heap.isEmpty() === false);
+assert(heap.insert(0) === undefined);
+assert(heap.top() === -10);
+assert(heap.extract() === -10);
+assert(heap.top() === -1);
+assert(heap.isEmpty() === false);
+
+/**
+ toString
+ current
  key
  next
- valid
- current
+ recoverFromCorruption
  rewind
- top
+ valid
  */

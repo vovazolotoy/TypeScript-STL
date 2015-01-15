@@ -109,6 +109,7 @@ assert(heap.extract() === 2);
 assert(heap.extract() === 1);
 
 /**
+ toString
  current
  key
  next
