@@ -124,6 +124,15 @@ toString = "\
     ├─100\n\
     └─1";
 assert(heap.toString() === toString);
+assert(heap.extract() === 100001);
+assert(heap.extract() === 100000);
+assert(heap.extract() === 10000);
+assert(heap.extract() === 1000);
+toString = "\
+  100\n\
+  ├─10\n\
+  └─1";
+assert(heap.toString() === toString);
 
 
 
