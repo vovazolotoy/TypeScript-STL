@@ -263,7 +263,7 @@ var Heap = (function () {
         line += this._tree[node];
         prefix += (last ? '  ' : '│ ');
         if (left < this._tree.length) {
-            line += '\n' + this._displayNode(left, prefix, (!this._tree[right] ? true : false));
+            line += '\n' + this._displayNode(left, prefix, (this._tree[right] == undefined ? true : false));
         }
         if (right < this._tree.length) {
             line += '\n' + this._displayNode(right, prefix, true);

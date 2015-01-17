@@ -108,8 +108,25 @@ assert(heap.extract() === 3);
 assert(heap.extract() === 2);
 assert(heap.extract() === 1);
 
+// Heap.toString
+var toString = "\
+  10\n\
+  ├─3\n\
+  │ ├─1\n\
+  │ └─0\n\
+  └─2\n\
+    └─null";
+assert(heap2.toString() === toString);
+assert(heap2.extract() === 10);
+assert(heap2.extract() === 3);
+assert(heap2.extract() === 2);
+var toString = "\
+  1\n\
+  ├─null\n\
+  └─0";
+assert(heap2.toString() === toString);
+
 /**
- toString
  current
  key
  next

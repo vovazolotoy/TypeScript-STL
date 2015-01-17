@@ -137,7 +137,6 @@ assert(heap.toString() === toString);
 
 
 /**
- toString
  current
  key
  next
