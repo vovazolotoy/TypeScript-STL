@@ -81,6 +81,49 @@ assert(heap.extract() === -10);
 assert(heap.top() === -1);
 assert(heap.isEmpty() === false);
 
+// MinHeap.toString
+var toString = "\
+  2231311232\n\
+  ├─1231311232\n\
+  │ ├─10000\n\
+  │ │ ├─1\n\
+  │ │ └─1000\n\
+  │ └─100\n\
+  └─123131232\n\
+    ├─10\n\
+    └─100000";
+assert(heap.toString() === toString);
+assert(heap.extract() === 2231311232);
+assert(heap.extract() === 1231311232);
+assert(heap.extract() === 123131232);
+toString = "\
+  100000\n\
+  ├─10000\n\
+  │ ├─1000\n\
+  │ └─100\n\
+  └─10\n\
+    └─1";
+assert(heap.toString() === toString);
+assert(heap.insert(100001) === undefined);
+toString = "\
+  100001\n\
+  ├─100000\n\
+  │ ├─10\n\
+  │ └─1000\n\
+  └─10000\n\
+    ├─100\n\
+    └─1";
+assert(heap.toString() === toString);
+assert(heap.extract() === 100001);
+assert(heap.extract() === 100000);
+assert(heap.extract() === 10000);
+assert(heap.extract() === 1000);
+toString = "\
+  100\n\
+  ├─10\n\
+  └─1";
+assert(heap.toString() === toString);
+
 /**
  toString
  current
