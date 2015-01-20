@@ -10,3 +10,6 @@ var PriorityQueue = require('./../Datastructures/PriorityQueue.js');
 // testing PriorityQueue
 var queue = new PriorityQueue();
 var queue2 = new PriorityQueue();
+
+queue.enqueue('C', 3);
+console.log(queue);
