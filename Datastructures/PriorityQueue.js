@@ -26,7 +26,7 @@ var PriorityQueue = (function (_super) {
      * @return void
      */
     PriorityQueue.prototype.enqueue = function (value, priority) {
-        return this.insert({ value: value, priority: priority });
+        return this.insert(new PriorityQueueNode(value, priority));
     };
     /**
      * Dequeues a node from the queue
@@ -59,5 +59,32 @@ var PriorityQueue = (function (_super) {
     };
     return PriorityQueue;
 })(Heap);
+/**
+ * PriorityQueue Node
+ *
+ * @class PriorityQueueNode
+ */
+var PriorityQueueNode = (function () {
+    /**
+     * Init
+     *
+     * @param value
+     * @param priority
+     */
+    function PriorityQueueNode(value, priority) {
+        this.value = value;
+        this.priority = priority;
+    }
+    /**
+     * Serializes the node to string
+     *
+     * @method toString
+     * @return string   The serialized string.
+     */
+    PriorityQueueNode.prototype.toString = function () {
+        return this.value + " [" + this.priority + "]";
+    };
+    return PriorityQueueNode;
+})();
 module.exports = PriorityQueue;
 //# sourceMappingURL=PriorityQueue.js.map

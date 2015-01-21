@@ -20,7 +20,7 @@ class PriorityQueue extends Heap {
      * @return void
      */
     public enqueue(value:any, priority:any) {
-        return this.insert({value:value, priority:priority});
+        return this.insert(new PriorityQueueNode(value, priority));
     }
 
     /**
@@ -42,7 +42,7 @@ class PriorityQueue extends Heap {
      * @return number Result of the comparison, positive integer if first is greater than second, 0 if they are equal, negative integer otherwise.
      * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
      */
-    public compare(first:any, second:any):number {
+    public compare(first:PriorityQueueNode, second:PriorityQueueNode):number {
         if (first.value > second.value) {
             return 1;
         } else if (first.value == second.value) {
@@ -50,6 +50,51 @@ class PriorityQueue extends Heap {
         } else {
             return -1;
         }
+    }
+}
+
+/**
+ * PriorityQueue Node
+ *
+ * @class PriorityQueueNode
+ */
+class PriorityQueueNode {
+
+    /**
+     * Node value
+     *
+     * @property value
+     * @type any
+     */
+    public value;
+
+    /**
+     * Node priority
+     *
+     * @property value
+     * @type any
+     */
+    public priority;
+
+    /**
+     * Init
+     * 
+     * @param value
+     * @param priority
+     */
+    public constructor(value:any, priority:any) {
+        this.value = value;
+        this.priority = priority;
+    }
+
+    /**
+     * Serializes the node to string
+     *
+     * @method toString
+     * @return string   The serialized string.
+     */
+    public toString():string {
+        return this.value + " [" + this.priority + "]";
     }
 }
 
