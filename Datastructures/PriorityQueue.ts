@@ -78,7 +78,7 @@ class PriorityQueueNode {
 
     /**
      * Init
-     * 
+     *
      * @param value
      * @param priority
      */
