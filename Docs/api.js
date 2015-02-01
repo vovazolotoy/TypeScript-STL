@@ -6,6 +6,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "MaxHeap",
         "MinHeap",
         "PriorityQueue",
+        "PriorityQueueNode",
         "Queue",
         "Stack"
     ],
