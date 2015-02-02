@@ -47,10 +47,10 @@ var PriorityQueue = (function (_super) {
      * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
      */
     PriorityQueue.prototype.compare = function (first, second) {
-        if (first.value > second.value) {
+        if (first.priority > second.priority) {
             return 1;
         }
-        else if (first.value == second.value) {
+        else if (first.priority == second.priority) {
             return 0;
         }
         else {

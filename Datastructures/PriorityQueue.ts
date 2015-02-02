@@ -43,9 +43,9 @@ class PriorityQueue extends Heap {
      * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
      */
     public compare(first:PriorityQueueNode, second:PriorityQueueNode):number {
-        if (first.value > second.value) {
+        if (first.priority > second.priority) {
             return 1;
-        } else if (first.value == second.value) {
+        } else if (first.priority == second.priority) {
             return 0;
         } else {
             return -1;
