@@ -250,15 +250,6 @@ class Heap {
     }
 
     /**
-     * Recover from the corrupted state and allow further actions on the heap.
-     *
-     * @method recoverFromCorruption
-     * @return void
-     */
-    public recoverFromCorruption():void {
-    }
-
-    /**
      * Compare elements in order to place them correctly in the heap while sifting up.
      *
      * @method compare

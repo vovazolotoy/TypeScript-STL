@@ -210,14 +210,6 @@ var Heap = (function () {
         return false;
     };
     /**
-     * Recover from the corrupted state and allow further actions on the heap.
-     *
-     * @method recoverFromCorruption
-     * @return void
-     */
-    Heap.prototype.recoverFromCorruption = function () {
-    };
-    /**
      * Compare elements in order to place them correctly in the heap while sifting up.
      *
      * @method compare
