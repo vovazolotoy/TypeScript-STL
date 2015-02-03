@@ -38,6 +38,15 @@ var PriorityQueue = (function (_super) {
         return this.extract().value;
     };
     /**
+     * Peeks at the node from the top of the heap
+     *
+     * @method top
+     * @return any The value of the node on the top.
+     */
+    PriorityQueue.prototype.top = function () {
+        return _super.prototype.top.call(this).value;
+    };
+    /**
      * Compare elements in order to place them correctly in the heap while sifting up.
      *
      * @method compare

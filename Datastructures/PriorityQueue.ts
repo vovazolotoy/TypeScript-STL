@@ -34,6 +34,16 @@ class PriorityQueue extends Heap {
     }
 
     /**
+     * Peeks at the node from the top of the heap
+     *
+     * @method top
+     * @return any The value of the node on the top.
+     */
+    public top():any {
+        return super.top().value;
+    }
+
+    /**
      * Compare elements in order to place them correctly in the heap while sifting up.
      *
      * @method compare
