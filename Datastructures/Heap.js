@@ -91,7 +91,7 @@ var Heap = (function () {
                 // there is 2 children and one of them must be swapped
                 // get correct element to sift down
                 var sift = left;
-                if ((this._tree[left] - this._tree[right]) * this._type < 0) {
+                if (this.compare(this._tree[left], this._tree[right]) * this._type < 0) {
                     sift = right;
                 }
                 this._swap(i, sift);
