@@ -75,8 +75,9 @@ var PriorityQueue = (function (_super) {
  */
 var PriorityQueueNode = (function () {
     /**
-     * Init
+     * Constructor
      *
+     * @method constructor
      * @param value
      * @param priority
      */

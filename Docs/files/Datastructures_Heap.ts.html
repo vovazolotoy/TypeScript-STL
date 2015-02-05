@@ -205,7 +205,7 @@
                                         // there is 2 children and one of them must be swapped
                                         // get correct element to sift down
                                         var sift = left;
-                                        if ((this._tree[left] - this._tree[right]) * this._type &lt; 0) {
+                                        if (this.compare(this._tree[left], this._tree[right]) * this._type &lt; 0) {
                                             sift = right;
                                         }
                                         this._swap(i, sift);
@@ -335,15 +335,6 @@
                              */
                             public valid():boolean {
                                 return false;
-                            }
-                        
-                            /**
-                             * Recover from the corrupted state and allow further actions on the heap.
-                             *
-                             * @method recoverFromCorruption
-                             * @return void
-                             */
-                            public recoverFromCorruption():void {
                             }
                         
                             /**

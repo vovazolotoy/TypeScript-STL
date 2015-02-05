@@ -145,7 +145,7 @@
             "plugin_for": [],
             "extension_for": [],
             "file": "Datastructures/PriorityQueue.ts",
-            "line": 56,
+            "line": 66,
             "description": "PriorityQueue Node"
         },
         "Queue": {
@@ -698,17 +698,6 @@
         {
             "file": "Datastructures/Heap.ts",
             "line": 252,
-            "description": "Recover from the corrupted state and allow further actions on the heap.",
-            "itemtype": "method",
-            "name": "recoverFromCorruption",
-            "return": {
-                "description": "void"
-            },
-            "class": "Heap"
-        },
-        {
-            "file": "Datastructures/Heap.ts",
-            "line": 261,
             "description": "Compare elements in order to place them correctly in the heap while sifting up.",
             "itemtype": "method",
             "name": "compare",
@@ -729,7 +718,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 280,
+            "line": 271,
             "description": "Visually display heap tree",
             "itemtype": "method",
             "name": "_displayNode",
@@ -756,7 +745,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 318,
+            "line": 309,
             "description": "Serializes the heap to string",
             "itemtype": "method",
             "name": "toString",
@@ -767,7 +756,7 @@
         },
         {
             "file": "Datastructures/Heap.ts",
-            "line": 329,
+            "line": 320,
             "description": "Serializes the heap to array",
             "itemtype": "method",
             "name": "toArray",
@@ -811,6 +800,17 @@
         {
             "file": "Datastructures/PriorityQueue.ts",
             "line": 36,
+            "description": "Peeks at the node from the top of the heap",
+            "itemtype": "method",
+            "name": "top",
+            "return": {
+                "description": "any The value of the node on the top."
+            },
+            "class": "PriorityQueue"
+        },
+        {
+            "file": "Datastructures/PriorityQueue.ts",
+            "line": 46,
             "description": "Compare elements in order to place them correctly in the heap while sifting up.",
             "itemtype": "method",
             "name": "compare",
@@ -831,7 +831,7 @@
         },
         {
             "file": "Datastructures/PriorityQueue.ts",
-            "line": 63,
+            "line": 73,
             "description": "Node value",
             "itemtype": "property",
             "name": "value",
@@ -840,7 +840,7 @@
         },
         {
             "file": "Datastructures/PriorityQueue.ts",
-            "line": 71,
+            "line": 81,
             "description": "Node priority",
             "itemtype": "property",
             "name": "value",
@@ -849,8 +849,10 @@
         },
         {
             "file": "Datastructures/PriorityQueue.ts",
-            "line": 79,
-            "description": "Init",
+            "line": 89,
+            "description": "Constructor",
+            "itemtype": "method",
+            "name": "constructor",
             "params": [
                 {
                     "name": "value",
@@ -865,7 +867,7 @@
         },
         {
             "file": "Datastructures/PriorityQueue.ts",
-            "line": 90,
+            "line": 101,
             "description": "Serializes the node to string",
             "itemtype": "method",
             "name": "toString",
@@ -911,10 +913,6 @@
         {
             "message": "Missing item type\nDoublyLinkedList element",
             "line": " Datastructures/DoublyLinkedList.ts:316"
-        },
-        {
-            "message": "Missing item type\nInit",
-            "line": " Datastructures/PriorityQueue.ts:79"
         }
     ]
 }

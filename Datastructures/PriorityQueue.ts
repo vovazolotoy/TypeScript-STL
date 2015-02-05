@@ -87,8 +87,9 @@ class PriorityQueueNode {
     public priority;
 
     /**
-     * Init
+     * Constructor
      *
+     * @method constructor
      * @param value
      * @param priority
      */
