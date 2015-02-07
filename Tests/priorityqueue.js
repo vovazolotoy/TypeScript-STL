@@ -29,4 +29,14 @@ assert(queue.dequeue() === 'C2');
 assert(queue.dequeue() === 'C1');
 assert(queue.dequeue() === 'C4');
 assert(queue.dequeue() === 'Cmin');
-assert(queue.dequeue() === 'C');
+
+// PriorityQueue.toString
+var toString = "  C [0.000001]";
+assert(queue.toString() === toString);
+queue.enqueue('C1', 1);
+queue.enqueue('Cmin', 0.01);
+var toString = "\
+  C1 [1]\n\
+  ├─Cmin [0.01]\n\
+  └─C [0.000001]";
+assert(queue.toString() === toString);
