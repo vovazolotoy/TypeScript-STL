@@ -1,7 +1,7 @@
 {
   "name": "libstl",
-  "version": "0.1.11",
-  "description": "Standard TypeScript/JavaScript Library: DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue",
+  "version": "0.1.12",
+  "description": "Standard JavaScript/TypeScript Library: DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue",
   "keywords": [
     "TypeScript",
     "Datastructures",

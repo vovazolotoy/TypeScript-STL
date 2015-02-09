@@ -125,6 +125,11 @@ var toString = "\
   ├─null\n\
   └─0";
 assert(heap2.toString() === toString);
+assert(heap2.extract() === 1);
+var toString = "\
+  null\n\
+  └─0";
+assert(heap2.toString() === toString);
 
 /**
  current
