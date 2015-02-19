@@ -13,8 +13,8 @@ var list2 = new DoublyLinkedList();
 var list3 = new DoublyLinkedList();
 var list4 = new DoublyLinkedList();
 
-// DoublyLinkedList::push
-// DoublyLinkedList::toArray
+// DoublyLinkedList.push
+// DoublyLinkedList.toArray
 assert(list.push(1) === undefined);
 assert(JSON.stringify(list.toArray()) === JSON.stringify([1]));
 assert(list.push(2) === undefined);
@@ -31,37 +31,37 @@ assert(list2.push(false) === undefined);
 assert(JSON.stringify(list2.toArray()) === JSON.stringify([undefined, null, false]));
 assert(list3.push(100000000) === undefined);
 
-// DoublyLinkedList::count
+// DoublyLinkedList.count
 assert(list.count() === 4);
 assert(list2.count() === 3);
 assert(list3.count() === 1);
 assert(list4.count() === 0);
 
-// DoublyLinkedList::isEmpty
+// DoublyLinkedList.isEmpty
 assert(list.isEmpty() === false);
 assert(list2.isEmpty() === false);
 assert(list3.isEmpty() === false);
 assert(list4.isEmpty() === true);
 
-// DoublyLinkedList::top
+// DoublyLinkedList.top
 assert(list.top() === 4);
 assert(list2.top() === false);
 assert(list3.top() === 100000000);
 assert(list4.top() === undefined);
 
-// DoublyLinkedList::bottom
+// DoublyLinkedList.bottom
 assert(list.bottom() === 1);
 assert(list2.bottom() === undefined);
 assert(list3.bottom() === 100000000);
 assert(list4.bottom() === undefined);
 
-// DoublyLinkedList::toString
+// DoublyLinkedList.toString
 assert(list.toString() === "{1->2->3->4}");
 assert(list2.toString() === "{->->false}");
 assert(list3.toString() === "{100000000}");
 assert(list4.toString() === "{}");
 
-// DoublyLinkedList::add
+// DoublyLinkedList.add
 assert(list.add(1,1) === undefined);
 assert(JSON.stringify(list.toArray()) === JSON.stringify([1,1,3,4]));
 assert(list.add(0,0.5) === undefined);
@@ -71,13 +71,13 @@ assert(JSON.stringify(list.toArray()) === JSON.stringify([0.5,1,2,4]));
 assert(list.add(3,3) === undefined);
 assert(JSON.stringify(list.toArray()) === JSON.stringify([0.5,1,2,3]));
 
-// DoublyLinkedList::pop
+// DoublyLinkedList.pop
 assert(list.pop() === 3);
 assert(list.pop() === 2);
 assert(list.pop() === 1);
 assert(list.pop() === 0.5);
 
-// DoublyLinkedList::shift
+// DoublyLinkedList.shift
 list.push(1);
 list.push(2);
 list.push(3);
@@ -87,7 +87,7 @@ assert(list.shift() === 2);
 assert(list.shift() === 3);
 assert(list.shift() === 4);
 
-// DoublyLinkedList::unshift
+// DoublyLinkedList.unshift
 assert(list.unshift(1) === undefined);
 assert(JSON.stringify(list.toArray()) === JSON.stringify([1]));
 assert(list.unshift(2) === undefined);
@@ -97,6 +97,7 @@ assert(JSON.stringify(list.toArray()) === JSON.stringify([3, 2, 1]));
 assert(list.unshift(4) === undefined);
 assert(JSON.stringify(list.toArray()) === JSON.stringify([4, 3, 2, 1]));
 
+// DoublyLinkedList.current
 /**
  current
  key
