@@ -3,7 +3,7 @@
         "name": "libstl",
         "description": "Standard TypeScript/JavaScript Library: DoublyLinkedList, Stack, Queue, Heap, MaxHeap, MinHeap, PriorityQueue",
         "logo": "https://vovazolotoy.github.io/docs/libstl.png",
-        "version": "0.1.13"
+        "version": "0.1.14"
     },
     "files": {
         "Datastructures/DoublyLinkedList.ts": {
@@ -843,7 +843,7 @@
             "line": 81,
             "description": "Node priority",
             "itemtype": "property",
-            "name": "value",
+            "name": "priority",
             "type": "any",
             "class": "PriorityQueueNode"
         },

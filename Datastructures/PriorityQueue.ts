@@ -81,7 +81,7 @@ class PriorityQueueNode {
     /**
      * Node priority
      *
-     * @property value
+     * @property priority
      * @type any
      */
     public priority;
