@@ -98,6 +98,16 @@ assert(list.unshift(4) === undefined);
 assert(JSON.stringify(list.toArray()) === JSON.stringify([4, 3, 2, 1]));
 
 // DoublyLinkedList.current
+// DoublyLinkedList.next
+list.rewind();
+assert(list.current() === 4);
+assert(list.current() === 4);
+list.next();
+assert(list.current() === 3);
+list.next();
+assert(list.current() === 2);
+list.next();
+assert(list.current() === 1);
 /**
  current
  key
