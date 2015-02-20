@@ -108,9 +108,16 @@ list.next();
 assert(list.current() === 2);
 list.next();
 assert(list.current() === 1);
+list.rewind();
+assert(list.current() === 4);
+list.next();
+assert(list.current() === 3);
+
+// DoublyLinkedList.key
+assert(list.key() === 1);
+
 /**
- current
- key
+
  next
  prev
  rewind
