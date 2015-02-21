@@ -114,6 +114,7 @@ list.next();
 assert(list.current() === 3);
 
 // DoublyLinkedList.key
+// DoublyLinkedList.prev
 assert(list.key() === 1);
 list.next();
 list.next();
@@ -121,9 +122,13 @@ assert(list.key() === 3);
 assert(list.key() === 3);
 list.prev();
 assert(list.key() === 2);
+list.prev();
+assert(list.key() === 1);
+list.prev();
+assert(list.key() === 0);
+assert(list.current() === 4);
 
 /**
- next
  prev
  rewind
  valid
