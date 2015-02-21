@@ -115,9 +115,14 @@ assert(list.current() === 3);
 
 // DoublyLinkedList.key
 assert(list.key() === 1);
+list.next();
+list.next();
+assert(list.key() === 3);
+assert(list.key() === 3);
+list.prev();
+assert(list.key() === 2);
 
 /**
-
  next
  prev
  rewind
