@@ -128,8 +128,16 @@ list.prev();
 assert(list.key() === 0);
 assert(list.current() === 4);
 
+// DoublyLinkedList.rewind
+list.rewind();
+assert(list.key() === 0);
+list.next();
+list.next();
+assert(list.key() === 2);
+list.rewind();
+assert(list.key() === 0);
+list4.rewind();
+
 /**
- prev
- rewind
  valid
  */
