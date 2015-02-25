@@ -138,6 +138,13 @@ list.rewind();
 assert(list.key() === 0);
 list4.rewind();
 
-/**
- valid
- */
+// DoublyLinkedList.valid
+list4.rewind();
+assert(list.valid() === true);
+list.next();
+list.next();
+assert(list.valid() === true);
+list.next();
+assert(list.valid() === true);
+list.next();
+assert(list.valid() !== true);
