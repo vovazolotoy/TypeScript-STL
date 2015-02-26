@@ -21,6 +21,14 @@ var Heap = (function () {
          * @private
          */
         this._type = Heap.MAX;
+        /**
+         * Iteration pointer
+         *
+         * @property _key
+         * @type number
+         * @private
+         */
+        this._key = 0;
     }
     /**
      * Get index of left child element in binary tree stored in array
@@ -175,6 +183,7 @@ var Heap = (function () {
      * @return void
      */
     Heap.prototype.rewind = function () {
+        this._key = 0;
     };
     /**
      * Return current node pointed by the iterator
@@ -183,6 +192,7 @@ var Heap = (function () {
      * @return any The current node value.
      */
     Heap.prototype.current = function () {
+        return this._tree[this._key];
     };
     /**
      * Return current node index
@@ -191,6 +201,7 @@ var Heap = (function () {
      * @return any The current node index.
      */
     Heap.prototype.key = function () {
+        return this._key;
     };
     /**
      * Move to the next node
@@ -199,6 +210,16 @@ var Heap = (function () {
      * @return void
      */
     Heap.prototype.next = function () {
+        this._key++;
+    };
+    /**
+     * Move to previous entry
+     *
+     * @method prev
+     * @return void
+     */
+    Heap.prototype.prev = function () {
+        this._key--;
     };
     /**
      * Check whether the heap contains more nodes
@@ -207,7 +228,7 @@ var Heap = (function () {
      * @return boolean true if the heap contains any more nodes, false otherwise.
      */
     Heap.prototype.valid = function () {
-        return false;
+        return (this._key >= 0 && this._key < this._tree.length);
     };
     /**
      * Compare elements in order to place them correctly in the heap while sifting up.

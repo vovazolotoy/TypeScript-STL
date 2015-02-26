@@ -42,6 +42,15 @@ class Heap {
     protected _type:number = Heap.MAX;
 
     /**
+     * Iteration pointer
+     *
+     * @property _key
+     * @type number
+     * @private
+     */
+    private _key = 0;
+
+    /**
      * Get index of left child element in binary tree stored in array
      *
      * @method _child
@@ -210,6 +219,7 @@ class Heap {
      * @return void
      */
     public rewind():void {
+        this._key = 0;
     }
 
     /**
@@ -219,6 +229,7 @@ class Heap {
      * @return any The current node value.
      */
     public current():any {
+        return this._tree[this._key];
     }
 
     /**
@@ -228,6 +239,7 @@ class Heap {
      * @return any The current node index.
      */
     public key():any {
+        return this._key;
     }
 
     /**
@@ -237,6 +249,17 @@ class Heap {
      * @return void
      */
     public next():void {
+        this._key++;
+    }
+
+    /**
+     * Move to previous entry
+     *
+     * @method prev
+     * @return void
+     */
+    public prev():void {
+        this._key--;
     }
 
     /**
@@ -246,7 +269,7 @@ class Heap {
      * @return boolean true if the heap contains any more nodes, false otherwise.
      */
     public valid():boolean {
-        return false;
+        return (this._key >= 0 && this._key < this._tree.length);
     }
 
     /**
