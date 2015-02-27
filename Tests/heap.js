@@ -131,8 +131,15 @@ var toString = "\
   └─0";
 assert(heap2.toString() === toString);
 
+// Heap.current
+heap2.rewind();
+assert(heap2.current() === null);
+heap2.rewind();
+assert(heap2.current() === null);
+heap2.next();
+assert(heap2.current() === 0);
+
 /**
- current
  key
  next
  recoverFromCorruption
