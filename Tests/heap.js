@@ -132,12 +132,19 @@ var toString = "\
 assert(heap2.toString() === toString);
 
 // Heap.current
+// Heap.next
 heap2.rewind();
 assert(heap2.current() === null);
 heap2.rewind();
 assert(heap2.current() === null);
 heap2.next();
 assert(heap2.current() === 0);
+heap2.next();
+assert(heap2.current() === undefined);
+heap2.next();
+assert(heap2.current() === undefined);
+heap2.rewind();
+assert(heap2.current() === null);
 
 /**
  key
