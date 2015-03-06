@@ -146,8 +146,13 @@ assert(heap2.current() === undefined);
 heap2.rewind();
 assert(heap2.current() === null);
 
+// Heap.key
+assert(heap2.key() === 0);
+assert(heap2.key() === 0);
+heap2.next();
+assert(heap2.key() === 1);
+
 /**
- key
  next
  recoverFromCorruption
  rewind
