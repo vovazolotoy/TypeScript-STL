@@ -172,6 +172,15 @@ heap2.rewind();
 assert(heap2.key() === 0);
 heap2.rewind();
 
-/**
- valid
-*/
+// Heap.valid
+heap2.rewind();
+assert(heap2.valid() === true);
+heap2.next();
+assert(heap2.valid() === true);
+heap2.next();
+assert(heap2.valid() === false);
+heap2.next();
+assert(heap2.valid() === false);
+heap2.rewind();
+assert(heap2.valid() === true);
+heap2.rewind();
