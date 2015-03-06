@@ -147,13 +147,22 @@ heap2.rewind();
 assert(heap2.current() === null);
 
 // Heap.key
+// Heap.prev
 assert(heap2.key() === 0);
 assert(heap2.key() === 0);
 heap2.next();
 assert(heap2.key() === 1);
+assert(heap2.current() === 0);
+heap2.next();
+assert(heap2.key() === 2);
+heap2.prev();
+assert(heap2.key() === 1);
+assert(heap2.current() === 0);
+heap2.prev();
+assert(heap2.key() === 0);
+assert(heap2.current() === null);
 
 /**
- next
  recoverFromCorruption
  rewind
  valid
