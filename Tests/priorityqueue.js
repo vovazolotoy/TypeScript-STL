@@ -40,3 +40,16 @@ var toString = "\
   ├─Cmin [0.01]\n\
   └─C [0.000001]";
 assert(queue.toString() === toString);
+assert(queue.dequeue() === 'C1');
+var toString = "\
+  Cmin [0.01]\n\
+  └─C [0.000001]";
+assert(queue.toString() === toString);
+assert(queue.dequeue() === 'Cmin');
+var toString = "\
+  C [0.000001]";
+assert(queue.toString() === toString);
+assert(queue.dequeue() === 'C');
+
+// TODO: fix for empty
+console.log(queue.toString());
