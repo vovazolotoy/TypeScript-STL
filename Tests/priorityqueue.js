@@ -52,4 +52,4 @@ assert(queue.toString() === toString);
 assert(queue.dequeue() === 'C');
 
 // TODO: fix for empty
-console.log(queue.toString());
+//console.log(queue.toString());

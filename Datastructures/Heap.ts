@@ -71,7 +71,8 @@ class Heap {
      * @private
      */
     private _parent(n:number):number {
-        return Math.floor((n - 1) / 2);
+        //console.log('n=', n, Math.floor(n / 2));
+        return Math.floor(n / 2);
     }
 
     /**
