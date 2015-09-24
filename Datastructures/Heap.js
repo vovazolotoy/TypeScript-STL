@@ -50,7 +50,7 @@ var Heap = (function () {
      * @private
      */
     Heap.prototype._parent = function (n) {
-        return Math.floor(n - 1 / 2);
+        return Math.floor((n - 1) / 2);
     };
     /**
      * Swap 2 elements in binary tree
