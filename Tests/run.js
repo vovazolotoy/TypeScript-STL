@@ -20,5 +20,6 @@ require('./heap.js');
 require('./maxheap.js');
 require('./minheap.js');
 require('./priorityqueue.js');
+require('./trie.js');
 
 console.log('Testing: Done, Success!');
