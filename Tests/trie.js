@@ -9,8 +9,6 @@ var Trie = require('./../Datastructures/trie.js');
 
 // testing Queue
 var trie = new Trie();
-var trie2 = new Trie();
-
 
 // Trie::insert
 assert(trie.insert('Test') === undefined);
