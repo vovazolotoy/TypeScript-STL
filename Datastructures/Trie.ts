@@ -6,6 +6,8 @@
  */
 class Trie {
 
+    private _root:TrieNode = null;
+
     /**
      * Adds a word to the trie
      *
@@ -23,6 +25,11 @@ class Trie {
     public contains(word:string) {
         return true;
     }
+}
+
+interface TrieNode {
+    children:Array<TrieNode>;
+    value:Array<any>;
 }
 
 export = Trie;

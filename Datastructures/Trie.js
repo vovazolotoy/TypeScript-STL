@@ -5,6 +5,7 @@
  */
 var Trie = (function () {
     function Trie() {
+        this._root = null;
     }
     /**
      * Adds a word to the trie
