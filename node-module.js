@@ -1,6 +1,6 @@
 /**
  * STL
- * @type {{DoublyLinkedList: exports, Stack: exports, Queue: exports, Heap: exports, MaxHeap: exports, MinHeap: exports, PriorityQueue: exports}}
+ * @type {{DoublyLinkedList: exports, Stack: exports, Queue: exports, Heap: exports, MaxHeap: exports, MinHeap: exports, PriorityQueue: exports, Trie: exports}}
  */
 module.exports = {
 	DoublyLinkedList: require('./Datastructures/DoublyLinkedList'),
@@ -9,5 +9,6 @@ module.exports = {
 	Heap: require('./Datastructures/Heap'),
 	MaxHeap: require('./Datastructures/MaxHeap'),
 	MinHeap: require('./Datastructures/MinHeap'),
-	PriorityQueue: require('./Datastructures/PriorityQueue')
+	PriorityQueue: require('./Datastructures/PriorityQueue'),
+	Trie: require('./Datastructures/Trie')
 };
