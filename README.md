@@ -17,6 +17,7 @@ STL provides a set of standard datastructures. They are grouped here by their un
 * [MaxHeap](#maxheap)
 * [MinHeap](#minheap)
 * [PriorityQueue](#priorityqueue)
+* [Trie](#trie)
 
 ## Doubly Linked Lists
 
@@ -106,4 +107,16 @@ heap.top(); // = 1
 var PriorityQueue = require('libstl').PriorityQueue;
 
 var queue = new PriorityQueue();
+```
+
+## Trie
+```javascript
+var Trie = require('libstl').Trie;
+
+var trie = new Trie();
+trie.insert('java');
+trie.insert('javascript');
+trie.insert('typescript');
+
+trie.contains('java'); // true
 ```
